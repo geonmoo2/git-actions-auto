@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>백정현 상세 정보</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/detailcss/playerdetail.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+
+    <!-- JS -->
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <th:block th:replace="~{fragments/nav :: navFragment}"></th:block>
+    <main>
+        <section>
+            <div class="member-area">
+                <div class="area1">
+
+                    <div class="playerphoto">
+                        <img src="/img/player/pitcher/백정현.png" alt="백정현 사진">
+                    </div>
+
+                    <div class="playercoment">
+                        <div class="playername">
+                            <div class="number">29</div>
+                            <div>
+                                <div class="koname">백정현</div>
+                                <div class="engname">Baek Jung-hyun</div>
+                            </div>
+                        </div>
+                        <div class="playerinfo">투수 / 좌투좌타</div><br>
+                        <div class="allinfo">
+                            <div class="info1">
+                                <div class="birth1">생 년 월 일</div>
+                                <div class="height1">키 / 몸 무 게</div>
+                                <div class="school1">출 신 학 교</div>
+                                <div class="spec1">입 단 년 도</div>
+                                <div class="pay1">연 봉</div>
+                                <div class="comment">코 멘 트</div>
+                            </div>
+                            <div>
+                                <div class="birth">&nbsp;: 1987년 7월 13일</div>
+                                <div class="height">&nbsp;: 184cm / 80kg</div>
+                                <div class="school">&nbsp;: 대구옥산초-대구중-대구상원고</div>
+                                <div class="spec">&nbsp;: 2007년 입단</div>
+                                <div class="pay">&nbsp;: 4억원</div>
+                            </div>
+                        </div>
+                        <span class="commenttext">2015시즌 페넌트레이스 성적은 31경기 28이닝 2홀드, 평균자책점 6.11로 저조했고 주로 퓨처스에 머물렀던 백정현. 그러나 한국시리즈 엔트리에 극적으로 합류했고, 큰 무대에서 자신의 이름을 널리 알리는 빼어난 피칭을 했다. 타자를 유인할 수 있는 슬라이더, 체인지업, 커브 등 변화구 구사에도 자신감을 갖고 있는 투수다. 2016시즌 6승을 기록하더니, 지난 2017시즌에는 8승 4패를 기록하며 커리어 하이를 찍었다. 그 뿐만 아니라 개인 첫 한시즌 100이닝을 돌파하며 의미있는 기록을 남겼다. 2018년 선발 로테이션의 한 축을 차지하며 7승 7패를 기록했다. 올 시즌 더 발전된 모습이 기대된다.</span>
+                        <div class="insta">
+                            <a href="https://www.instagram.com/baek_junghyun/" target="_blank">
+                                <img src="/img/insta.png" alt="인스타그램 아이콘">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="members-area">
+                <th:block th:replace="~{fragments/pitcher_detail_slider :: pitcher_detail_sliderFragment}"></th:block>
+            </div>
+        </section>
+    </main>
+    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+
+    <script>
+        /* header */
+        document.querySelectorAll('.menu > li').forEach(menuItem => {
+            menuItem.addEventListener('mouseenter', () => {
+                document.querySelector('.hideback').classList.add('show-hideback');
+            });
+            menuItem.addEventListener('mouseleave', () => {
+                document.querySelector('.hideback').classList.remove('show-hideback');
+            });
+        });
+        /* header */
+        let slider = document.querySelector(".slider");
+        let innerSlider = document.querySelector(".slider-inner");
+        let pressed = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener("mousedown", (e) => {
+            pressed = true;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = innerSlider.offsetLeft;
+            slider.classList.add("active");
+        });
+
+        slider.addEventListener("mouseleave", () => {
+            pressed = false;
+            slider.classList.remove("active");
+        });
+
+        slider.addEventListener("mouseup", () => {
+            pressed = false;
+            slider.classList.remove("active");
+        });
+
+        slider.addEventListener("mousemove", (e) => {
+            if (!pressed) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = x - startX;
+            innerSlider.style.left = `${scrollLeft + walk}px`;
+            checkBoundary();
+        });
+
+        function checkBoundary() {
+            let outer = slider.getBoundingClientRect();
+            let inner = innerSlider.getBoundingClientRect();
+
+            if (parseInt(innerSlider.style.left) > 0) {
+                innerSlider.style.left = "0px";
+            } else if (inner.right < outer.right) {
+                innerSlider.style.left = `-${inner.width - outer.width}px`;
+
+            }
+        }
+
+        // 중앙에 배치할 슬라이드 인덱스 설정
+        const targetIndex = 2; // 중앙에 배치할 슬라이드의 인덱스 (0부터 시작)
+
+        function centerSlide(index) {
+            const slides = document.querySelectorAll('.slider-item');
+            const targetSlide = slides[index];
+            const sliderRect = slider.getBoundingClientRect();
+            const targetRect = targetSlide.getBoundingClientRect();
+
+            const offset = targetRect.left - sliderRect.left - (sliderRect.width / 2) + (targetRect.width / 2);
+            innerSlider.scrollLeft += offset;
+        }
+
+        // 슬라이더 로드 후 중앙에 배치
+        window.addEventListener('load', () => {
+            centerSlide(targetIndex);
+        });
+
+    </script>
+</div>
+</body>
+</html>

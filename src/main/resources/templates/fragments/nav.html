@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
+<head>
+    <title>Nav Fragment</title>
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+
+
+
+</head>
+<body>
+<header th:fragment="navFragment" class="navbar" id="navbar" >
+    <script type="text/javascript" src="/js/nav.js"></script>
+    <div class="logo header-left">
+        <a href="/samsung"></a>
+        <!-- img src="img/logo.png" alt="LOGO" -->
+    </div>
+    <div class="header-right">
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a href="">구단</a>
+                    <ul class="submenu">
+                        <li><a href="/club/slintro">구단소개말</a></li>
+                        <li><a href="/club/board/paging">공지사항</a></li>
+                        <li><a href="/club/clubnews/paging">구단소식</a></li>
+                        <li><a href="/club/lionsPark">라이온즈파크</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/player/player_main">선수단</a>
+                    <ul class="submenu">
+                        <li><a href="/player/staff">코칭스태프</a></li>
+                        <li><a href="/player/pitcher">투수</a></li>
+                        <li><a href="/player/hitter">타자</a></li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="">기록</a>
+                    <ul class="submenu">
+                        <li><a href="/record/teams">팀순위</a></li>
+                        <li><a href="/club/slhistory">역대기록</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/fan/fan_main">팬</a>
+                    <ul class="submenu">
+                        <li><a href="/fan/fan_gallery">갤러리</a></li>
+                        <li><a href="/fan/faqboard/paging">FAQ</a></li>
+                        <li><a href="/fan/fan_cheermain">응원단</a></li>
+                        <li><a href="/fan/board/fanpaging">자유게시판</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/book/book_real_start">예매</a>
+                    <ul class="submenu">
+                        <li><a href="/book/book_real_start">예매</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">쇼핑</a>
+                    <ul class="submenu">
+                        <li><a href="https://samsunglionsmall.com/" target="_blank">쇼핑</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="rightmenu">
+
+                <th:block sec:authorize="not isAuthenticated()">
+                    <li><a href="/user/login">로그인</a></li>
+                    <li>|</li>
+                    <li ><a href="/user/join_start">회원가입</a></li>
+                </th:block>
+
+                <th:block sec:authorize="isAuthenticated()">
+                    <li><a href="/user/logout">로그아웃</a></li>
+                    <li>|</li>
+                    <li><a href="/user/profile">나의정보</a></li>
+                </th:block>
+
+
+
+
+            </ul>
+        </nav>
+    </div>
+    <div class="hideback"></div>
+</header>
+</body>
+</html>

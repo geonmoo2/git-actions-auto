@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김동엽 상세 정보</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/detailcss/playerdetail.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+
+    <!-- JS -->
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <th:block th:replace="~{fragments/nav :: navFragment}"></th:block>
+    <main>
+        <section>
+            <div class="member-area">
+                <div class="area1">
+                    <div class="playerphoto">
+                        <img src="/img/player/hitter/outfielder/김동엽.png" alt="김동엽 사진">
+                    </div>
+                    <div class="playercoment">
+                        <div class="playername">
+                            <div class="number">38</div>
+                            <div>
+                                <div class="koname">김동엽</div>
+                                <div class="engname">Kim Dong-yub</div>
+                            </div>
+                        </div>
+                        <div class="playerinfo">외야수 / 우투우타</div><br>
+                        <div class="allinfo">
+                            <div class="info1">
+                                <div class="birth1">생 년 월 일</div>
+                                <div class="height1">키 / 몸 무 게</div>
+                                <div class="school1">출 신 학 교</div>
+                                <div class="spec1">입 단 년 도</div>
+                                <div class="pay1">연 봉</div>
+                                <div class="comment">코 멘 트</div>
+                            </div>
+                            <div>
+                                <div class="birth">&nbsp;: 1990년 07월 24일</div>
+                                <div class="height">&nbsp;: 186cm/ 101kg</div>
+                                <div class="school">&nbsp;: 천안남산초-천안북중-북일고</div>
+                                <div class="spec">&nbsp;: 2018년 입단</div>
+                                <div class="pay">&nbsp;: 8000만원</div>
+                            </div>
+                        </div>
+                        <span class="commenttext">김동엽은 천안북일고 시절부터 그 잠재력을 주목받았다. 2008년 봉황대기, 2009년 청룡기에서 홈런왕에 오르며 ''''리틀 김태균''''이라는 별명이 붙기도 했다. 메이저리그 스카우트들의 관심을 받아 시카고 컵스와 계약을 거쳐 SK에 입단했다. 2019년에 삼성라이온즈에 입단해 엄청난 파워의 타격을 보여주었다. 거포 유형의 선수지만 주력도 빠른 편이라 앞으로의 활약이 더욱 기대된다.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="members-area">
+                <th:block th:replace="~{fragments/outfielder_detail_slider :: outfielder_detail_sliderFragment}"></th:block>
+            </div>
+        </section>
+    </main>
+    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+
+    <script>
+        /* header */
+        document.querySelectorAll('.menu > li').forEach(menuItem => {
+            menuItem.addEventListener('mouseenter', () => {
+                document.querySelector('.hideback').classList.add('show-hideback');
+            });
+            menuItem.addEventListener('mouseleave', () => {
+                document.querySelector('.hideback').classList.remove('show-hideback');
+            });
+        });
+        /* header */
+        let slider = document.querySelector(".slider");
+        let innerSlider = document.querySelector(".slider-inner");
+        let pressed = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener("mousedown", (e) => {
+            pressed = true;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = innerSlider.offsetLeft;
+            slider.classList.add("active");
+        });
+
+        slider.addEventListener("mouseleave", () => {
+            pressed = false;
+            slider.classList.remove("active");
+        });
+
+        slider.addEventListener("mouseup", () => {
+            pressed = false;
+            slider.classList.remove("active");
+        });
+
+        slider.addEventListener("mousemove", (e) => {
+            if (!pressed) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = x - startX;
+            innerSlider.style.left = `${scrollLeft + walk}px`;
+            checkBoundary();
+        });
+
+        function checkBoundary() {
+            let outer = slider.getBoundingClientRect();
+            let inner = innerSlider.getBoundingClientRect();
+
+            if (parseInt(innerSlider.style.left) > 0) {
+                innerSlider.style.left = "0px";
+            } else if (inner.right < outer.right) {
+                innerSlider.style.left = `-${inner.width - outer.width}px`;
+
+            }
+        }
+
+        // 중앙에 배치할 슬라이드 인덱스 설정
+        const targetIndex = 1; // 중앙에 배치할 슬라이드의 인덱스 (0부터 시작)
+
+        function centerSlide(index) {
+            const slides = document.querySelectorAll('.slider-item');
+            const targetSlide = slides[index];
+            const sliderRect = slider.getBoundingClientRect();
+            const targetRect = targetSlide.getBoundingClientRect();
+
+            const offset = targetRect.left - sliderRect.left - (sliderRect.width / 2) + (targetRect.width / 2);
+            innerSlider.scrollLeft += offset;
+        }
+
+        // 슬라이더 로드 후 중앙에 배치
+        window.addEventListener('load', () => {
+            centerSlide(targetIndex);
+        });
+
+    </script>
+</div>
+</body>
+</html>

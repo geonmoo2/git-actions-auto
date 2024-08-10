@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>seats_modal</title>
+</head>
+<body>
+<div id="seatList">
+    <th:block th:each="seat : ${availableSeats}">
+        <div class="seat" th:classappend="${seat.reserved ? ' reserved' : ''}"
+             th:data-seat="${seat.seatNumber}" th:data-price="${seat.price}">
+            <span th:text="${seat.seatNumber} + ' - ' + ${seat.price} + '원'"></span>
+        </div>
+    </th:block>
+</div>
+</body>
+</html>

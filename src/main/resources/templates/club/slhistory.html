@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMSUNG LIONS</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="script.js"></script>
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="/css/clubcss/slhistory.css">
+    <link rel="stylesheet" type="text/css" href="/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="/css/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+
+    <!--js-->
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="/js/slick.js"></script>
+    <script type="text/javascript" src="/js/slick.min.js"></script>
+
+
+</head>
+
+<body>
+
+<div class="wrapper">
+    <th:block th:replace="~{fragments/nav :: navFragment}"></th:block>
+    <main>
+        <section>
+            <!-- <ul class="section-nav">
+                <li><a href="">팀순위</a></li>
+                <li><a href="">선수기록</a></li>
+                <li><a href="">역대기록</a></li>
+            </ul>  -->
+            <div class="table-section">
+
+                <div class="table-section-sub">
+
+                    <table class="main-table">
+                        <tr>
+                            <td colspan="9" class="table-header">삼성 라이온즈 역대 성적</td>
+                        </tr>
+                        <tr class="table-nav">
+                            <td>연도</td>
+                            <td>정규 시즌 순위</td>
+                            <td>포스트시즌</td>
+                            <td>최종 순위</td>
+                            <td>경기</td>
+                            <td>승</td>
+                            <td>무</td>
+                            <td>패</td>
+                            <td>승률</td>
+                        </tr>
+                        <tr>
+                            <td colspan="9" class="table-body">삼성 라이온즈</td>
+                        </tr>
+                        <tr>
+                            <td>1982</td>
+                            <td>전기 2위 / 6팀 <br>후기 1위 / 6팀</td>
+                            <td>ks 1-4(1무) 준우승(OB)</td>
+                            <td class="s2th">준우승</td>
+                            <td>80</td>
+                            <td>54</td>
+                            <td>0</td>
+                            <td>26</td>
+                            <td>0.675</td>
+                        </tr>
+                        <tr>
+                            <td>1983</td>
+                            <td>전기 5위 / 6팀 <br>후기 2위 / 6팀</td>
+                            <td>진출 실패</td>
+                            <td class="s4th">4위</td>
+                            <td>100</td>
+                            <td>46</td>
+                            <td>4</td>
+                            <td>50</td>
+                            <td>0.479</td>
+                        </tr>
+                        <tr>
+                            <td>1984</td>
+                            <td>전기 1위 / 6팀 <br>후기 5위 / 6팀</td>
+                            <td>ks 3-4 준우승(롯데)</td>
+                            <td class="s2th">준우승</td>
+                            <td>100</td>
+                            <td>55</td>
+                            <td>0</td>
+                            <td>45</td>
+                            <td>0.550</td>
+                        </tr>
+                        <tr>
+                            <td>1985</td>
+                            <td>전기 1위 / 6팀 <br>후기 1위 / 6팀</td>
+                            <td>전 후기 리그 통합 우승</td>
+                            <td class="s1th">우승</td>
+                            <td>110</td>
+                            <td>77</td>
+                            <td>1</td>
+                            <td>32</td>
+                            <td>0.706</td>
+                        </tr>
+                        <tr>
+                            <td>1986</td>
+                            <td>전기 1위 / 7팀 <br>후기 4위 / 7팀</td>
+                            <td>ks 1-4 준우승(해태)</td>
+                            <td class="s2th">준우승</td>
+                            <td>108</td>
+                            <td>70</td>
+                            <td>1</td>
+                            <td>37</td>
+                            <td>0.654</td>
+                        </tr>
+                        <tr>
+                            <td>1987</td>
+                            <td>전기 1위 / 7팀 <br>후기 1위 / 7팀</td>
+                            <td>ks 0-4 준우승(해태)</td>
+                            <td class="s2th">준우승</td>
+                            <td>108</td>
+                            <td>64</td>
+                            <td>0</td>
+                            <td>44</td>
+                            <td>0.593</td>
+                        </tr>
+                        <tr>
+                            <td>1988</td>
+                            <td>전기 5위 / 7팀 <br>후기 2위 / 7팀</td>
+                            <td>po 0-3 탈락(빙그레)</td>
+                            <td class="s3th">3위</td>
+                            <td>108</td>
+                            <td>56</td>
+                            <td>2</td>
+                            <td>50</td>
+                            <td>0.528</td>
+                        </tr>
+                        <tr>
+                            <td>1989</td>
+                            <td> 4위 / 7팀</td>
+                            <td>준PO 1-2 탈락(태평양)</td>
+                            <td class="s3th">4위</td>
+                            <td>120</td>
+                            <td>57</td>
+                            <td>5</td>
+                            <td>58</td>
+                            <td>0.496</td>
+                        </tr>
+                        <tr>
+                            <td>1990</td>
+                            <td> 4위 / 7팀</td>
+                            <td>ks 0-4 준우승(LG)</td>
+                            <td class="s2th">준우승</td>
+                            <td>120</td>
+                            <td>66</td>
+                            <td>2</td>
+                            <td>52</td>
+                            <td>0.558</td>
+                        </tr>
+                        <tr>
+                            <td>1991</td>
+                            <td> 3위 / 8팀</td>
+                            <td>PO 1-3 탈락(빙그레)</td>
+                            <td class="s3th">3위</td>
+                            <td>126</td>
+                            <td>70</td>
+                            <td>1</td>
+                            <td>55</td>
+                            <td>0.560</td>
+                        </tr>
+                        <tr>
+                            <td>1992</td>
+                            <td> 4위 / 8팀</td>
+                            <td>준PO 0-2 탈락(롯데)</td>
+                            <td class="s3th">4위</td>
+                            <td>126</td>
+                            <td>67</td>
+                            <td>2</td>
+                            <td>57</td>
+                            <td>0.540</td>
+                        </tr>
+                        <tr>
+                            <td>1993</td>
+                            <td> 2위 / 8팀</td>
+                            <td>ks 2-4(1무) 준우승(해태)</td>
+                            <td class="s2th">준우승</td>
+                            <td>126</td>
+                            <td>73</td>
+                            <td>5</td>
+                            <td>48</td>
+                            <td>0.599</td>
+                        </tr>
+                        <tr>
+                            <td>1994</td>
+                            <td> 5위 / 8팀</td>
+                            <td>진출 실패</td>
+                            <td class="s4th">5위</td>
+                            <td>126</td>
+                            <td>60</td>
+                            <td>2</td>
+                            <td>64</td>
+                            <td>0.484</td>
+                        </tr>
+                        <tr>
+                            <td colspan="9" class="table-header">삼성 라이온즈</td>
+                        </tr>
+                        <tr>
+                            <td>1995</td>
+                            <td> 5위 / 8팀</td>
+                            <td>진출 실패</td>
+                            <td class="s4th">5위</td>
+                            <td>126</td>
+                            <td>60</td>
+                            <td>6</td>
+                            <td>60</td>
+                            <td>0.500</td>
+                        </tr>
+                        <tr>
+                            <td>1996</td>
+                            <td> 6위 / 8팀</td>
+                            <td>진출 실패</td>
+                            <td class="s4th">6위</td>
+                            <td>126</td>
+                            <td>54</td>
+                            <td>5</td>
+                            <td>67</td>
+                            <td>0.448</td>
+                        </tr>
+                        <tr>
+                            <td>1997</td>
+                            <td> 4위 / 8팀</td>
+                            <td>PO 2-3 탈락(LG)</td>
+                            <td class="s3th">4위</td>
+                            <td>126</td>
+                            <td>66</td>
+                            <td>7</td>
+                            <td>53</td>
+                            <td>0.552</td>
+                        </tr>
+                        <tr>
+                            <td>1998</td>
+                            <td> 2위 / 8팀</td>
+                            <td>PO 2-3 탈락(LG)</td>
+                            <td class="s3th">3위</td>
+                            <td>126</td>
+                            <td>66</td>
+                            <td>2</td>
+                            <td>58</td>
+                            <td>0.532</td>
+                        </tr>
+                        <tr>
+                            <td>1999</td>
+                            <td>1위 / 4팀</td>
+                            <td>PO 3-4 탈락(롯데)</td>
+                            <td class="s3th">4위</td>
+                            <td>132</td>
+                            <td>73</td>
+                            <td>2</td>
+                            <td>57</td>
+                            <td>0.562</td>
+                        </tr>
+                        <tr>
+                            <td>2000</td>
+                            <td> 3위 / 4팀</td>
+                            <td>PO 0-4 탈락(현대)</td>
+                            <td class="s3th">3위</td>
+                            <td>133</td>
+                            <td>69</td>
+                            <td>5</td>
+                            <td>59</td>
+                            <td>0.539</td>
+                        </tr>
+                        <tr>
+                            <td>2001</td>
+                            <td> 1위 / 8팀</td>
+                            <td>KS 2-4 준우승(두산)</td>
+                            <td class="s2th">준우승</td>
+                            <td>133</td>
+                            <td>81</td>
+                            <td>0</td>
+                            <td>52</td>
+                            <td>0.609</td>
+                        </tr>
+                        <tr>
+                            <td>2002</td>
+                            <td> 1위 / 8팀</td>
+                            <td>KS 4-2 우승(LG)</td>
+                            <td class="s1th">우승</td>
+                            <td>133</td>
+                            <td>82</td>
+                            <td>4</td>
+                            <td>47</td>
+                            <td>0.636</td>
+                        </tr>
+                        <tr>
+                            <td>2003</td>
+                            <td> 3위 / 8팀</td>
+                            <td>준PO 0-2 탈락(SK)</td>
+                            <td class="s3th">4위</td>
+                            <td>133</td>
+                            <td>76</td>
+                            <td>4</td>
+                            <td>53</td>
+                            <td>0.589</td>
+                        </tr>
+                        <tr>
+                            <td>2004</td>
+                            <td> 2위 / 8팀</td>
+                            <td>KS 2-4(3무) 준우승(현대)</td>
+                            <td class="s2th">준우승</td>
+                            <td>133</td>
+                            <td>73</td>
+                            <td>8</td>
+                            <td>52</td>
+                            <td>0.584</td>
+                        </tr>
+                        <tr>
+                            <td>2005</td>
+                            <td> 1위 / 8팀</td>
+                            <td>KS 4-0 우승(두산)</td>
+                            <td class="s1th">우승</td>
+                            <td>126</td>
+                            <td>74</td>
+                            <td>4</td>
+                            <td>48</td>
+                            <td>0.607</td>
+                        </tr>
+                        <tr>
+                            <td>2006</td>
+                            <td> 1위 / 8팀</td>
+                            <td>KS 4-1(1무) 우승(한화)</td>
+                            <td class="s1th">우승</td>
+                            <td>126</td>
+                            <td>73</td>
+                            <td>3</td>
+                            <td>50</td>
+                            <td>0.593</td>
+                        </tr>
+                        <tr>
+                            <td>2007</td>
+                            <td> 4위 / 8팀</td>
+                            <td>준PO 1-2 탈락(한화)</td>
+                            <td class="s3th">4위</td>
+                            <td>126</td>
+                            <td>62</td>
+                            <td>4</td>
+                            <td>60</td>
+                            <td>0.508</td>
+                        </tr>
+                        <tr>
+                            <td>2008</td>
+                            <td> 4위 / 8팀</td>
+                            <td>준PO 2-2 탈락(두산)</td>
+                            <td class="s3th">4위</td>
+                            <td>126</td>
+                            <td>65</td>
+                            <td>0</td>
+                            <td>61</td>
+                            <td>0.516</td>
+                        </tr>
+                        <tr>
+                            <td>2009</td>
+                            <td> 5위 / 8팀</td>
+                            <td>진출 실패</td>
+                            <td class="s4th">5위</td>
+                            <td>133</td>
+                            <td>64</td>
+                            <td>0</td>
+                            <td>69</td>
+                            <td>0.481</td>
+                        </tr>
+                        <tr>
+                            <td>2010</td>
+                            <td> 2위 / 8팀</td>
+                            <td>KS 0-4 준우승(SK)</td>
+                            <td class="s2th">준우승</td>
+                            <td>133</td>
+                            <td>79</td>
+                            <td>2</td>
+                            <td>52</td>
+                            <td>0.594</td>
+                        </tr>
+                        <tr>
+                            <td>2011</td>
+                            <td> 1위 / 8팀</td>
+                            <td>KS 4-1 우승(SK)</td>
+                            <td class="s1th">우승</td>
+                            <td>133</td>
+                            <td>79</td>
+                            <td>4</td>
+                            <td>50</td>
+                            <td>0.612</td>
+                        </tr>
+                        <tr>
+                            <td>2012</td>
+                            <td> 1위 / 8팀</td>
+                            <td>KS 4-2 우승(SK)</td>
+                            <td class="s1th">우승</td>
+                            <td>133</td>
+                            <td>80</td>
+                            <td>2</td>
+                            <td>51</td>
+                            <td>0.611</td>
+                        </tr>
+                        <tr>
+                            <td>2013</td>
+                            <td> 1위 / 9팀</td>
+                            <td>KS 4-3 우승(두산)</td>
+                            <td class="s1th">우승</td>
+                            <td>128</td>
+                            <td>75</td>
+                            <td>2</td>
+                            <td>51</td>
+                            <td>0.595</td>
+                        </tr>
+                        <tr>
+                            <td>2014</td>
+                            <td> 1위 / 9팀</td>
+                            <td>KS 4-1 우승(넥센)</td>
+                            <td class="s1th">우승</td>
+                            <td>128</td>
+                            <td>78</td>
+                            <td>3</td>
+                            <td>47</td>
+                            <td>0.624</td>
+                        </tr>
+                        <tr>
+                            <td>2015</td>
+                            <td> 1위 / 10팀</td>
+                            <td>KS 1-4 준우승(두산)</td>
+                            <td class="s2th">준우승</td>
+                            <td>144</td>
+                            <td>88</td>
+                            <td>0</td>
+                            <td>56</td>
+                            <td>0.611</td>
+                        </tr>
+                        <tr>
+                            <td>2016</td>
+                            <td> 9위 / 10팀</td>
+                            <td>진출 실패</td>
+                            <td class="s4th">9위</td>
+                            <td>144</td>
+                            <td>65</td>
+                            <td>1</td>
+                            <td>78</td>
+                            <td>0.455</td>
+                        </tr>
+                        <tr>
+                            <td>2017</td>
+                            <td> 9위 / 10팀</td>
+                            <td>진출 실패</td>
+                            <td class="s4th">9위</td>
+                            <td>144</td>
+                            <td>55</td>
+                            <td>5</td>
+                            <td>84</td>
+                            <td>0.396</td>
+                        </tr>
+                        <tr>
+                            <td>2018</td>
+                            <td> 6위 / 10팀</td>
+                            <td>진출 실패</td>
+                            <td class="s4th">6위</td>
+                            <td>144</td>
+                            <td>98</td>
+                            <td>4</td>
+                            <td>72</td>
+                            <td>0.486</td>
+                        </tr>
+                        <tr>
+                            <td>2019</td>
+                            <td> 8위 / 10팀</td>
+                            <td>진출 실패</td>
+                            <td class="s4th">8위</td>
+                            <td>144</td>
+                            <td>60</td>
+                            <td>1</td>
+                            <td>83</td>
+                            <td>0.420</td>
+                        </tr>
+                        <tr>
+                            <td>2020</td>
+                            <td> 8위 / 10팀</td>
+                            <td>진출 실패</td>
+                            <td class="s4th">8위</td>
+                            <td>144</td>
+                            <td>64</td>
+                            <td>5</td>
+                            <td>75</td>
+                            <td>0.460</td>
+                        </tr>
+                        <tr>
+                            <td>2021</td>
+                            <td> 2위 / 6팀</td>
+                            <td>PO 0-2 탈락(두산)</td>
+                            <td class="s3th">3위</td>
+                            <td>144</td>
+                            <td>76</td>
+                            <td>9</td>
+                            <td>59</td>
+                            <td>0.563</td>
+                        </tr>
+                        <tr>
+                            <td>2022</td>
+                            <td> 7위 / 10팀</td>
+                            <td>진출 실패</td>
+                            <td class="s4th">7위</td>
+                            <td>144</td>
+                            <td>66</td>
+                            <td>2</td>
+                            <td>76</td>
+                            <td>0.465</td>
+                        </tr>
+                        <tr>
+                            <td>2023</td>
+                            <td> 8위 / 10팀</td>
+                            <td>진출 실패</td>
+                            <td class="s4th">8위</td>
+                            <td>144</td>
+                            <td>61</td>
+                            <td>1</td>
+                            <td>82</td>
+                            <td>0.427</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="table-section2">
+
+                    <div class="p1">
+                        <img src="https://i.namu.wiki/i/CK3leWkyPsrwt33SWB4hY136iO4bmWkRf3gQPVrzlAg5ItQshLMMhvNiigkT5cpCSYtm02sXa3QvgknCPx-uxg.webp"
+                             alt="">
+                        <img src="https://i.namu.wiki/i/KFhyG0UwCx4d1lHbsOrzHemYP_EzBjWVWHc1V3reQv4ewC4LVIfSUR9UduKfD-WKBKe2eDuUtZRFAGxr4aqFPg.webp"
+                             alt="">
+                        <img src="https://i.namu.wiki/i/im3FhGsKgPgb5w-UqLwia6VS-vTWVV5Hf_2M5lSGKahdt5_ZDQ_F0_4N4L94IomDSi71bj9Gd1WicZub_LQPnw.webp"
+                             alt="">
+
+                    </div>
+                    <div class="table-section2-bottom">
+                        <table class="sub-table">
+                            <tr>
+                                <td class="ss1th"></td>
+                                <td colspan="3">우승</td>
+                            </tr>
+                            <tr>
+                                <td class="ss2th"></td>
+                                <td colspan="3">준우승</td>
+                            </tr>
+                            <tr>
+                                <td class="ss3th"></td>
+                                <td colspan="3">포스트시즌 진출</td>
+                            </tr>
+                            <tr>
+                                <td class="ss4th"></td>
+                                <td colspan="3">포스트시즌 진출 실패</td>
+                            </tr>
+                        </table>
+                        <!-- <img src="img/영구결번.png" alt=""> -->
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+    <script>
+        /*header*/
+        document.querySelectorAll('.menu > li').forEach(menuItem => {
+            menuItem.addEventListener('mouseenter', () => {
+                document.querySelector('.hideback').classList.add('show-hideback');
+            });
+
+            menuItem.addEventListener('mouseleave', () => {
+                document.querySelector('.hideback').classList.remove('show-hideback');
+            });
+        });
+        /*//header*/
+    </script>
+</div>
+
+</body>
+</html>

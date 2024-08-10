@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김헌곤 상세 정보</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/detailcss/playerdetail.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+
+    <!-- JS -->
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <th:block th:replace="~{fragments/nav :: navFragment}"></th:block>
+    <main>
+        <section>
+            <div class="member-area">
+                <div class="area1">
+
+                    <div class="playerphoto">
+                        <img src="/img/player/hitter/outfielder/김헌곤.png" alt="김헌곤 사진">
+                    </div>
+                    <div class="playercoment">
+                        <div class="playername">
+                            <div class="number">32</div>
+                            <div>
+                                <div class="koname">김헌곤</div>
+                                <div class="engname">Kim Heon-gon</div>
+                            </div>
+                        </div>
+                        <div class="playerinfo">외야수 / 우투우타</div><br>
+                        <div class="allinfo">
+                            <div class="info1">
+                                <div class="birth1">생 년 월 일</div>
+                                <div class="height1">키 / 몸 무 게</div>
+                                <div class="school1">출 신 학 교</div>
+                                <div class="spec1">입 단 년 도</div>
+                                <div class="pay1">연 봉</div>
+                                <div class="comment">코 멘 트</div>
+                            </div>
+                            <div>
+                                <div class="birth">&nbsp;: 1988년 11월 09일</div>
+                                <div class="height">&nbsp;: 174cm / 81kg</div>
+                                <div class="school">&nbsp;: 회원초-경복중-제주관광고-영남대</div>
+                                <div class="spec">&nbsp;: 2011년 입단</div>
+                                <div class="pay">&nbsp;: 6000만원</div>
+                            </div>
+                        </div>
+                        <span class="commenttext">2011년 삼성에 입단한 김헌곤은 체격은 그리 크지 않지만 강한 어깨를 가진 오른손 외야수라서 삼성에서는 반드시 필요한 자원이다. 오랜기간 프로무대에 적응하는 기간이 필요했지만 2014년에는 76경기에 나서 32개의 안타를 생산해내며 타격에서 재능을 보였다. 같은 해에 한국시리즈에서 주전 중견수로 활동하기도 했다. 또한 2016년에는 퓨처스리그에서 전체 타율 1위를 차지했다. 2018시즌 팀의 주전 외야수로 141경기 출장해 3할의 타율과 154개의 안타, 71타점을 기록하며 커리어하이 시즌을 보냈다. 좋은 어깨를 갖고 있고 외야 수비능력이 타고났다는 평가를 받고 있기에 조금 더 다듬고 준비한다면 그 역시 용이 되어 승천할 수 있는 가능성이 큰 선수다.</span>
+                        <div class="insta">
+                            <a href="https://www.instagram.com/gjsrhs11/" target="_blank">
+                                <img src="/img/insta.png" alt="인스타그램 아이콘">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="members-area">
+                <th:block th:replace="~{fragments/outfielder_detail_slider :: outfielder_detail_sliderFragment}"></th:block>
+            </div>
+        </section>
+    </main>
+    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+
+    <script>
+        /* header */
+        document.querySelectorAll('.menu > li').forEach(menuItem => {
+            menuItem.addEventListener('mouseenter', () => {
+                document.querySelector('.hideback').classList.add('show-hideback');
+            });
+            menuItem.addEventListener('mouseleave', () => {
+                document.querySelector('.hideback').classList.remove('show-hideback');
+            });
+        });
+        /* header */
+        let slider = document.querySelector(".slider");
+        let innerSlider = document.querySelector(".slider-inner");
+        let pressed = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener("mousedown", (e) => {
+            pressed = true;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = innerSlider.offsetLeft;
+            slider.classList.add("active");
+        });
+
+        slider.addEventListener("mouseleave", () => {
+            pressed = false;
+            slider.classList.remove("active");
+        });
+
+        slider.addEventListener("mouseup", () => {
+            pressed = false;
+            slider.classList.remove("active");
+        });
+
+        slider.addEventListener("mousemove", (e) => {
+            if (!pressed) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = x - startX;
+            innerSlider.style.left = `${scrollLeft + walk}px`;
+            checkBoundary();
+        });
+
+        function checkBoundary() {
+            let outer = slider.getBoundingClientRect();
+            let inner = innerSlider.getBoundingClientRect();
+
+            if (parseInt(innerSlider.style.left) > 0) {
+                innerSlider.style.left = "0px";
+            } else if (inner.right < outer.right) {
+                innerSlider.style.left = `-${inner.width - outer.width}px`;
+
+            }
+        }
+
+        // 중앙에 배치할 슬라이드 인덱스 설정
+        const targetIndex = 0; // 중앙에 배치할 슬라이드의 인덱스 (0부터 시작)
+
+        function centerSlide(index) {
+            const slides = document.querySelectorAll('.slider-item');
+            const targetSlide = slides[index];
+            const sliderRect = slider.getBoundingClientRect();
+            const targetRect = targetSlide.getBoundingClientRect();
+
+            const offset = targetRect.left - sliderRect.left - (sliderRect.width / 2) + (targetRect.width / 2);
+            innerSlider.scrollLeft += offset;
+        }
+
+        // 슬라이더 로드 후 중앙에 배치
+        window.addEventListener('load', () => {
+            centerSlide(targetIndex);
+        });
+
+    </script>
+</div>
+</body>
+</html>

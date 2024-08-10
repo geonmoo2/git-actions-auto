@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>booklist</title>
+
+    <!--js-->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/big.js/6.0.3/big.min.js"></script>
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="/css/bookcss/booklist.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+
+    <!--js-->
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+<div class="wrapper">
+    <th:block th:replace="~{fragments/nav :: navFragment}"></th:block>
+    <main>
+        <section>
+            <div class="listlist">
+                <h1>예매 목록</h1>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>예매 ID</th>
+                        <th>메인구역</th>
+                        <th>구역</th>
+                        <th>좌석</th>
+                        <th>이름</th>
+                        <th>게임 정보</th>
+                        <th>예매 상태</th>
+                        <th>결제 ID</th>
+                        <th>예매 일시</th>
+                        <th>Imp UID</th>
+                        <th>취소</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="book : ${bookPage.content}">
+                        <td th:text="${book.bookid}"></td>
+                        <td th:text="${book.mainZone}"></td>
+                        <td th:text="${book.zone}"></td>
+                        <td th:text="${book.seat}"></td>
+                        <td th:text="${book.name}"></td>
+                        <td th:text="${book.gameName}"></td>
+                        <td th:text="${book.bookstatus}"></td>
+                        <td th:text="${book.payid}"></td>
+                        <td th:text="${book.date}"></td>
+                        <td th:text="${book.impUid}">Imp UID</td>
+                        <td><button class="cancel-btn" th:data-bookid="${book.bookid}" th:data-impuid="${book.impUid}" th:data-totalprice="${book.totalPrice}">취소</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="pagination">
+                    <ul>
+                        <li th:if="${currentPage > 0}">
+                            <a th:href="@{/book/list(page=${currentPage - 1})}">이전</a>
+                        </li>
+                        <li th:each="i : ${#numbers.sequence(0, totalPages - 1)}" th:class="${currentPage == i} ? 'active' : ''">
+                            <a th:href="@{/book/list(page=${i})}" th:text="${i + 1}">1</a>
+                        </li>
+                        <li th:if="${currentPage < totalPages - 1}">
+                            <a th:href="@{/book/list(page=${currentPage + 1})}">다음</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+    <script>
+        document.querySelectorAll('.menu > li').forEach(menuItem => {
+            menuItem.addEventListener('mouseenter', () => {
+                document.querySelector('.hideback').classList.add('show-hideback');
+            });
+            menuItem.addEventListener('mouseleave', () => {
+                document.querySelector('.hideback').classList.remove('show-hideback');
+            });
+        });
+
+        $(document).on('click', '.cancel-btn', function() {
+            const bookId = $(this).data('bookid');
+            const impUid = $(this).data('impuid');
+            const totalPrice = $(this).data('totalprice');
+
+            if (confirm('정말로 이 예매를 취소하시겠습니까?')) {
+                $.ajax({
+                    url: '/book/status/' + bookId,
+                    type: 'GET',
+                    success: function(response) {
+                        if (response.bookstatus === 'CANCELLED') {
+                            alert('이미 취소된 내역입니다.');
+                        } else {
+                            $.ajax({
+                                url: '/book/cancel',
+                                type: 'POST',
+                                contentType: 'application/json',
+                                data: JSON.stringify([bookId]),
+                                success: function(response) {
+                                    alert('예매가 취소되었습니다.');
+                                    location.reload();
+                                },
+                                error: function(error) {
+                                    alert('예매 취소에 실패했습니다. 다시 시도해주세요: ' + (error.responseJSON ? error.responseJSON.error : error.responseText));
+                                }
+                            });
+                        }
+                    },
+                    error: function(error) {
+                        if (error.status === 404) {
+                            alert('해당 예매를 찾을 수 없습니다.');
+                        } else if (error.status === 409) {
+                            alert('잘못된 예매 ID입니다: ' + (error.responseJSON ? error.responseJSON.error : error.responseText));
+                        } else {
+                            alert('예매 상태 확인에 실패했습니다. 다시 시도해주세요: ' + (error.responseJSON ? error.responseJSON.error : error.responseText));
+                        }
+                    }
+                });
+            }
+        });
+
+    </script>
+</div>
+</body>
+</html>

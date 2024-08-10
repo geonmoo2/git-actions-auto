@@ -1,0 +1,975 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'PreT';
+    font-weight: 100;
+    font-style: normal;
+    src: url('../font/Pretendard-Thin.eot');
+    src: local('��'),
+    url('../font/Pretendard-Thin.woff') format('woff'),
+    url('../font/Pretendard-Thin.woff2') format('woff2'),
+    url('../font/Pretendard-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Pre';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../font/Pretendard-Light.eot');
+    src: local('��'),
+    url('../font/Pretendard-Light.woff') format('woff'),
+    url('../font/Pretendard-Light.woff2') format('woff2'),
+    url('../font/Pretendard-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreR';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../font/Pretendard-Regular.eot');
+    src: local('��'),
+    url('../font/Pretendard-Regular.woff') format('woff'),
+    url('../font/Pretendard-Regular.woff2') format('woff2'),
+    url('../font/Pretendard-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreM';
+    font-weight: 600;
+    font-style: normal;
+    src: url('../font/Pretendard-Medium.eot');
+    src: local('��'),
+    url('../font/Pretendard-Medium.woff') format('woff'),
+    url('../font/Pretendard-Medium.woff2') format('woff2'),
+    url('../font/Pretendard-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreSB';
+    font-weight: 700;
+    font-style: normal;
+    src: url('../font/Pretendard-SemiBold.eot');
+    src: local('��'),
+    url('../font/Pretendard-SemiBold.woff') format('woff'),
+    url('../font/Pretendard-SemiBold.woff2') format('woff2'),
+    url('../font/Pretendard-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreEB';
+    font-weight: 900;
+    font-style: normal;
+    src: url('../font/Pretendard-ExtraBold.eot');
+    src: local('��'),
+    url('../font/Pretendard-ExtraBold.woff') format('woff'),
+    url('../font/Pretendard-ExtraBold.woff2') format('woff2'),
+    url('../font/Pretendard-ExtraBold.otf') format('opentype');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 전체 래퍼 */
+.wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+
+
+
+
+.wrapper > .navbar {
+    width: 100%;
+    border: 0px solid;
+    height: 100px;
+    /* justify-content: space-between; */
+    position: fixed;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    z-index: 999;
+    background-color: rgb(0 102 179);
+    /*margin-top: -100px;*/
+    transition: background-color 0.3s ease;
+}
+
+.navbar.navbar-opaque {
+    background-color: rgba(0, 0, 0, 1); /* 스크롤 이후에는 완전히 불투명하게 */
+}
+
+.wrapper>header>.header-left{
+    margin-right: 2rem;
+}
+
+.wrapper > header > .header-left > a {
+    background: url(../img/teamlogo/logo.png) no-repeat 0 0;
+    display: block;
+    width: 100px;
+    height: 64px;
+    background-size: 100%;
+    margin-left: 40px;
+}
+
+.wrapper > header > .header-right > nav {
+    display: flex;
+    align-items: center;
+    /* padding-right: 80px; */
+    height: 100px;
+}
+
+.wrapper > header > .header-right > nav > .menu {
+    width: 900px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 0;
+
+}
+
+.wrapper > header > .header-right > nav > .menu > li {
+    flex-grow: 1;
+    flex-shrink: 0;
+    text-align: center;
+    position: relative;
+}
+
+.wrapper > header > .header-right > nav > .menu > li > a {
+    display: block;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    font-family: 'PreEB';
+    transition: all 0.2s linear;
+}
+
+.wrapper > header > .header-right > nav > .menu > li > a:hover {
+    color: #003478;
+}
+
+.wrapper > header > .header-right > nav > .menu > li > .submenu {
+    background-color: white;
+    position: absolute;
+    left: 0px;
+    top: 100px;
+    width: 100%;
+    /* padding-top: 10px; */
+    z-index: 2;
+    display: none;
+}
+
+.wrapper > header > .header-right > nav > .menu > li > .submenu > li {
+    height: 50px;
+    line-height: 50px;
+}
+
+.wrapper > header > .header-right > nav > .menu > li > .submenu > li:last-child {
+    margin-bottom: 20px;
+    /*hideback높이맞춤*/
+}
+
+.wrapper > header > .header-right > nav > .menu > li > .submenu > li > a {
+    font-size: 16px;
+    color: #000;
+    display: block;
+    transition: all 0.2s linear;
+    font-family: 'PreM';
+}
+
+.wrapper > header > .header-right > nav > .menu > li > .submenu > li > a:hover {
+    color: #1f5cae;
+    font-size: 17px;
+}
+
+.wrapper > header > .header-right > nav > .menu:hover .submenu {
+    display: block;
+    background-color: white;
+    height: 10px;
+}
+
+.wrapper>header>.header-right>nav>.rightmenu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border: 0;
+    height: auto;
+    padding-left: 450px;
+    margin:0;
+}
+
+.wrapper>header>.header-right>nav>.rightmenu>li {
+    position: relative;
+    width: auto;
+    text-align: center;
+    font-size: 1rem;
+    border: 0 solid;
+    color:white;
+
+}
+.wrapper>header>.header-right>nav>.rightmenu>li:last-child::after{
+    display:none;
+}
+
+.wrapper > header > .header-right > nav > .rightmenu > li:nth-child(2) {
+    width: 10px;
+}
+
+.wrapper > header > .header-right > nav > .rightmenu > li > a {
+    border: 0 solid;
+}
+
+.hideback {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100vw;
+    height: 205px;
+    background-color: #fff;
+    z-index: 1;
+    display: none;
+    transition: all 3s linear;
+
+}
+
+.show-hideback {
+    display: block;
+
+}
+
+.section {
+    width: 100vw;
+    height: 100vh;
+}
+
+.section.main {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+
+}
+
+/*메인*/
+.main {
+    width: 100%;
+    /*margin-top: 100px;*/
+    padding-top: 100px;
+}
+
+.m_visual {
+    /* background: url(../img/main.jpg); */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border: 1px solid black;
+
+
+    /* padding-bottom: 56.25%; */
+    /* height: 0; */
+
+
+}
+
+.m_visual iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* 기본 테두리 제거 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+
+/*주간경기일정*/
+.schedule {
+    width: 100%;
+    /*margin: 7rem 0 10rem 0;*/
+}
+
+.schedule-in {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 200px;
+}
+
+.schedule-in > h2 {
+    font-family: 'PreSB';
+    color: #000;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.schedule-all {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.schedule-box {
+    width: 280px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    transition: all 0.3s linear;
+}
+
+.schedule-box:hover {
+    background-color: #1f5cae;
+}
+
+.schedule-box > .days {
+    padding: 14px 20px 13px;
+    border-bottom: 1px solid #ccc;
+}
+
+.schedule-box > .days > h3 {
+    font-family: 'PreEB';
+    font-size: 20px;
+}
+
+.schedule-box:hover .days > h3 {
+    color: #fff;
+}
+
+.schedule-box .team {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 24px 20px;
+}
+
+.schedule-box .team .team-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+}
+
+.schedule-box .team .team-left > h3 {
+    font-size: 14px;
+    font-family: 'PreR';
+    margin-bottom: 1rem;
+}
+
+.schedule-box:hover .team-left > h3 {
+    color: #fff;
+}
+.schedule-box:hover .team-left > img{
+    width: 80px;
+    height: 60px;
+}
+
+.schedule-box>.team-left > img{
+    width: 80px;
+    height: 60px;
+}
+
+
+
+.schedule-box .team .team-left > p {
+    font-size: 18px;
+    font-family: 'PreEB';
+    color: #1f5cae;
+    margin-top: 1rem;
+}
+
+.schedule-box:hover .team-left > p {
+    color: #FC4100;
+}
+
+.schedule-box .team .team-center {
+    font-size: 18px;
+    font-family: 'PreEB';
+}
+
+.schedule-box:hover .team-center {
+    color: #fff;
+}
+
+.schedule-box .team .team-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.schedule-box .team .team-right > h3 {
+    font-size: 14px;
+    font-family: 'PreR';
+    margin-bottom: 1rem;
+}
+
+.schedule-box:hover .team-right > h3 {
+    color: white;
+}
+
+
+
+.schedule-box .team .team-right > p {
+    font-size: 18px;
+    font-family: 'PreEB';
+    margin-top: 1rem;
+}
+
+.schedule-box:hover .team-right > p {
+    color: white;
+}
+
+.schedule-box:hover > h4 {
+    color: white;
+}
+
+.schedule-box > h4 {
+    font-size: 16px;
+    text-align: center;
+    font-family: 'PreEB';
+    padding-bottom: 24px;
+}
+
+.ranking {
+    margin-top: 5rem;
+}
+
+.ranking > .more {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+}
+
+.ranking > .more > a {
+    display: block;
+    font-size: 14px;
+    font-family: 'PreEB';
+    margin-right: 5px;
+}
+
+.ranking-in {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.ranking-box-blue {
+    flex: 1 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    height: 100px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 8px 30px 0 rgba(20, 20, 20, 0.2);
+    background: #1f5cae;
+}
+
+.ranking-box-blue > h4 {
+    color: #fff;
+    font-size: 18px;
+    font-family: 'PreM';
+}
+
+.ranking-box-blue > h3 {
+    color: #fff;
+    font-size: 26px;
+    font-family: 'PreSB';
+}
+
+.ranking-box {
+    flex: 1 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    height: 100px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 8px 30px 0 rgba(20, 20, 20, 0.2);
+}
+
+.ranking-box > h4 {
+    color: #000;
+    font-size: 18px;
+    font-family: 'PreM';
+}
+
+.ranking-box > h3 {
+    color: #000;
+    font-size: 26px;
+    font-family: 'PreSB';
+}
+
+/*선수소개*/
+.psection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("/img/backgroundex1.jpg") no-repeat;
+    background-size: 100% 100%;
+
+}
+
+.player {
+    /*margin-bottom: 10rem;*/
+    overflow: hidden;
+    max-width: 1600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*margin-left: 160px;*/
+    padding-top: 100px;
+}
+
+.player-in {
+
+
+}
+
+.player-in > h2 {
+    font-family: 'PreSB';
+    color: #000;
+    font-size: 3rem;
+    text-align: center;
+    max-width: 1300px;
+    margin: 0 auto 5rem auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+}
+
+.playerall {
+    display: flex;
+    align-items: flex-start;
+    overflow: visible; /**/
+    animation: slidePlayer 30s linear infinite;
+}
+
+.playerbox {
+    width: 273px;
+    flex: 0 0 auto; /* 이 부분 추가 */
+    margin-right: 20px; /* 각 playerbox 사이의 간격을 설정 */
+    position: relative;
+    transition: all 0.3s linear;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+
+.playerbox > .overlay {
+    background: #00000062;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+    display: none;
+}
+
+.playerbox > img {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.playerbox:hover .overlay {
+    display: block;
+}
+
+.playerbox2 {
+    width: 273px;
+    flex: 0 0 auto; /* 이 부분 추가 */
+    margin-right: 20px; /* 각 playerbox 사이의 간격을 설정 */
+    /*padding-top: 5rem;*/
+    position: relative;
+    transition: all 0.3s linear;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.playerbox2 > .overlay {
+    background: #00000062;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+    display: none;
+}
+
+.playerbox2:hover .overlay {
+    display: block;
+}
+
+.playerbox2 > img {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+@keyframes slidePlayer {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.playerbox, .playerbox2 {
+    animation: rotatePlayer 30s linear infinite;
+}
+
+/*Lions TV*/
+.lionstv {
+    width: 100%;
+    background-color: #ececec;
+    padding: 7rem 0 7rem 0;
+    padding-top: 150px;
+
+}
+
+.lionstv-in {
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+.lions-tit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+}
+
+.lions-tit > h2 {
+    font-family: 'PreSB';
+    color: #000;
+    font-size: 2rem;
+}
+
+.lions-tit > .more {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.lions-tit > .more > a {
+    display: block;
+    font-size: 14px;
+    font-family: 'PreEB';
+    margin-right: 5px;
+}
+
+.lionstv-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.lionstv-box {
+    width: calc(25% - 20px);
+    margin: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.lionstv-con {
+    height: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    margin: 0;
+    background: #fff;
+    position: relative;
+    border: 0;
+    box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lionstv-top {
+    position: relative;
+    overflow: hidden;
+    padding-top: 70%;
+}
+
+.lionstv-top > .sum {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: All 0.2s ease;
+    -webkit-transition: All 0.2s ease;
+    -moz-transition: All 0.2s ease;
+    -o-transition: All 0.2s ease;
+}
+
+.lionstv-list > .lionstv-box > a:hover .sum {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.lionstv-text {
+    padding: 7%;
+}
+
+.lionstv-text > h3 {
+    font-family: 'PreR';
+    font-size: 1rem;
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+    margin-bottom: 20px;
+}
+
+.lionstv-text > p {
+    font-family: 'PreR';
+    font-size: 14px;
+    color: #8d8d8d;
+}
+
+/*구단소식*/
+.lions-news {
+    width: 100%;
+    background: #1f5cae;
+    padding: 9rem 0 9rem 0;
+}
+
+.lions-news > .win {
+    display: block;
+    margin: 2rem auto 5rem auto;
+}
+
+.news-in {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.news-left {
+    width: 55%;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    padding: 35px;
+}
+
+.news-left > h2 {
+    font-family: 'PreSB';
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.news-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.news-list > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.news-list > li:last-child {
+    margin-bottom: 0;
+}
+
+.news-list > li:hover > a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.news-list > li > a {
+    font-family: 'PreSB';
+    color: #fff;
+    font-size: 1.12rem;
+}
+
+.news-list > li > span {
+    font-family: 'PreSB';
+    color: #fff;
+    font-size: 14px;
+}
+
+.news-right {
+    width: 40%;
+}
+
+.news-ritop {
+    width: 100%;
+    border: 1px solid #003478;
+    border-radius: 30px;
+    padding: 35px;
+    margin-bottom: 4rem;
+    background: #003478;
+}
+
+.news-ritop > h2 {
+    font-family: 'PreSB';
+    color: #fff;
+    font-size: 1.55rem;
+    margin-bottom: 2rem;
+}
+
+.news-ritop > .board {
+    display: flex;
+    flex-direction: column;
+}
+
+.news-ritop > .board > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.news-ritop > .board > li:last-child {
+    margin-bottom: 0;
+}
+
+.news-ritop > .board > li > a {
+    font-family: 'PreSB';
+    color: #fff;
+    font-size: 1rem;
+}
+
+.news-ritop > .board > li > a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.news-ritop > .board > li > span {
+    font-family: 'PreSB';
+    color: #fff;
+    font-size: 13px;
+}
+
+.news-ribot {
+    width: 100%;
+    border: 1px solid #003478;
+    border-radius: 30px;
+    padding: 35px;
+
+    background: #003478;
+}
+
+.news-ribot > h2 {
+    font-family: 'PreSB';
+    color: #fff;
+    font-size: 1.55rem;
+    margin-bottom: 2rem;
+}
+
+.news-ribot > .board {
+    display: flex;
+    flex-direction: column;
+}
+
+.news-ribot > .board > li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.news-ribot > .board > li:last-child {
+    margin-bottom: 0;
+}
+
+.news-ribot > .board > li > a {
+    font-family: 'PreSB';
+    color: #fff;
+    font-size: 1rem;
+}
+
+.news-ribot > .board > li > a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.news-ribot > .board > li > span {
+    font-family: 'PreSB';
+    color: #fff;
+    font-size: 13px;
+}
+
+.gallery {
+    width: 100%;
+    background-color: #1e1e1e;
+    padding: 14.2rem 0 14.2rem 0;
+}
+
+.gallery-in {
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+.gallery-in > h2 {
+    font-family: 'PreSB';
+    color: #fff;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.gallerycon {
+    width: 100%;
+}
+
+.gallerybox {
+    position: relative;
+    width: 400px;
+    height:400px;
+    overflow: hidden;
+}
+
+.gallerybox > img {
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.gallerybox > h3 {
+    position: absolute;
+    top: 89%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000000aa;
+    width: 100%;
+    height: 100px;
+    padding: 25px 0 0 20px;
+    font-family: 'PreSB';
+    font-size: 1.32rem;
+    color: #fff;
+}

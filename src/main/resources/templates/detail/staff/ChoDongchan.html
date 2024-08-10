@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조동찬 상세 정보</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/detailcss/playerdetail.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+
+    <!-- JS -->
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <th:block th:replace="~{fragments/nav :: navFragment}"></th:block>
+    <main>
+        <section>
+            <div class="member-area">
+                <div class="area1">
+
+                    <div class="playerphoto">
+                        <img src="/img/player/staff/조동찬.png" alt="조동찬 사진">
+                    </div>
+
+                    <div class="playercoment">
+                        <div class="playername">
+                            <div class="number">71</div>
+                            <div>
+                                <div class="koname">조동찬</div>
+                                <div class="engname">Cho Dong-chan</div>
+                            </div>
+                        </div>
+                        <div class="playerinfo">2군 작전·외야코치</div><br>
+                        <div class="allinfo">
+                            <div class="info1">
+                                <div class="birth1">생 년 월 일</div>
+                                <div class="height1">키 / 몸 무 게</div>
+                                <div class="school1">출 신 학 교</div>
+                                <div class="spec1">입 단 년 도</div>
+                                <div class="comment">코 멘 트</div>
+                            </div>
+                            <div>
+                                <div class="birth">&nbsp;: 1983-07-27</div>
+                                <div class="height">&nbsp;: 180cm / 80kg</div>
+                                <div class="school">&nbsp;: 중동초-공주중-공주고</div>
+                                <div class="spec">&nbsp;: 2002년 입단</div>
+                            </div>
+                        </div>
+                        <span class="commenttext">조동찬은 2002년 신인 드래프트 2차 지명으로 삼성 라이온즈에 입단한 이래 무려 6개의 우승 반지를 보유한 삼성왕조의 살아있는 증인이다. 선수시절 숱한 고비에도 강한 정신력으로 극복해냈던 조동찬은 2018년을 끝으로 현역에서 물러났다. 대신 큰 경기 경험을 살려 젊은 후배 선수들을 양성하는데 힘을 보태게 됐다.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="members-area">
+                <th:block th:replace="~{fragments/staff_detail_slider :: staff_detail_sliderFragment}"></th:block>
+            </div>
+        </section>
+    </main>
+    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+
+    <script>
+        /* header */
+        document.querySelectorAll('.menu > li').forEach(menuItem => {
+            menuItem.addEventListener('mouseenter', () => {
+                document.querySelector('.hideback').classList.add('show-hideback');
+            });
+            menuItem.addEventListener('mouseleave', () => {
+                document.querySelector('.hideback').classList.remove('show-hideback');
+            });
+        });
+        /* header */
+        let slider = document.querySelector(".slider");
+        let innerSlider = document.querySelector(".slider-inner");
+        let pressed = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener("mousedown", (e) => {
+            pressed = true;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = innerSlider.offsetLeft;
+            slider.classList.add("active");
+        });
+
+        slider.addEventListener("mouseleave", () => {
+            pressed = false;
+            slider.classList.remove("active");
+        });
+
+        slider.addEventListener("mouseup", () => {
+            pressed = false;
+            slider.classList.remove("active");
+        });
+
+        slider.addEventListener("mousemove", (e) => {
+            if (!pressed) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = x - startX;
+            innerSlider.style.left = `${scrollLeft + walk}px`;
+            checkBoundary();
+        });
+
+        function checkBoundary() {
+            let outer = slider.getBoundingClientRect();
+            let inner = innerSlider.getBoundingClientRect();
+
+            if (parseInt(innerSlider.style.left) > 0) {
+                innerSlider.style.left = "0px";
+            } else if (inner.right < outer.right) {
+                innerSlider.style.left = `-${inner.width - outer.width}px`;
+
+            }
+        }
+
+        // 중앙에 배치할 슬라이드 인덱스 설정
+        const targetIndex = 10; // 중앙에 배치할 슬라이드의 인덱스 (0부터 시작)
+
+        function centerSlide(index) {
+            const slides = document.querySelectorAll('.slider-item');
+            const targetSlide = slides[index];
+            const sliderRect = slider.getBoundingClientRect();
+            const targetRect = targetSlide.getBoundingClientRect();
+
+            const offset = targetRect.left - sliderRect.left - (sliderRect.width / 2) + (targetRect.width / 2);
+            innerSlider.scrollLeft += offset;
+        }
+
+        // 슬라이더 로드 후 중앙에 배치
+        window.addEventListener('load', () => {
+            centerSlide(targetIndex);
+        });
+
+    </script>
+</div>
+</body>
+</html>

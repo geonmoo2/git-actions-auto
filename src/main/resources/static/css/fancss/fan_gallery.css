@@ -1,0 +1,325 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'PreT';
+    font-weight: 100;
+    font-style: normal;
+    src: url('../../font/Pretendard-Thin.eot');
+    src: local(''),
+    url('../../font/Pretendard-Thin.woff') format('woff'),
+    url('../../font/Pretendard-Thin.woff2') format('woff2'),
+    url('../../font/Pretendard-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Pre';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../../font/Pretendard-Light.eot');
+    src: local(''),
+    url('../../font/Pretendard-Light.woff') format('woff'),
+    url('../../font/Pretendard-Light.woff2') format('woff2'),
+    url('../../font/Pretendard-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreR';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../../font/Pretendard-Regular.eot');
+    src: local(''),
+    url('../../font/Pretendard-Regular.woff') format('woff'),
+    url('../../font/Pretendard-Regular.woff2') format('woff2'),
+    url('../../font/Pretendard-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreM';
+    font-weight: 600;
+    font-style: normal;
+    src: url('../../font/Pretendard-Medium.eot');
+    src: local(''),
+    url('../../font/Pretendard-Medium.woff') format('woff'),
+    url('../../font/Pretendard-Medium.woff2') format('woff2'),
+    url('../../font/Pretendard-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreSB';
+    font-weight: 700;
+    font-style: normal;
+    src: url('../../font/Pretendard-SemiBold.eot');
+    src: local(''),
+    url('../../font/Pretendard-SemiBold.woff') format('woff'),
+    url('../../font/Pretendard-SemiBold.woff2') format('woff2'),
+    url('../../font/Pretendard-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreEB';
+    font-weight: 900;
+    font-style: normal;
+    src: url('../../font/Pretendard-ExtraBold.eot');
+    src: local(''),
+    url('../../font/Pretendard-ExtraBold.woff') format('woff'),
+    url('../../font/Pretendard-ExtraBold.woff2') format('woff2'),
+    url('../../font/Pretendard-ExtraBold.otf') format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    font-family: PreR;
+}
+
+.wrapper > main {
+    padding: 0;
+    min-height: 100vh;
+    background: url('../../img/하늘2.jpg') left top repeat-y,
+    url('../../img/하늘1.jpg') right top repeat-y;
+    /*url('../../img/backgroundex1.jpg') repeat;*/
+    background-color: rgba(255, 255, 255, 0.7);
+    background-size: 220px auto, 220px auto, auto 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0 0;
+    flex-direction: column;
+}
+
+.wrapper > main > section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 20px;
+    padding-bottom: 20px;
+}
+
+.gallerytitle-inner > h2 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.gallerytitle {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 20px; /* 추가한 여백 */
+}
+
+.gallerytitle-inner {
+    /*background-color: #e0f7fa;*/
+    /*border: 1px solid #ccc;*/
+    /*border-radius: 5px;*/
+    /*overflow: hidden;*/
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
+    padding: 20px;
+}
+
+.form1{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form2 {
+    display: flex;
+    margin-bottom: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.form1>div{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+label {
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="text"]{
+    margin-right: 10px;
+    padding: 5px 5px 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height:36px;
+}
+
+
+input[type="file"] {
+    margin-right: 10px;
+    padding: 5px 5px 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+}
+button{
+    width: 100px;
+    height: 30px;
+    background-color: rgba(118, 228, 255, 0.5);
+    font-size: 1rem;
+    display: flex;
+    border: 2px solid rgba(18, 205, 252);
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* 요소의 크기를 보더와 패딩을 포함한 값으로 설정 */
+    /* border: 2px solid transparent; */
+    outline: 2px solid transparent; /* 아웃라인 초기화 */
+    transition: background-color 0.7s ease;
+    padding: 5px 10px;
+}
+
+.download-button:hover {
+    background-color: rgba(18, 205, 252, 0.9);
+    border: 2px double white; /* 안쪽 선 */
+    outline: 2px solid rgba(18, 205, 252); /* 바깥쪽 선 */
+    color: white;
+    transition: .7s ease-out;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding-top: 20px; /* Add padding to avoid overlap with fixed section */
+}
+
+.gallery-item {
+    padding: 20px; /* 패딩 추가 */
+    background-color: #e0f7fa; /* 패딩 영역 배경색 */
+    border-radius: 10px;
+}
+.delete-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: red;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.gallery-item-inner {
+    position: relative;
+    display: inline-block;
+}
+.gallery-item-inner {
+    background-color: white; /* 내부 콘텐츠 배경색 */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    height :330px;
+}
+
+.gallery-item h2 {
+    font-size: 18px;
+    text-align: center;
+    color: #555;
+    margin: 10px 0;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 200px;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.pagination a:hover {
+    text-decoration: underline;
+}
+
+.pagination a.active {
+    font-weight: bold;
+    color: #000;
+}
+
+.download-button {
+    width: 100px;
+    height: 30px;
+    background-color: rgba(118, 228, 255, 0.5);
+    font-size: 1rem;
+    display: flex;
+    border: 2px solid rgba(18, 205, 252);
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* 요소의 크기를 보더와 패딩을 포함한 값으로 설정 */
+    /* border: 2px solid transparent; */
+    outline: 2px solid transparent; /* 아웃라인 초기화 */
+    transition: background-color 0.7s ease;
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+
+.download-button:hover {
+    background-color: rgba(18, 205, 252, 0.9);
+    border: 2px double white; /* 안쪽 선 */
+    outline: 2px solid rgba(18, 205, 252); /* 바깥쪽 선 */
+    color: white;
+    transition: .7s ease-out;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.arrow-button {
+    text-decoration: none;
+    font-size: 20px;
+    color: #007bff;
+    margin: 0 10px;
+}
+
+.arrow-button:hover {
+    text-decoration: underline;
+}
+
+.search-container {
+    margin-top: 20px;
+    text-align: center;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fan Main</title>
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/playercss/player_main.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+
+    <!--js-->
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+<div class="wrapper">
+    <th:block th:replace="~{fragments/nav :: navFragment}"></th:block>
+    <main>
+        <section>
+            <div class="banner">
+                <img src="/img/win.png" alt="">
+            </div>
+            <div class="fmain_top">
+                <div class="lionsstory">
+                    <div class="span">
+                        <span class="subtitle">MANAGER PARKJINMAN</span>
+                        <span class="subtext">삼성 라이온즈에서 선수와 수비코치를 역임하신 박진만 감독님을 소개합니다. </span>
+                    </div>
+                    <div>
+                        <a href="/detail/staff/ParkJinman"><img src="/img/player/박진만메인.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="gallery">
+                    <div class="span">
+                        <span class="subtitle">LIONS BEST CAPTAIN</span>
+                        <span class="subtext">삼성 라이온즈의 주장, 구자욱 선수를 소개합니다.</span>
+                    </div>
+                    <div>
+                        <a href="/detail/hitter/outfielder/KooJawook"><img src="/img/player/구자욱메인.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="fmain_bottom">
+                <div class="cheer">
+                    <div class="span">
+                        <span class="subtitle">LIONS BEST BATTER</span>
+                        <span class="subtext">솔선수범 안방마님, 강민호 선수를 소개합니다.</span>
+                    </div>
+                    <div>
+                        <a href="/detail/hitter/catcher/KangMinho"><img src="/img/player/강민호메인.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="faq">
+                    <div class="span">
+                        <span class="subtitle">LIONS BEST BATTER</span>
+                        <span class="subtext">든든한 선발투수, 원태인 선수를 소개합니다.</span>
+                    </div>
+                    <div>
+                        <a href="/detail/pitcher/WonTaein"><img src="/img/player/원태인메인.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+    <script>
+        /* header */
+        document.querySelectorAll('.menu > li').forEach(menuItem => {
+            menuItem.addEventListener('mouseenter', () => {
+                document.querySelector('.hideback').classList.add('show-hideback');
+            });
+            menuItem.addEventListener('mouseleave', () => {
+                document.querySelector('.hideback').classList.remove('show-hideback');
+            });
+        });
+        /* header */
+    </script>
+</div>
+</body>
+</html>

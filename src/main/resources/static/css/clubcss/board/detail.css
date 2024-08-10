@@ -1,0 +1,473 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'PreT';
+    font-weight: 100;
+    font-style: normal;
+    src: url('/font/Pretendard-Thin.eot');
+    src: local('��'),
+        url('/font/Pretendard-Thin.woff') format('woff'),
+        url('/font/Pretendard-Thin.woff2') format('woff2'),
+        url('/font/Pretendard-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Pre';
+    font-weight: 300;
+    font-style: normal;
+    src: url('/font/Pretendard-Light.eot');
+    src: local('��'),
+        url('/font/Pretendard-Light.woff') format('woff'),
+        url('/font/Pretendard-Light.woff2') format('woff2'),
+        url('/font/Pretendard-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreR';
+    font-weight: 400;
+    font-style: normal;
+    src: url('/font/Pretendard-Regular.eot');
+    src: local('��'),
+        url('/font/Pretendard-Regular.woff') format('woff'),
+        url('/font/Pretendard-Regular.woff2') format('woff2'),
+        url('/font/Pretendard-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreM';
+    font-weight: 600;
+    font-style: normal;
+    src: url('/font/Pretendard-Medium.eot');
+    src: local('��'),
+        url('/font/Pretendard-Medium.woff') format('woff'),
+        url('/font/Pretendard-Medium.woff2') format('woff2'),
+        url('/font/Pretendard-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreSB';
+    font-weight: 700;
+    font-style: normal;
+    src: url('/font/Pretendard-SemiBold.eot');
+    src: local('��'),
+        url('/font/Pretendard-SemiBold.woff') format('woff'),
+        url('/font/Pretendard-SemiBold.woff2') format('woff2'),
+        url('/font/Pretendard-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreEB';
+    font-weight: 900;
+    font-style: normal;
+    src: url('/font/Pretendard-ExtraBold.eot');
+    src: local('��'),
+        url('/font/Pretendard-ExtraBold.woff') format('woff'),
+        url('/font/Pretendard-ExtraBold.woff2') format('woff2'),
+        url('/font/Pretendard-ExtraBold.otf') format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/* header */
+.wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+
+
+
+/* main */
+/* main - nav */
+.wrapper>main{
+
+    /* height : 700px; */
+}
+
+.section-table{
+
+
+    background-image: url('/img/백정현배경화면.jpg');
+    background-size:2000px,1200px;
+    width:2000px;
+    height: 1200px;
+}
+
+
+
+
+
+.main-section2 {
+    transition: height 0.3s ease; /* 높이 변화를 0.3초 동안 부드럽게 적용 */
+}
+.wrapper>main>section{
+    align-items: center;
+    margin-top: 100px;
+
+
+}
+
+
+.wrapper>main>section>.section-nav{
+
+    margin-top: 100px;
+    border-bottom: 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.wrapper>main>section>.section-nav>li{
+
+    margin-right: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper>main>section>.section-nav>li>a{
+
+    font-size: 25px;
+}
+.wrapper>main>section>.section-nav>li>a:hover{
+
+    color: red;
+}
+
+/* table CSS */
+.board_list_wrap{
+    position: absolute;
+    background-color:rgba(255, 255, 255, 0.9);
+    margin-top: 200px;
+    margin-left: 220px;
+    padding: 50px;
+    width: 1500px;
+    border-radius: 15px;
+    height: 750px;
+    margin-bottom : 50px;
+
+
+}
+
+
+
+
+
+
+/* 기본 컨테이너 스타일 */
+.container {
+    width: 1300px;
+
+
+    border-radius: 15px;
+    margin-left:60px;
+    margin-top:10px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    border-radius: 10px;
+
+
+}
+.container>a{
+
+
+
+}
+.tittle{
+
+    display: flex;
+    justify-content: flex-end;
+    margin-right:20px;
+    margin-bottom:-20px;
+
+}
+.tittle>p{
+
+    font-size:10px;
+}
+.tittle>a{
+
+    font-size:20px;
+    margin-top:-2px;
+    margin-right:3px;
+}
+a>.material-symbols-outlined{
+
+margin-top:-6px;
+font-size:14px;
+}
+
+.container>.tittle>a>span{
+
+    font-size: 35px;
+
+
+}
+.container>.tittle>a:hover{
+
+        color:red;
+
+}
+.board-details{
+
+
+    margin: 20px 0;
+    border: 0px solid #ccc;
+    padding: 10px;
+    border-radius: 15px;
+
+
+
+}
+h1{
+
+    font-size: 2.5rem;
+    margin-left: 40px;
+    margin-top: 30px;
+
+
+}
+
+/* 섹션 스타일 */
+.comment-form, .comments-section {
+    margin: 20px 0;
+    border: 0px solid #ccc;
+    padding: 10px;
+    border-radius: 15px;
+    margin-left: 40px;
+
+
+
+
+}
+
+.board-details h2 {
+    padding: 20px;
+    border-bottom: 2px solid rgb(0 102 179);
+    border-top:2px solid rgb(0 102 179);
+    margin-bottom: 30px;
+    margin-left:30px;
+    color:rgb(0 102 179);
+    margin-top:10px;
+}
+
+/* 게시글 정보 스타일 */
+.board-line1 {
+
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+    margin-bottom: 10px;
+    font-size: 10px;
+}
+
+.board-line1 div {
+    margin-right: 20px;
+}
+
+/* 게시글 내용 스타일 */
+.board-details textarea {
+
+    width: 95%;
+    height: 200px;
+    resize: none;
+    border: none;
+    margin-bottom: 20px;
+    margin-left:30px;
+    padding: 10px;
+
+
+    border-radius:30px;
+
+}
+textarea[readonly] {
+    pointer-events: none;
+}
+
+/* 댓글 작성 폼 스타일 */
+.comment-form {
+    margin-bottom: 20px;
+}
+
+.comment-form > div {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* input 필드 간의 여백 조정 */
+}
+
+.comment-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comment-form input:nth-child(1) {
+    width: 150px; /* 필요에 따라 너비 조정 */
+}
+
+.comment-form input:nth-child(2) {
+    width: 300px; /* 필요에 따라 너비 조정 */
+}
+
+.comment-form button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.comment-form button:hover {
+    background-color: #0056b3;
+}
+
+/* 댓글 섹션 스타일 */
+.comments-section {
+    margin-top: 30px;
+}
+
+.comment-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.comment-item .comment-content {
+    flex: 1;
+}
+
+.comment-item .comment-meta {
+    flex: 0 0 auto;
+    text-align: right;
+    color: #888;
+}
+
+/* 버튼 스타일 */
+.content-bottom-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+
+}
+
+.content-bottom-btn > button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 70px;
+    height: 35px;
+    margin-right: 7px;
+}
+
+.content-bottom-btn > button:hover {
+    background-color: #0056b3;
+}
+.material-icons-outlined delete-button{
+
+    margin-bottom:100px;
+
+
+}
+.comment-item {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .delete-button {
+    cursor: pointer;
+    color: red;
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .comment-meta {
+    margin-top: 50px;
+    font-size: 14px;
+    color: #555;
+  }
+  .comment-content {
+    padding-right: 45px;
+    word-wrap: break-word;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer */
+
+footer {
+
+    width: 100%;
+    background-color: #ececec;;
+    padding: 3rem 0 3rem 0;
+
+}
+.footer-in{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footerlogo{
+    margin-bottom: 2rem;
+}
+.footer-con{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.footer-left>p{
+    font-family: 'PreM';
+    font-size: 15px;
+    margin-bottom: 1rem;
+}
+.footer-left>span{
+    display: block;
+    font-family: 'PreSB';
+    font-size: 13px;
+    color: #a8a8a8;
+}
+.footer-right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 18%;
+}
+.footer-right>img{
+    cursor:pointer;
+}
+

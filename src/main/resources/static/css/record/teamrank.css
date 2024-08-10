@@ -1,0 +1,238 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'PreT';
+    font-weight: 100;
+    font-style: normal;
+    src: url('/font/Pretendard-Thin.eot');
+    src: local('��'),
+        url('/font/Pretendard-Thin.woff') format('woff'),
+        url('/font/Pretendard-Thin.woff2') format('woff2'),
+        url('/font/Pretendard-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Pre';
+    font-weight: 300;
+    font-style: normal;
+    src: url('/font/Pretendard-Light.eot');
+    src: local('��'),
+        url('/font/Pretendard-Light.woff') format('woff'),
+        url('/font/Pretendard-Light.woff2') format('woff2'),
+        url('/font/Pretendard-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreR';
+    font-weight: 400;
+    font-style: normal;
+    src: url('/font/Pretendard-Regular.eot');
+    src: local('��'),
+        url('/font/Pretendard-Regular.woff') format('woff'),
+        url('/font/Pretendard-Regular.woff2') format('woff2'),
+        url('/font/Pretendard-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreM';
+    font-weight: 600;
+    font-style: normal;
+    src: url('/font/Pretendard-Medium.eot');
+    src: local('��'),
+        url('/font/Pretendard-Medium.woff') format('woff'),
+        url('/font/Pretendard-Medium.woff2') format('woff2'),
+        url('/font/Pretendard-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreSB';
+    font-weight: 700;
+    font-style: normal;
+    src: url('/font/Pretendard-SemiBold.eot');
+    src: local('��'),
+        url('/font/Pretendard-SemiBold.woff') format('woff'),
+        url('/font/Pretendard-SemiBold.woff2') format('woff2'),
+        url('/font/Pretendard-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreEB';
+    font-weight: 900;
+    font-style: normal;
+    src: url('/font/Pretendard-ExtraBold.eot');
+    src: local('��'),
+        url('/font/Pretendard-ExtraBold.woff') format('woff'),
+        url('/font/Pretendard-ExtraBold.woff2') format('woff2'),
+        url('/font/Pretendard-ExtraBold.otf') format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/* header */
+.wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+
+
+
+/* main */
+/* main - nav */
+.wrapper>main{
+
+    /* height : 700px; */
+}
+
+.section-table{
+
+
+    background-color: #f8f8f8;
+    background-size:2000px 1000px;
+    height: 1000px;
+}
+
+
+
+
+
+.main-section2 {
+    transition: height 0.3s ease; /* 높이 변화를 0.3초 동안 부드럽게 적용 */
+}
+.wrapper>main>section{
+    align-items: center;
+    margin-top: 100px;
+
+
+}
+
+
+.wrapper>main>section>.section-nav{
+
+    margin-top: 100px;
+    border-bottom: 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.wrapper>main>section>.section-nav>li{
+
+    margin-right: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper>main>section>.section-nav>li>a{
+
+    font-size: 25px;
+}
+.wrapper>main>section>.section-nav>li>a:hover{
+
+    color: red;
+}
+
+/* table CSS */
+.board_list_wrap{
+    position: absolute;
+    background-color:rgba(255, 255, 255, 0.9);
+    margin-top: 100px;
+    margin-left: 220px;
+    padding: 50px;
+    width: 1500px;
+    border-radius: 15px;
+    height: 700px;
+
+
+
+}
+
+/* footer */
+
+footer {
+
+    width: 100%;
+    background-color: #ececec;;
+    padding: 3rem 0 3rem 0;
+
+}
+.footer-in{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footerlogo{
+    margin-bottom: 2rem;
+}
+.footer-con{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.footer-left>p{
+    font-family: 'PreM';
+    font-size: 15px;
+    margin-bottom: 1rem;
+}
+.footer-left>span{
+    display: block;
+    font-family: 'PreSB';
+    font-size: 13px;
+    color: #a8a8a8;
+}
+.footer-right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 18%;
+}
+.footer-right>img{
+    cursor:pointer;
+}
+        table {
+            width: 101%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+            font-family: 'Arial', sans-serif;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 12px;
+        }
+        th {
+            background-color: rgb(0 102 179 / 90%);
+            color: #fff;
+            font-weight: bold;
+        }
+        td {
+            background-color: #ffffff;
+            color: #333;
+        }
+        tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+        tr:hover td {
+            background-color: #f1f1f1;
+        }
+        td>img {
+            height: 20px;
+            vertical-align: middle;
+        }
+        .section-table {
+            overflow-x: auto;
+        }

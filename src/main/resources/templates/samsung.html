@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMSUNG LIONS</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="/css/slick-theme.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+
+    <!--js-->
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="/js/slick.js"></script>
+    <script type="text/javascript" src="/js/slick.min.js"></script>
+
+
+</head>
+<body>
+<div class="wrapper">
+    <th:block th:replace="~{fragments/nav :: navFragment}"></th:block>
+
+    <!--메인-->
+    <section>
+        <div class="section main">
+            <iframe class="m_visual" src="https://www.youtube.com/embed/tq7Gh2OnFjA?si=Ab6GJ5BTgElT5O4b&autoplay=1&mute=1&loop=1&controls=0&playlist=tq7Gh2OnFjA"></iframe>
+        </div>
+
+    </section>
+    <!--//메인-->
+
+    <!--주간경기일정-->
+    <section>
+        <div class="section schedule">
+            <script type="text/javascript" src="/js/schedule.js"></script>
+            <div class="schedule-in">
+                <h2>구단 경기 일정 / 순위</h2>
+                <div class="schedule-all">
+                    <div class="schedule-box">
+                        <div class="days">
+                            <h3>07.03</h3>
+                        </div>
+                        <div class="team">
+                            <div class="team-left">
+                                <h3>삼성</h3>
+                                <img src="/img/teamlogo/footer_logo.png" alt="삼성">
+                                <p>0</p>
+                            </div>
+                            <div class="team-center">VS</div>
+                            <div class="team-right">
+                                <h3>KIA</h3>
+                                <img src="/img/teamlogo/KIAlogo.png" alt="KIA">
+                                <p>0</p>
+                            </div>
+                        </div>
+                        <h4>2024.07.03 수 18:30 예매중</h4>
+                    </div>
+
+                    <div class="schedule-box">
+                        <div class="days">
+                            <h3>07.04</h3>
+                        </div>
+                        <div class="team">
+                            <div class="team-left">
+                                <h3>삼성</h3>
+                                <img src="/img/teamlogo/footer_logo.png" alt="삼성">
+                                <p>0</p>
+                            </div>
+                            <div class="team-center">VS</div>
+                            <div class="team-right">
+                                <h3>KIA</h3>
+                                <img src="/img/teamlogo/KIAlogo.png" alt="KIA">
+                                <p>0</p>
+                            </div>
+                        </div>
+                        <h4>2024.07.04 목 18:30 예매중</h4>
+                    </div>
+
+                    <div class="schedule-box">
+                        <div class="days">
+                            <h3>07.05</h3>
+                        </div>
+                        <div class="team">
+                            <div class="team-left">
+                                <h3>삼성</h3>
+                                <img src="/img/teamlogo/footer_logo.png" alt="삼성">
+                                <p>0</p>
+                            </div>
+                            <div class="team-center">VS</div>
+                            <div class="team-right">
+                                <h3>NC</h3>
+                                <img src="/img/teamlogo/NClogo.png" alt="NC">
+                                <p>0</p>
+                            </div>
+                        </div>
+                        <h4>2024.07.05 금 18:30 예매중</h4>
+                    </div>
+
+                    <div class="schedule-box">
+                        <div class="days">
+                            <h3>07.06</h3>
+                        </div>
+                        <div class="team">
+                            <div class="team-left">
+                                <h3>삼성</h3>
+                                <img src="/img/teamlogo/footer_logo.png" alt="삼성">
+                                <p>0</p>
+                            </div>
+                            <div class="team-center">VS</div>
+                            <div class="team-right">
+                                <h3>NC</h3>
+                                <img src="/img/teamlogo/NClogo.png" alt="NC">
+                                <p>0</p>
+                            </div>
+                        </div>
+                        <h4>2024.07.06 토 17:00 예매중</h4>
+                    </div>
+
+                    <div class="schedule-box">
+                        <div class="days">
+                            <h3>07.07</h3>
+                        </div>
+                        <div class="team">
+                            <div class="team-left">
+                                <h3>삼성</h3>
+                                <img src="/img/teamlogo/footer_logo.png" alt="삼성">
+                                <p>0</p>
+                            </div>
+                            <div class="team-center">VS</div>
+                            <div class="team-right">
+                                <h3>NC</h3>
+                                <img src="/img/teamlogo/NClogo.png" alt="NC">
+                                <p>0</p>
+                            </div>
+                        </div>
+                        <h4>2024.07.07 일 17:00 예매중</h4>
+                    </div>
+
+                </div>
+
+
+                <div class="ranking">
+
+                    <div class="more">
+                        <a href="/record/teams">더보기</a>
+                        <img src="/img/more.png" alt="더보기">
+                    </div>
+
+                    <div class="ranking-in">
+
+                        <div class="ranking-box-blue">
+                            <h4>순위</h4>
+                            <h3>1</h3>
+                        </div>
+                        <div class="ranking-box">
+                            <h4>경기</h4>
+                            <h3>84</h3>
+                        </div>
+                        <div class="ranking-box">
+                            <h4>승</h4>
+                            <h3>81</h3>
+                        </div>
+                        <div class="ranking-box">
+                            <h4>패</h4>
+                            <h3>3</h3>
+                        </div>
+                        <div class="ranking-box">
+                            <h4>무</h4>
+                            <h3>0</h3>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <!--//주간경기일정-->
+
+    <!--선수소개-->
+    <section class="psection">
+        <div class="section player">
+            <div class="player-in">
+                <h2>SAMSUNG LIONS PLAYERS</h2>
+
+                <div class="playerall">
+
+                    <div class="playerbox">
+                        <div class="overlay"></div>
+                        <img src="/img/player/구자욱.jpg" alt="구자욱">
+                    </div>
+
+                    <div class="playerbox2">
+                        <div class="overlay"></div>
+                        <img src="/img/player/원태인.jpg" alt="원태인">
+                    </div>
+
+                    <div class="playerbox">
+                        <div class="overlay"></div>
+                        <img src="/img/player/오승환.jpg" alt="오승환">
+                    </div>
+
+                    <div class="playerbox2">
+                        <div class="overlay"></div>
+                        <img src="/img/player/김헌곤.jpg" alt="김헌곤">
+                    </div>
+
+                    <div class="playerbox">
+                        <div class="overlay"></div>
+                        <img src="/img/player/강민호.jpg" alt="구자욱">
+                    </div>
+
+                    <div class="playerbox2">
+                        <div class="overlay"></div>
+                        <img src="/img/player/김대우.jpg" alt="원태인">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//선수소개-->
+
+    <!--삼튜브-->
+    <section>
+        <div class="section lionstv">
+            <div class="lionstv-in">
+
+                <div class="lions-tit">
+                    <h2>Lions TV</h2>
+                    <div class="more">
+                        <a href="https://www.youtube.com/@lionstv1982">더보기</a>
+                        <img src="/img/more.png" alt="더보기">
+                    </div>
+                </div>
+
+                <ul class="lionstv-list">
+
+                    <li class="lionstv-box">
+                        <a href="https://www.youtube.com/watch?v=P7FM86-Fi4M" target="_blank">
+                            <div class="lionstv-con">
+                                <div class="lionstv-top">
+                                    <img src="/img/thumbnail/sum4.jpg" alt="썸네일" class="sum">
+                                </div>
+                                <div class="lionstv-text">
+                                    <h3>뭐든 될 것 같은 분위기, 삼성의 분위기입니다 📹 #덕아웃1열 (05.17 한화전)</h3>
+                                    <p>2024-05-18</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="lionstv-box">
+                        <a href="https://www.youtube.com/watch?v=mxisZiW-WUQ" target="_blank">
+                            <div class="lionstv-con">
+                                <div class="lionstv-top">
+                                    <img src="/img/thumbnail/sum.jpg" alt="썸네일" class="sum">
+                                </div>
+                                <div class="lionstv-text">
+                                    <h3>그럼에도 불구하고, 연승, 승리 직후의 모습 #애프터매치(05.17 한화전)</h3>
+                                    <p>2024-05-17</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="lionstv-box">
+                        <a href="https://www.youtube.com/watch?v=ElPJ69kncKk" target="_blank">
+                            <div class="lionstv-con">
+                                <div class="lionstv-top">
+                                    <img src="/img/thumbnail/sum3.jpg" alt="썸네일" class="sum">
+                                </div>
+                                <div class="lionstv-text">
+                                    <h3>"야구"라는 드라마, 삼성라이온즈 📹 #덕아웃1열 (05.18 한화전)</h3>
+                                    <p>2024-05-19</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="lionstv-box">
+                        <a href="https://www.youtube.com/watch?v=3L7JP9jW21Y" target="_blank">
+                            <div class="lionstv-con">
+                                <div class="lionstv-top">
+                                    <img src="/img/thumbnail/sum2.jpg" alt="썸네일" class="sum">
+                                </div>
+                                <div class="lionstv-text">
+                                    <h3>철벽 마운드, 타선의 득점 지원, 승리 직후의 모습 #애프터매치(05.22 KT전)</h3>
+                                    <p>2024-05-23</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+
+
+                    <li class="lionstv-box">
+                        <a href="https://www.youtube.com/watch?v=huNgSGr0aVQ" target="_blank">
+                            <div class="lionstv-con">
+                                <div class="lionstv-top">
+                                    <img src="/img/thumbnail/sum5.jpg" alt="썸네일" class="sum">
+                                </div>
+                                <div class="lionstv-text">
+                                    <h3>엘도라도는, 삼성은 멈추지 않습니다. 📹 #덕아웃1열 (05.16 SSG전)</h3>
+                                    <p>2024-05-17</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="lionstv-box">
+                        <a href="https://www.youtube.com/watch?v=rfso3bv9Qek" target="_blank">
+                            <div class="lionstv-con">
+                                <div class="lionstv-top">
+                                    <img src="/img/thumbnail/sum8.jpg" alt="썸네일" class="sum">
+                                </div>
+                                <div class="lionstv-text">
+                                    <h3>상대전적을 깨고 대승리, 역대 첫 번째 27,000득점, 승리 직후의 모습 #애프터매치(05.16 SSG전)</h3>
+                                    <p>2024-05-17</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="lionstv-box">
+                        <a href="https://www.youtube.com/watch?v=rucpBrDrH_c" target="_blank">
+                            <div class="lionstv-con">
+                                <div class="lionstv-top">
+                                    <img src="/img/thumbnail/sum7.jpg" alt="썸네일" class="sum">
+                                </div>
+                                <div class="lionstv-text">
+                                    <h3>삼성라이온즈가 좋다고 말해💙 📹 #덕아웃1열 (05.11 NC전)</h3>
+                                    <p>2024-05-12</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="lionstv-box">
+                        <a href="https://www.youtube.com/watch?v=vLU6yrn0WO8" target="_blank">
+                            <div class="lionstv-con">
+                                <div class="lionstv-top">
+                                    <img src="/img/thumbnail/sum6.jpg" alt="썸네일" class="sum">
+                                </div>
+                                <div class="lionstv-text">
+                                    <h3>𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 | 선수들의 추천곡을 모아 만든🫧✨💙 #스프링캠프</h3>
+                                    <p>2024-03-06</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+
+                </ul>
+
+
+            </div>
+        </div>
+    </section>
+    <!--//삼튜브-->
+
+    <!--구단소식-->
+    <section>
+        <div class="section lions-news">
+
+            <img src="/img/win.png" alt="winorwow" class="win">
+            <div class="news-in">
+
+                <div class="news-left">
+                    <h2>구단소식</h2>
+                    <ul class="news-list">
+                        <li th:each="board : ${latestClubNews}">
+                            <a th:href="@{/club/clubnews/{id}(id=${board.id})}" th:text="${board.boardTitle}"></a>
+                            <span class="date" th:text="${#temporals.format(board.boardCreatedTime, 'yyyy-MM-dd ')}"></span>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="news-right">
+                    <div class="news-ritop">
+                        <h2>자유게시판</h2>
+                        <ul class="board">
+                            <li th:each="board : ${latestFanBoard}">
+                                <a th:href="@{/fan/board/fandetail/{id}(id=${board.id})}" th:text="${board.boardTitle}"></a>
+                                <span class="date" th:text="${#temporals.format(board.boardCreatedTime, 'yyyy-MM-dd')}"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="news-ribot">
+                        <h2>FAQ</h2>
+                        <ul class="board">
+                            <li th:each="board, iterStat : ${latestFaqBoard}">
+                                <a th:href="@{/fan/faqboard/{id}(id=${board.id})}" th:text="${board.boardTitle}"></a>
+                                <span class="date" th:text="${#temporals.format(board.boardCreatedTime, 'yyyy-MM-dd')}"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//구단소식-->
+
+    <!--갤러리-->
+    <section>
+        <div class="section gallery">
+            <script type="text/javascript" src="/js/gallery.js"></script>
+            <div class="gallery-in">
+                <h2>Gallery</h2>
+
+                <div class="gallerycon">
+
+                    <div th:each="image : ${latestimages}" class="gallerybox">
+                        <img th:src="@{'data:image/png;base64,'+${image.image64Based}}" th:alt="${image.title}">
+                        <h3>김영웅, 데뷔 첫 타석 홈런</h3>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//갤러리-->
+
+    <!--footer-->
+    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+    <!--//footer-->
+</div>
+
+<script>
+
+
+    /*자동슬라이드*/
+    document.addEventListener("DOMContentLoaded", function () {
+        const playerAll = document.querySelector(".playerall");
+        const playerBoxes = document.querySelectorAll(".playerbox, .playerbox2");
+
+        let totalWidth = 0;
+        playerBoxes.forEach(box => {
+            totalWidth += box.offsetWidth + 20; // 이미지 너비 + 마진
+        });
+        playerAll.style.width = `${totalWidth}px`; // 캐로셀 컨테이너의 너비 설정
+
+        // 요소 복제
+        const clonePlayerBoxes = [...playerBoxes].map(box => box.cloneNode(true));
+        clonePlayerBoxes.forEach(box => playerAll.appendChild(box));
+
+        // 애니메이션 실행
+        let position = 0;
+        const animation = setInterval(function () {
+            position -= 420; // 이미지 너비 + 마진
+            playerAll.style.transition = "transform 1s ease-in-out";
+            playerAll.style.transform = `translateX(${position}px)`;
+            if (position <= -totalWidth) {
+                setTimeout(function () {
+                    playerAll.style.transition = "none";
+                    playerAll.style.transform = `translateX(0)`; // 첫 번째 이미지로 이동
+                    position = 0;
+                }, 1000); // 1초 후에 변환을 없앰
+            }
+        }, 3000); // 3초마다 슬라이드
+    });
+    /*//자동슬라이드*/
+
+    // 스크롤이벤트
+
+</script>
+<script>
+    window.onload = function () {
+        const elm = document.querySelectorAll("section");
+        const elmCount = elm.length;
+        elm.forEach(function (item, index) {
+            item.addEventListener("mousewheel", function (event) {
+                event.preventDefault();
+                let delta = 0;
+                if (!event) event = window.event;
+                if (event.wheelDelta) {
+                    delta = event.wheelDelta / 120;
+                    if (window.opera) delta = -delta;
+                } else if (event.detail) delta = -event.detail / 3;
+
+                let moveTop = window.scrollY;
+                let elmSelector = elm[index];
+
+                // wheel down : move to next section
+                if (delta < 0) {
+                    // 이동할 섹션이 더 있는지 확인
+                    if (index !== elmCount - 1) {
+                        try {
+                            moveTop =
+                                window.pageYOffset +
+                                elmSelector.nextElementSibling.getBoundingClientRect().top;
+                        } catch (e) {}
+                    } else {
+                        // 마지막 섹션인 경우 페이지 끝으로 스크롤
+                        moveTop = document.body.scrollHeight;
+                    }
+                }
+
+                // wheel up : move to previous section
+                else {
+                    // 이동할 섹션이 있는지 확인
+                    if (index !== 0) {
+                        try {
+                            moveTop =
+                                window.pageYOffset +
+                                elmSelector.previousElementSibling.getBoundingClientRect().top;
+                        } catch (e) {}
+                    } else {
+                        // 첫 번째 섹션인 경우 페이지 상단으로 스크롤
+                        moveTop = 0;
+                    }
+                }
+
+                const body = document.querySelector("html");
+                window.scrollTo({ top: moveTop, left: 0, behavior: "smooth" });
+            });
+        });
+    };
+</script>
+<script>
+    /*header*/
+    document.querySelectorAll('.menu > li').forEach(menuItem => {
+        menuItem.addEventListener('mouseenter', () => {
+            document.querySelector('.hideback').classList.add('show-hideback');
+        });
+
+        menuItem.addEventListener('mouseleave', () => {
+            document.querySelector('.hideback').classList.remove('show-hideback');
+        });
+    });
+    /*//header*/
+</script>
+
+</body>
+
+</html>

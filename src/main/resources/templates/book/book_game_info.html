@@ -1,0 +1,73 @@
+<!-- book_game_info.html -->
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book_game_info</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="/css/bookcss/book_game_info.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+
+    <!--js-->
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+
+</head>
+
+<body>
+<div class="wrapper">
+    <th:block th:replace="~{fragments/nav :: navFragment}"></th:block>
+    <main>
+        <section>
+            <div class="match_list">
+                <h1>경기 정보</h1>
+                <div class="match-tabs">
+                    <table class="table table-hover text-center table-striped" style="background-color: #f8f8f8;">
+                        <thead>
+                        <tr>
+                            <th>게임 ID</th>
+                            <th>게임 이름</th>
+                            <th>경기장</th>
+                            <th>시작 시간</th>
+                            <th>예매</th> <!-- 예약 버튼 열 추가 -->
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="gameInfo : ${gameInfoList}">
+                            <td th:text="${gameInfo.gameInfoId}"></td>
+                            <td th:text="${gameInfo.gameName}"></td>
+                            <td th:text="${gameInfo.stadium}"></td>
+                            <td th:text="${#temporals.format(gameInfo.startTime, 'yyyy-MM-dd HH:mm')}"></td>
+                            <td>
+                                <a th:href="@{/book/book_start(gameInfoId=${gameInfo.gameInfoId})}" class="btn btn-primary">예매</a>
+                            </td> <!-- 예약 버튼 추가 -->
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--footer-->
+    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+    <!--footer-->
+    <script>
+        /* header */
+        document.querySelectorAll('.menu > li').forEach(menuItem => {
+            menuItem.addEventListener('mouseenter', () => {
+                document.querySelector('.hideback').classList.add('show-hideback');
+            });
+
+            menuItem.addEventListener('mouseleave', () => {
+                document.querySelector('.hideback').classList.remove('show-hideback');
+            });
+        });
+        /* header */
+    </script>
+</div>
+</body>
+</html>

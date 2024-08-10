@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>응원단 프로필</title>
+
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/fancss/fan_cheerdetails.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+
+    <!--js-->
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+<div class="wrapper">
+    <th:block th:replace="~{fragments/nav :: navFragment}"></th:block>
+    <main>
+        <section class="cheermember-area">
+            <div class="area1">
+                <div class="leaderphoto">
+                    <img src="/img/fan/Kim.jpg" alt="리더 사진">
+                </div>
+                <div class="leadercoment">
+                    <div class="koname">김상헌</div>
+                    <div class="engname">KIM SANG-HEON</div>
+                    <div class="coment">오늘의 경기가 최고가 될 수 있게 뛰자</div>
+                    <div class="birth">1982년 2월 7일</div>
+                    <div class="length">---</div>
+                    <div class="spec">성남 한국도로공사 하이패스 제니스<br>고양 오리온 오리온스</div>
+                    <div class="insta">
+                        <a href="https://www.instagram.com/your_instagram_username" target="_blank">
+                            <img src="/img/icons/instagram-icon.png" alt="인스타그램 아이콘">
+                            인스타그램
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="memberlist">
+                <div class="photo"><img src="/img/fan/LEESUJIN.jpg" alt="이수진"></div>
+                <div class="photo"><img src="/img/fan/KIMHAYUN.jpg" alt="김하연"></div>
+                <div class="photo"><img src="/img/fan/JUNGYUMI.jpg" alt="정유미"></div>
+                <div class="photo"><img src="/img/fan/KIMKAHYUN.jpg" alt="김가현"></div>
+                <div class="photo"><img src="/img/fan/LEESOHYUN.jpg" alt="이소현"></div>
+                <div class="photo"><img src="/img/fan/KIMMISO.jpg" alt="김미소"></div>
+                <div class="photo"><img src="/img/fan/kwonkayoung.jpg" alt="권가영"></div>
+                <div class="photo"><img src="/img/fan/kimyujung.jpg" alt="김유정"></div>
+                <div class="photo"><img src="/img/fan/sunghyoreyoun.jpg" alt="성효련"></div>
+            </div>
+        </section>
+    </main>
+    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+    <script>
+        /* header */
+        document.querySelectorAll('.menu > li').forEach(menuItem => {
+            menuItem.addEventListener('mouseenter', () => {
+                document.querySelector('.hideback').classList.add('show-hideback');
+            });
+            menuItem.addEventListener('mouseleave', () => {
+                document.querySelector('.hideback').classList.remove('show-hideback');
+            });
+        });
+        /* header */
+    </script>
+</div>
+</body>
+</html>

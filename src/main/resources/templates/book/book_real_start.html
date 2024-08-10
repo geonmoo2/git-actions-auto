@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book_real_start</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="/css/bookcss/book_real_start.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+
+    <!--js-->
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+<div class="wrapper">
+    <th:block th:replace="~{fragments/nav :: navFragment}"></th:block>
+    <main>
+        <section>
+            <div class="book-title">
+                <h2>
+                    TICKET
+                </h2>
+                <div class="long"></div>
+            </div>
+            <div class="book-text">
+                <h1>구매하실 티켓을 선택해주세요.</h1>
+            </div>
+            <div class="book-btn">
+                <a href="/book/book_game_info" class="btn">
+                    <div class="btn-logo">
+                        <img src="/img/teamlogo/logoblue.png" alt="">
+                    </div>
+                    <div class="btn-text">
+                        <div></div>
+                        <span><h1>경기예매</h1></span>
+                        <div></div>
+                        <span><h1>(일반경기)</h1></span>
+                    </div>
+                    <div style="width: 50px; height: 40px;"></div>
+                </a>
+            </div>
+        </section>
+    </main>
+    <!--footer-->
+    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+    <!--footer-->
+    <script>
+        /* header */
+        document.querySelectorAll('.menu > li').forEach(menuItem => {
+            menuItem.addEventListener('mouseenter', () => {
+                document.querySelector('.hideback').classList.add('show-hideback');
+            });
+
+            menuItem.addEventListener('mouseleave', () => {
+                document.querySelector('.hideback').classList.remove('show-hideback');
+            });
+        });
+        /* header */
+    </script>
+</div>
+</body>
+</html>

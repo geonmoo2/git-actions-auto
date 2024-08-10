@@ -1,0 +1,448 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'PreT';
+    font-weight: 100;
+    font-style: normal;
+    src: url('/font/Pretendard-Thin.eot');
+    src: local('��'),
+    url('/font/Pretendard-Thin.woff') format('woff'),
+    url('/font/Pretendard-Thin.woff2') format('woff2'),
+    url('/font/Pretendard-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Pre';
+    font-weight: 300;
+    font-style: normal;
+    src: url('/font/Pretendard-Light.eot');
+    src: local('��'),
+    url('/font/Pretendard-Light.woff') format('woff'),
+    url('/font/Pretendard-Light.woff2') format('woff2'),
+    url('/font/Pretendard-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreR';
+    font-weight: 400;
+    font-style: normal;
+    src: url('/font/Pretendard-Regular.eot');
+    src: local('��'),
+    url('/font/Pretendard-Regular.woff') format('woff'),
+    url('/font/Pretendard-Regular.woff2') format('woff2'),
+    url('/font/Pretendard-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreM';
+    font-weight: 600;
+    font-style: normal;
+    src: url('/font/Pretendard-Medium.eot');
+    src: local('��'),
+    url('/font/Pretendard-Medium.woff') format('woff'),
+    url('/font/Pretendard-Medium.woff2') format('woff2'),
+    url('/font/Pretendard-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreSB';
+    font-weight: 700;
+    font-style: normal;
+    src: url('/font/Pretendard-SemiBold.eot');
+    src: local('��'),
+    url('/font/Pretendard-SemiBold.woff') format('woff'),
+    url('/font/Pretendard-SemiBold.woff2') format('woff2'),
+    url('/font/Pretendard-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreEB';
+    font-weight: 900;
+    font-style: normal;
+    src: url('/font/Pretendard-ExtraBold.eot');
+    src: local('��'),
+    url('/font/Pretendard-ExtraBold.woff') format('woff'),
+    url('/font/Pretendard-ExtraBold.woff2') format('woff2'),
+    url('/font/Pretendard-ExtraBold.otf') format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* header */
+.wrapper {
+    position: relative;
+    width: 100%;
+    margin: 100px 0 0;
+}
+
+
+/* main */
+.section-main{
+
+    display: flex;
+
+
+
+}
+.section-mid{
+
+    background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20230418/pngtree-clouds-sky-blue-aesthetic-pastel-image_2403934.jpg);
+    /*margin-top: 100px;*/
+    margin-left: 400px;
+    width: 1200px;
+    background-size: 1200px;
+    background-color: rgb(255, 255, 255,0.8);
+
+}
+
+/* main-mid */
+
+/* Section 좌석 배치도랑 지도 */
+
+
+
+.main-section1{
+    background-color: rgb(255, 255, 255,0.7);
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    width: 1098px;
+
+
+
+}
+.main-section1>.main-left{
+    margin-top: 10px;
+    margin-left: 140px;
+
+}
+.main-section1>.main-left>h1{
+
+
+    margin-bottom: 60px;
+    margin-left: -20px;
+
+}
+.main-section1>.main-left>h3{
+
+    margin-top: -20px;
+}
+
+
+
+.main-section1>.main-left>a>img{
+
+    border-radius: 15%;
+    width: 350px;
+    height: 350px;
+
+}
+
+.main-section1>.main-right{
+
+    display: flex;
+    margin-top: 130px;
+    margin-left: 80px;
+
+}
+.main-section1>.main-right>a>img{
+
+    border-radius: 15%;
+    width: 370px;
+    height: 355px;
+    margin-top: 15px;
+
+
+}
+
+/* 오시는 길 */
+.main-section2 {
+
+    background-color: rgb(255, 255, 255,0.8);
+    width: 1200px;
+
+}
+.main-section2>h1{
+
+    margin-left: 130px;
+    margin-bottom: 30px;
+
+
+
+}
+.section2-map{
+
+
+
+    margin-left: 150px;
+}
+
+
+
+.section2-top {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    background-color: rgb(0 102 179 / 90%);
+    color: black;
+    width: 850px;
+    height: 55px;
+    margin-top: 10px;
+}
+
+.section2-top>h1{
+
+    margin-left: 15px;
+    margin-top: 10px;
+    color: white;
+
+
+}
+.material-symbols-outlined{
+
+    margin-top: 15px;
+    margin-right: 13px;
+
+}
+.section2-bottom1{
+    border: 1px solid rgba(6, 49, 165, 0.384);
+    display: none;
+    border-radius: 15px;
+    width: 850px;
+    height: 300px;
+}
+.section2-bottom2{
+    border: 1px solid rgba(6, 49, 165, 0.384);
+    display: none;
+    border-radius: 15px;
+    width: 850px;
+    height: 150px;
+}
+.section2-bottom3{
+    border: 1px solid rgba(6, 49, 165, 0.384);
+    display: none;
+    border-radius: 15px;
+    width: 850px;
+    height: 80px;
+
+}
+
+.section2-bottom1>ul{
+    margin-top: 30px;
+    margin-left: 15px;
+}
+.section2-bottom2>ul{
+    margin-top: 17px;
+    margin-left: 15px;
+}
+.section2-bottom3>ul{
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.section2-bottom1>ul > h3 {
+
+    color: red;
+}
+.section2-bottom2>ul > h3 {
+    color: red;
+}
+.section2-bottom3>ul > h3 {
+    color: red;
+}
+
+.section2-bottom.active{
+    display: block;
+}
+
+/* 아이콘 회전 */
+.rotate {
+    transform: rotate(180deg);
+}
+.section2-toggle-btn{
+
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.section2-mid{
+
+    background-color: rgb(255, 255, 255,0.8);
+    width: 1200px;
+
+}
+.section2-mid2{
+    height: 500px;
+    margin-left: 150px;
+    transition: height 0.3s ease;
+    overflow: hidden;
+
+
+}
+
+.section2-mid2>h1{
+
+
+    margin-bottom: 40px;
+
+
+}
+
+
+/* section-mid-nav 부분 */
+
+.section-nav{
+    background-color: rgb(255, 255, 255,0.8);
+    border-bottom: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+}
+.section-nav>li{
+
+    margin-right: 60px;
+    justify-content: center;
+    align-items: center;
+
+}
+.section-nav>li>a{
+
+    font-size: 20px;
+}
+.section-nav>li>a:hover{
+
+    color: red;
+}
+.section-nav>li>a:hover{
+
+    color: red;
+}
+
+
+
+
+.section-left{
+
+
+    background-image: url(https://blog.kakaocdn.net/dn/bdVbHo/btszcHtvOkW/DtFwuCm7otuaKbkxfvejyK/img.jpg);
+    background-size: 400px 865px;
+    position: fixed;
+
+    width: 400px;
+    height: 865px;
+    /*margin-top: 100px;*/
+
+
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 50%;
+    top: 50%;
+    width: 700px; /* Full width */
+    height: 700px; /* Full height */
+    transform: translate(-50%, -50%); /* Center the modal */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+/* Modal content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%; /* Max width for the image */
+    max-height: 90%; /* Max height for the image */
+    object-fit: contain; /* Ensure the image fits within the container */
+
+    margin-top: 35px;
+
+
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+/* The close button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.section-right{
+
+    background-image: url(https://blog.kakaocdn.net/dn/CpoZG/btszgntOiaM/KGnOqbJj6RcR8UzyW5VTJ0/img.jpg);
+    background-size: 400px 865px;
+    margin-left: 1500px;
+    position: fixed;
+    width: 400px;
+    height: 200px;
+    height: 865px;
+    /*margin-top: 100px;*/
+}
+
+.section2-map{
+
+    max-width: 900px;
+
+
+}
+
+
+

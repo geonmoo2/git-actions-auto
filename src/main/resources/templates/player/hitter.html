@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fan Cheer Main</title>
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/playercss/hittermain.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+
+    <!--js-->
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+
+    <style>
+
+
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <th:block th:replace="~{fragments/nav :: navFragment}"></th:block>
+    <main>
+        <section>
+            <div id="html1" class="content active">
+                <div class="titlebox">
+                    <div class="titlearea"><h2>내야수</h2><br>
+                        <h1>SAMSUNG LIONS 마운드를 빛내 주는 내야수들을 소개합니다</h1></div>
+                </div>
+                <div class="navbtn">
+                    <button onclick="showContent('html1')">내야수</button>
+                    <button onclick="showContent('html2')">외야수</button>
+                    <button onclick="showContent('html3')">포수</button>
+                </div>
+                <div class="player">
+                    <div class="playersection">
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">박병호</div>
+                                <div class="engname">Park Byung-ho</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/infielder/ParkByungho">자세히 보기</a>
+                                <img src="/img/player/hitter/infielder/박병호.png" alt="박병호">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>라팍에 입성한 국민거포</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">전병우</div>
+                                <div class="engname">Jeon Byeong-woo</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/infielder/JeonByeongwoo">자세히 보기</a>
+                                <img src="/img/player/hitter/infielder/전병우.png" alt="전병우">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>1, 3루 모두 소화 가능한 내야 유틸리티 거포</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">안주형</div>
+                                <div class="engname">Ahn Joo-hyung</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/infielder/AhnJoohyung">자세히 보기</a>
+                                <img src="/img/player/hitter/infielder/안주형.png" alt="안주형">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>육성선수 신화를 꿈꾼다</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playersection">
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">류지혁</div>
+                                <div class="engname">Ryu Ji-hyuk</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/infielder/RyuJihyuk">자세히 보기</a>
+                                <img src="/img/player/hitter/infielder/류지혁.png" alt="류지혁">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>새로운 내야의 든든한 선배의 역할을 기대한다</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">맥키넌</div>
+                                <div class="engname">David MacKinnon</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/infielder/DavidMacKinnon">자세히 보기</a>
+                                <img src="/img/player/hitter/infielder/맥키넌.png" alt="맥키넌">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>라이온즈의 새로운 외인 거포</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">김동진</div>
+                                <div class="engname">Kim Dong-jin</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/infielder/KimDongjin">자세히 보기</a>
+                                <img src="/img/player/hitter/infielder/김동진.png" alt="김동진">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>꿈을 향해 비상하는 1%의 주인공</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playersection">
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">이창용</div>
+                                <div class="engname">Lee Chang-yong</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/infielder/LeeChangyong">자세히 보기</a>
+                                <img src="/img/player/hitter/infielder/이창용.png" alt="이창용">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>파워와 잠재력을 지닌 유망주 내야수</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">이재현</div>
+                                <div class="engname">Lee Jae-hyeon</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/infielder/LeeJaehyeon">자세히 보기</a>
+                                <img src="/img/player/hitter/infielder/이재현.png" alt="이재현">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>앞으로가 더욱 기대되는 홈런타자</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">김영웅</div>
+                                <div class="engname">Kim Young-woong</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/infielder/KimYoungwoong">자세히 보기</a>
+                                <img src="/img/player/hitter/infielder/김영웅.png" alt="김영웅">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>꾸준한 실력 상승을 보여줄 히어로</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="all">
+                    <img src="/img/타올디자인.jpg" alt="">
+                </div>
+            </div>
+
+            <div id="html2" class="content">
+                <div class="titlebox">
+                    <div class="titlearea"><h2>외야수</h2><br>
+                        <h1>SAMSUNG LIONS 마운드를 빛내 주는 외야수들을 소개합니다</h1></div>
+                </div>
+                <div class="navbtn">
+                    <button onclick="showContent('html1')">내야수</button>
+                    <button onclick="showContent('html2')">외야수</button>
+                    <button onclick="showContent('html3')">포수</button>
+                </div>
+                <div class="player">
+                    <div class="playersection">
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">김헌곤</div>
+                                <div class="engname">Kim Heon-gon</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/outfielder/KimHeongon">자세히 보기</a>
+                                <img src="/img/player/hitter/outfielder/김헌곤.png" alt="김헌곤">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>강견과 좋은 타격감을 지닌 인재</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">김동엽</div>
+                                <div class="engname">Kim Dong-yub</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/outfielder/KimDongyub">자세히 보기</a>
+                                <img src="/img/player/hitter/outfielder/김동엽.png" alt="김동엽">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>장타력으로 팀 공격을 이끌 타자</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">구자욱</div>
+                                <div class="engname">Koo Ja-wook</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/outfielder/KooJawook">자세히 보기</a>
+                                <img src="/img/player/hitter/outfielder/구자욱.png" alt="구자욱">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>명실상부한 라이온즈의 스타</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playersection">
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">이성규</div>
+                                <div class="engname">Lee Sung-gyu</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/outfielder/LeeSunggyu">자세히 보기</a>
+                                <img src="/img/player/hitter/outfielder/이성규.png" alt="이성규">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>선구안과 컨택 능력을 갖춘 멀티 외야수</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">김태훈</div>
+                                <div class="engname">Kim Tae-hoon</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/outfielder/KimTaehoon">자세히 보기</a>
+                                <img src="/img/player/hitter/outfielder/타태훈.png" alt="타태훈">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>미래가 기대되는 원석</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">김성윤</div>
+                                <div class="engname">Kim Seong-yoon</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/outfielder/KimSeongyoon">자세히 보기</a>
+                                <img src="/img/player/hitter/outfielder/김성윤.png" alt="김성윤">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>강철어깨와 근성을 가진 젊은 외야수</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playersection">
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">윤정빈</div>
+                                <div class="engname">Yoon Jeong-bin</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/outfielder/YoonJeongbin">자세히 보기</a>
+                                <img src="/img/player/hitter/outfielder/윤정빈.png" alt="윤정빈">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>내,외야를 책임질 멀티 플레이어</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">김지찬</div>
+                                <div class="engname">Kim Ji-chan</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/outfielder/KimJichan">자세히 보기</a>
+                                <img src="/img/player/hitter/outfielder/김지찬.png" alt="김지찬">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>압도적인 주루플레이, 삼성의 슈퍼소닉</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">김현준</div>
+                                <div class="engname">Kim Hyeon-joon</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/outfielder/KimHyeonjoon">자세히 보기</a>
+                                <img src="/img/player/hitter/outfielder/김현준.png" alt="김현준">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>볼에 대한 강한 집념을 지닌 외야수</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="all">
+                    <img src="/img/타올디자인.jpg" alt="">
+                </div>
+            </div>
+
+            <div id="html3" class="content">
+                <div class="titlebox">
+                    <div class="titlearea"><h2>포수</h2><br>
+                        <h1>SAMSUNG LIONS 마운드를 빛내 주는 포수들을 소개합니다</h1></div>
+                </div>
+                <div class="navbtn">
+                    <button onclick="showContent('html1')">내야수</button>
+                    <button onclick="showContent('html2')">외야수</button>
+                    <button onclick="showContent('html3')">포수</button>
+                </div>
+                <div class="player">
+                    <div class="playersection">
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">강민호</div>
+                                <div class="engname">Kang Min-ho</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/catcher/KangMinho">자세히 보기</a>
+                                <img src="/img/player/hitter/catcher/강민호.png" alt="강민호">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>사자 군단을 지키는 안방마님</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">김재성</div>
+                                <div class="engname">Kim Jae-seong</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/catcher/KimJaeseong">자세히 보기</a>
+                                <img src="/img/player/hitter/catcher/김재성.png" alt="김재성">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>포수의 위대한 면모를 보여줄 선수</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">이병헌</div>
+                                <div class="engname">Lee Byung-heon</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/catcher/LeeByungheon">자세히 보기</a>
+                                <img src="/img/player/hitter/catcher/이병헌.png" alt="이병헌">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>강민호를 이을 공격형 안방마님</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playersection">
+                        <div class="playerbox">
+                            <div class="playerinfo">
+                                <div class="name">김도환</div>
+                                <div class="engname">Kim Do-hwan</div>
+                            </div>
+                            <div class="photo">
+                                <a href="/detail/hitter/catcher/KimDohwan">자세히 보기</a>
+                                <img src="/img/player/hitter/catcher/김도환.png" alt="김도환">
+                            </div>
+                            <div class="playerdetails">
+                                <div class="motto">
+                                    <div>당장 선발도 가능한 수비형 포수</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="all">
+                    <img src="/img/타올디자인.jpg" alt="">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+</div>
+
+<script>
+    /* header */
+    document.querySelectorAll('.menu > li').forEach(menuItem => {
+        menuItem.addEventListener('mouseenter', () => {
+            document.querySelector('.hideback').classList.add('show-hideback');
+        });
+        menuItem.addEventListener('mouseleave', () => {
+            document.querySelector('.hideback').classList.remove('show-hideback');
+        });
+    });
+    /* header */
+
+    function showContent(id) {
+        var contents = document.querySelectorAll('.content');
+        contents.forEach(function(content) {
+            content.classList.remove('active');
+        });
+        document.getElementById(id).classList.add('active');
+    }
+</script>
+</body>
+</html>

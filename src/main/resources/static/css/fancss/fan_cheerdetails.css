@@ -1,0 +1,125 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'PreT';
+    font-weight: 100;
+    font-style: normal;
+    src: url('../../font/Pretendard-Thin.eot');
+    src: local('��'),
+    url('../../font/Pretendard-Thin.woff') format('woff'),
+    url('../../font/Pretendard-Thin.woff2') format('woff2'),
+    url('../../font/Pretendard-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Pre';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../../font/Pretendard-Light.eot');
+    src: local('��'),
+    url('../../font/Pretendard-Light.woff') format('woff'),
+    url('../../font/Pretendard-Light.woff2') format('woff2'),
+    url('../../font/Pretendard-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreR';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../../font/Pretendard-Regular.eot');
+    src: local('��'),
+    url('../../font/Pretendard-Regular.woff') format('woff'),
+    url('../../font/Pretendard-Regular.woff2') format('woff2'),
+    url('../../font/Pretendard-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreM';
+    font-weight: 600;
+    font-style: normal;
+    src: url('../../font/Pretendard-Medium.eot');
+    src: local('��'),
+    url('../../font/Pretendard-Medium.woff') format('woff'),
+    url('../../font/Pretendard-Medium.woff2') format('woff2'),
+    url('../../font/Pretendard-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreSB';
+    font-weight: 700;
+    font-style: normal;
+    src: url('../../font/Pretendard-SemiBold.eot');
+    src: local('��'),
+    url('../../font/Pretendard-SemiBold.woff') format('woff'),
+    url('../../font/Pretendard-SemiBold.woff2') format('woff2'),
+    url('../../font/Pretendard-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreEB';
+    font-weight: 900;
+    font-style: normal;
+    src: url('../../font/Pretendard-ExtraBold.eot');
+    src: local('��'),
+    url('../../font/Pretendard-ExtraBold.woff') format('woff'),
+    url('../../font/Pretendard-ExtraBold.woff2') format('woff2'),
+    url('../../font/Pretendard-ExtraBold.otf') format('opentype');
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+
+
+
+.wrapper>main{
+    /* width: auto;
+    height : 1000px;
+    background-image: url('/img/다운로드.jpg'),url('/img/구자욱.jpg');
+    background-repeat: no-repeat;
+    background-size:100% 100%, 100% 100%;
+    background-position:0px 0px ,0px 0px; */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background:
+    /*        url('/img/player/오승환.jpg') left top no-repeat,*/
+    /*url('/img/player/구자욱.jpg') right top no-repeat,*/
+    url('/img/backgroundex1.jpg');
+
+    background-color: rgb(255, 255, 255,0.7);
+
+
+    background-size: auto 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-top: 100px;
+
+
+
+}
+.wrapper>main>section{
+    margin: auto;
+
+
+}

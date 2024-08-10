@@ -1,0 +1,281 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'PreT';
+    font-weight: 100;
+    font-style: normal;
+    src: url('/font/Pretendard-Thin.eot');
+    src: local('��'),
+    url('/font/Pretendard-Thin.woff') format('woff'),
+    url('/font/Pretendard-Thin.woff2') format('woff2'),
+    url('/font/Pretendard-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Pre';
+    font-weight: 300;
+    font-style: normal;
+    src: url('/font/Pretendard-Light.eot');
+    src: local('��'),
+    url('/font/Pretendard-Light.woff') format('woff'),
+    url('/font/Pretendard-Light.woff2') format('woff2'),
+    url('/font/Pretendard-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreR';
+    font-weight: 400;
+    font-style: normal;
+    src: url('/font/Pretendard-Regular.eot');
+    src: local('��'),
+    url('/font/Pretendard-Regular.woff') format('woff'),
+    url('/font/Pretendard-Regular.woff2') format('woff2'),
+    url('/font/Pretendard-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreM';
+    font-weight: 600;
+    font-style: normal;
+    src: url('/font/Pretendard-Medium.eot');
+    src: local('��'),
+    url('/font/Pretendard-Medium.woff') format('woff'),
+    url('/font/Pretendard-Medium.woff2') format('woff2'),
+    url('/font/Pretendard-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreSB';
+    font-weight: 700;
+    font-style: normal;
+    src: url('/font/Pretendard-SemiBold.eot');
+    src: local('��'),
+    url('/font/Pretendard-SemiBold.woff') format('woff'),
+    url('/font/Pretendard-SemiBold.woff2') format('woff2'),
+    url('/font/Pretendard-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreEB';
+    font-weight: 900;
+    font-style: normal;
+    src: url('/font/Pretendard-ExtraBold.eot');
+    src: local('��'),
+    url('/font/Pretendard-ExtraBold.woff') format('woff'),
+    url('/font/Pretendard-ExtraBold.woff2') format('woff2'),
+    url('/font/Pretendard-ExtraBold.otf') format('opentype');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+
+
+/* main */
+.wrapper > main {
+    /* width: auto;
+    height : 1000px;
+    background-image: url('/img/다운로드.jpg'),url('/img/구자욱.jpg');
+    background-repeat: no-repeat;
+    background-size:100% 100%, 100% 100%; 
+    background-position:0px 0px ,0px 0px; */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: url('/img/오승환.jpg') left top no-repeat,
+    url('/img/구자욱.jpg') right top no-repeat,
+    url('/img/backgroundex1.jpg');
+
+    background-color: rgb(255, 255, 255, 0.7);
+
+
+    background-size: auto 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.wrapper > main > section {
+    margin: auto;
+
+}
+
+.wrapper > main > section > .join {
+    width: 750px;
+    height: 750px;
+    margin: auto;
+
+
+    padding: 60px 68px 40px;
+    border-radius: 10px;
+    color: rgb(7, 7, 82);
+    background-color: rgb(255, 255, 255, 0.7);
+
+
+}
+
+.wrapper > main > section > .join > h1 {
+    text-align: center;
+    font-size: 2.7rem;
+}
+
+.wrapper > main > section > .join > .title-box {
+    text-align: center;
+}
+
+.wrapper > main > section > .join > .title-box > h2 {
+}
+
+.wrapper > main > section > .join > .title-box > p {
+}
+
+.wrapper > main > section > .join > .input-form {
+}
+
+.wrapper > main > section > .join > .input-form > .title {
+}
+
+.wrapper > main > section > .join > .input-form > .line-box {
+
+}
+
+.wrapper > main > section > .join > .input-form > .line-box > ul {
+    background-color: gray;
+    color: aliceblue;
+    padding: 20px;
+    font-size: 80%;
+    text-align: left;
+    display: flex;
+    justify-content: flex;
+    border-radius: 10px;
+    margin-top: 5px;
+
+}
+
+.wrapper > main > section > .join > .input-form > .line-box > ul > li {
+    margin: auto 0;
+
+
+}
+
+.wrapper > main > section > .join > .input-form > .line-box > ul > li > strong {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 4;
+    width: 60px;
+    margin-bottom: 15px;
+
+}
+
+.wrapper > main > section > .join > .input-form > .line-box > ul > li > span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 4;
+    /* margin-bottom: px; */
+}
+
+.wrapper > main > section > .join > .input-form > .line-box > ul > li > span:nth-child(2) {
+    margin-top: 14px;
+}
+
+.wrapper > main > section > .join > .input-form > .info-text {
+    display: flex;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.wrapper > main > section > .join > .input-form > .info-text > span:nth-child(1) {
+    font-size: 80%;
+}
+
+.wrapper > main > section > .join > .input-form > .info-text > span:nth-child(2) {
+}
+
+.wrapper > main > section > .join > .input-form > .btn {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    height: 100px;
+    border-radius: 100px;
+
+
+}
+
+.wrapper > main > section > .join > .input-form > .btn > .btn1a {
+    width: 300px;
+    background-color: rgba(118, 228, 255, 0.5);
+    font-size: 1rem;
+    border-radius: 10px;
+    display: flex;
+    border: 2px solid rgba(18, 205, 252);
+
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* 요소의 크기를 보더와 패딩을 포함한 값으로 설정 */
+    /* /* border: 2px solid transparent; */
+    outline: 2px solid transparent;
+    transition: background-color 0.7s ease;
+
+
+}
+
+.wrapper > main > section > .join > .input-form > .btn > .btn1a > span {
+
+}
+
+.wrapper > main > section > .join > .input-form > .btn > .btn2a {
+
+    width: 300px;
+    background-color: rgba(118, 138, 255, 0.5);
+    border: 2px solid rgba(0, 38, 255);
+    font-size: 1rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box; /* 요소의 크기를 보더와 패딩을 포함한 값으로 설정 */
+    /* border: 2px solid transparent; */
+    outline: 2px solid transparent; /* 아웃라인 초기화 */
+    transition: background-color 0.7s ease;
+}
+
+.wrapper > main > section > .join > .input-form > .btn > .btn1a:hover {
+    background-color: rgba(18, 205, 252, 0.9);
+    border: 2px double white; /* 안쪽 선 */
+    outline: 2px solid rgba(18, 205, 252); /* 바깥쪽 선 */
+    color: white;
+    transition: .7s ease-out;
+}
+
+.wrapper > main > section > .join > .input-form > .btn > .btn2a:hover {
+    background-color: rgba(0, 38, 255, 0.9);
+    border: 2px double white; /* 안쪽 선 */
+    outline: 2px solid rgba(0, 38, 255);; /* 바깥쪽 선 */
+    color: white;
+    transition: .7s ease-out;
+}
+
+

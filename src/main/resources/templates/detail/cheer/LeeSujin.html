@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이수진치어리더 상세 정보</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/detailcss/cheerdetail.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+
+    <!-- JS -->
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <th:block th:replace="~{fragments/nav :: navFragment}"></th:block>
+    <main>
+        <section>
+            <div class="member-area">
+                <div class="area1">
+                    <div class="leaderphoto">
+                        <img src="/img/fan/LeeSujin.png" alt="이수진 사진">
+                    </div>
+                    <div class="leadercoment">
+                        <div class="koname">이수진</div>
+                        <div class="engname">Lee Su-jin</div>
+                        <div class="coment">2024시즌은 더 높은 곳을 향해<br>응원단과 함께 힘차게 응원해 봅시다!<br>아자아자 화이팅!!</div>
+                        <div class="birth">1992년 10월 21일</div>
+                        <div class="length">---</div>
+                        <div class="spec">삼성 라이온즈 (2013~ / KBO리그)<br>
+                            포항 스틸러스 (2018~2020, 2022~ / K리그)<br>
+                            김천 한국도로공사 하이패스 (2022~ / V-리그)</div>
+                        <div class="insta">
+                            <a href="https://www.instagram.com/sssssujin_l/" target="_blank">
+                                <img src="/img/insta.png" alt="인스타그램 아이콘">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="members-area">
+                <th:block th:replace="~{fragments/cheer_detail_slider :: cheer_detail_sliderFragment}"></th:block>
+            </div>
+        </section>
+    </main>
+    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+
+    <script>
+        /* header */
+        document.querySelectorAll('.menu > li').forEach(menuItem => {
+            menuItem.addEventListener('mouseenter', () => {
+                document.querySelector('.hideback').classList.add('show-hideback');
+            });
+            menuItem.addEventListener('mouseleave', () => {
+                document.querySelector('.hideback').classList.remove('show-hideback');
+            });
+        });
+        /* header */
+        let slider = document.querySelector(".slider");
+        let innerSlider = document.querySelector(".slider-inner");
+        let pressed = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener("mousedown", (e) => {
+            pressed = true;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = innerSlider.offsetLeft;
+            slider.classList.add("active");
+        });
+
+        slider.addEventListener("mouseleave", () => {
+            pressed = false;
+            slider.classList.remove("active");
+        });
+
+        slider.addEventListener("mouseup", () => {
+            pressed = false;
+            slider.classList.remove("active");
+        });
+
+        slider.addEventListener("mousemove", (e) => {
+            if (!pressed) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = x - startX;
+            innerSlider.style.left = `${scrollLeft + walk}px`;
+            checkBoundary();
+        });
+
+        function checkBoundary() {
+            let outer = slider.getBoundingClientRect();
+            let inner = innerSlider.getBoundingClientRect();
+
+            if (parseInt(innerSlider.style.left) > 0) {
+                innerSlider.style.left = "0px";
+            } else if (inner.right < outer.right) {
+                innerSlider.style.left = `-${inner.width - outer.width}px`;
+
+            }
+        }
+
+        // 중앙에 배치할 슬라이드 인덱스 설정
+        const targetIndex = 1; // 중앙에 배치할 슬라이드의 인덱스 (0부터 시작)
+
+        function centerSlide(index) {
+            const slides = document.querySelectorAll('.slider-item');
+            const targetSlide = slides[index];
+            const sliderRect = slider.getBoundingClientRect();
+            const targetRect = targetSlide.getBoundingClientRect();
+
+            const offset = targetRect.left - sliderRect.left - (sliderRect.width / 2) + (targetRect.width / 2);
+            innerSlider.scrollLeft += offset;
+        }
+
+        // 슬라이더 로드 후 중앙에 배치
+        window.addEventListener('load', () => {
+            centerSlide(targetIndex);
+        });
+    </script>
+</div>
+</body>
+</html>

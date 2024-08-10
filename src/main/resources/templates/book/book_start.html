@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>야구 좌석 예매</title>
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="/css/bookcss/book_start.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+
+    <!--js-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/big.js/6.0.3/big.min.js"></script>
+
+</head>
+<body>
+<div class="wrapper">
+    <th:block th:replace="~{fragments/nav :: navFragment}"></th:block>
+    <main>
+        <section>
+            <div class="title">
+                <h2>예매하기</h2>
+            </div>
+            <div class="zone-selection" id="zoneSelection">
+                <img src="/img/좌석전체.png" usemap="#image-map" id="seatImage">
+                <svg id="highlight-svg" width="836" height="878"></svg>
+                <map name="image-map" id="imageMap">
+                    <area target="" alt="sky_top" title="sky_top" href="javascript:void(0);" data-mainzone="sky_top"
+                          coords="546,844,461,845,460,827,389,828,391,844,337,844,25,581,26,308,64,308,64,562,352,805,528,805,792,585,815,616"
+                          shape="poly" onmouseover="highlightArea(this)" onmouseout="removeHighlight()">
+                    <area target="" alt="blue_zone" title="blue_zone" href="javascript:void(0);"
+                          data-mainzone="blue_zone"
+                          coords="236,611,287,552,191,467,192,429,115,429,118,512" shape="poly"
+                          onmouseover="highlightArea(this)" onmouseout="removeHighlight()">
+                    <area target="" alt="3rd_tb" title="3rd_tb" href="javascript:void(0);" data-mainzone="3rd_tb"
+                          coords="236,610,364,718,389,637,288,553" shape="poly" onmouseover="highlightArea(this)"
+                          onmouseout="removeHighlight()">
+                    <area target="" alt="sky_bot" title="sky_bot" href="javascript:void(0);" data-mainzone="sky_bot"
+                          coords="66,308,80,309,82,551,361,790,522,790,784,573,792,584,529,803,353,804,65,564"
+                          shape="poly" onmouseover="highlightArea(this)" onmouseout="removeHighlight()">
+                    <area target="" alt="3rd_in" title="3rd_in" href="javascript:void(0);" data-mainzone="3rd_in"
+                          coords="116,283,127,282,144,299,146,337,161,339,162,368,192,370,192,426,116,427" shape="poly"
+                          onmouseover="highlightArea(this)" onmouseout="removeHighlight()">
+                    <area target="" alt="vip" title="vip" href="javascript:void(0);" data-mainzone="vip"
+                          coords="398,627,391,644,489,646,482,628" shape="poly" onmouseover="highlightArea(this)"
+                          onmouseout="removeHighlight()">
+                    <area target="" alt="center_tb" title="center_tb" href="javascript:void(0);"
+                          data-mainzone="center_tb"
+                          coords="391,649,368,716,516,716,491,648" shape="poly" onmouseover="highlightArea(this)"
+                          onmouseout="removeHighlight()">
+                    <area target="" alt="1st_tb" title="1st_tb" href="javascript:void(0);" data-mainzone="1st_tb"
+                          coords="490,639,519,713,644,612,591,551" shape="poly" onmouseover="highlightArea(this)"
+                          onmouseout="removeHighlight()">
+                    <area target="" alt="1st_zone" title="1st_zone" href="javascript:void(0);" data-mainzone="1st_zone"
+                          coords="593,550,644,611,764,511,693,467" shape="poly" onmouseover="highlightArea(this)"
+                          onmouseout="removeHighlight()">
+                    <area target="" alt="1st_in" title="1st_in" href="javascript:void(0);" data-mainzone="1st_in"
+                          coords="759,505,688,463,689,371,717,367,717,338,736,339,735,302,751,284,760,282" shape="poly"
+                          onmouseover="highlightArea(this)" onmouseout="removeHighlight()">
+                    <area target="" alt="3rd_exciting" title="3rd_exciting" href="javascript:void(0);"
+                          data-mainzone="3rd_exciting" coords="195,381,194,465,227,495,227,406" shape="poly"
+                          onmouseover="highlightArea(this)" onmouseout="removeHighlight()">
+                    <area target="" alt="1st_exciting" title="1st_exciting" href="javascript:void(0);"
+                          data-mainzone="1st_exciting" coords="654,403,654,493,688,469,685,378" shape="poly"
+                          onmouseover="highlightArea(this)" onmouseout="removeHighlight()">
+                    <area target="" alt="grass" title="grass" href="javascript:void(0);" data-mainzone="grass"
+                          coords="766,282,797,283,796,482,769,482" shape="poly" onmouseover="highlightArea(this)"
+                          onmouseout="removeHighlight()">
+                    <area target="" alt="outfield" title="outfield" href="javascript:void(0);" data-mainzone="outfield"
+                          coords="138,258,170,291,371,90,508,91,710,292,743,260,527,45,352,45" shape="poly"
+                          onmouseover="highlightArea(this)" onmouseout="removeHighlight()">
+                    <area target="" alt="out_tb" title="out_tb" href="javascript:void(0);" data-mainzone="out_tb"
+                          coords="124,276,154,307,169,294,137,263" shape="poly" onmouseover="highlightArea(this)"
+                          onmouseout="removeHighlight()">
+                    <area target="" alt="out_tb" title="out_tb" href="javascript:void(0);" data-mainzone="out_tb"
+                          coords="375,26,529,26,552,45,580,68,771,260,725,308,711,292,744,258,529,44,374,45"
+                          shape="poly" onmouseover="highlightArea(this)" onmouseout="removeHighlight()">
+                    <area target="" alt="out_fm" title="out_fm" href="javascript:void(0);" data-mainzone="out_fm"
+                          coords="628,58,602,84,742,225,773,192,741,157,663,91" shape="poly"
+                          onmouseover="highlightArea(this)" onmouseout="removeHighlight()">
+                    <area target="" alt="roof_top" title="roof_top" href="javascript:void(0);" data-mainzone="roof_top"
+                          coords="172,182,190,198,309,82,291,65" shape="poly" onmouseover="highlightArea(this)"
+                          onmouseout="removeHighlight()">
+                    <area target="" alt="yogibo" title="yogibo" href="javascript:void(0);" data-mainzone="yogibo"
+                          coords="391,828,390,843,460,845,458,827" shape="poly" onmouseover="highlightArea(this)"
+                          onmouseout="removeHighlight()">
+                    <area target="" alt="party_floor" title="party_floor" href="javascript:void(0);"
+                          data-mainzone="party_floor" coords="114,275,96,275,96,335,115,336" shape="poly"
+                          onmouseover="highlightArea(this)" onmouseout="removeHighlight()">
+                </map>
+            </div>
+            <div class="zoneSelect">
+                <select id="zoneSelect">
+                    <option value="">구역 선택</option>
+                    <th:block th:each="zone : ${zones}">
+                        <option th:value="${zone}" th:text="${zone}"></option>
+                    </th:block>
+                </select>
+            </div>
+            <div id="seatModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="seat-container" id="seatContainer"></div>
+                    <div class="summary">
+                        <p id="selectedSeats">선택된 좌석: 없음</p>
+                        <p id="totalPrice">총 가격: 0원</p>
+                    </div>
+                    <form id="bookingForm">
+                        <input type="hidden" id="gameinfoId" th:value="${gameInfo.gameInfoId}"> <!-- 게임 정보 ID -->
+                        <div class="form-group"><label for="name">이름:</label><input type="text" id="name" th:value="${username}" required></div> <!-- 로그인된 사용자 이름 표시 -->
+                        <div class="form-group"><label for="gameName">게임 이름:</label><input type="text" id="gameName" th:value="${gameInfo.gameName}" required readonly></div> <!-- 게임 이름 표시 -->
+                        <div class="form-group"><label for="payid">결제 방법:</label>
+                            <select id="payid" required>
+                                <option value="">결제 방법 선택</option>
+                                <option value="card">카드</option>
+                                <option value="vbank">가상계좌</option>
+                                <option value="phone">모바일 결제</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">예매완료</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+</div>
+
+<script>
+    /* header */
+    document.querySelectorAll('.menu > li').forEach(menuItem => {
+        menuItem.addEventListener('mouseenter', () => {
+            document.querySelector('.hideback').classList.add('show-hideback');
+        });
+
+        menuItem.addEventListener('mouseleave', () => {
+            document.querySelector('.hideback').classList.remove('show-hideback');
+        });
+    });
+    /* header */
+
+    function highlightArea(area) {
+        const svg = document.getElementById('highlight-svg');
+        svg.innerHTML = ''; // Clear previous highlights
+        const coords = area.coords.split(',').map(Number);
+        const points = [];
+
+        for (let i = 0; i < coords.length; i += 2) {
+            points.push(`${coords[i]},${coords[i+1]}`);
+        }
+
+        const polygon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        polygon.setAttribute('points', points.join(' '));
+        polygon.classList.add('highlight');
+
+        svg.appendChild(polygon);
+    }
+
+    function removeHighlight() {
+        const svg = document.getElementById('highlight-svg');
+        svg.innerHTML = ''; // Clear the highlights
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const seatContainer = document.getElementById('seatContainer');
+        const selectedSeatsDisplay = document.getElementById('selectedSeats');
+        const totalPriceDisplay = document.getElementById('totalPrice');
+        const bookingForm = document.getElementById('bookingForm');
+        const zoneSelect = document.getElementById('zoneSelect');
+        const seatModal = document.getElementById('seatModal');
+        const closeBtn = document.querySelector('.close');
+        const zoneSelection = document.getElementById('zoneSelection');
+        let selectedMainZone = "";
+        let selectedZone = "";
+        let globalImpUid = null;
+        let currentBookingId = null;
+
+        // 이미지 맵 크기 조정
+        const originalWidth = 836;
+        const originalHeight = 878;
+        const newWidth = 600;
+        const newHeight = 600;
+
+        const adjustCoords = (coords, originalWidth, originalHeight, newWidth, newHeight) => {
+            const scaleX = newWidth / originalWidth;
+            const scaleY = newHeight / originalHeight;
+            return coords.split(',').map((coord, index) => {
+                return (index % 2 === 0) ? Math.round(coord * scaleX) : Math.round(coord * scaleY);
+            }).join(',');
+        };
+
+        document.querySelectorAll('area').forEach(area => {
+            const originalCoords = area.coords;
+            const newCoords = adjustCoords(originalCoords, originalWidth, originalHeight, newWidth, newHeight);
+            area.coords = newCoords;
+        });
+
+        document.getElementById('seatImage').width = newWidth;
+        document.getElementById('seatImage').height = newHeight;
+        document.getElementById('highlight-svg').setAttribute('width', newWidth);
+        document.getElementById('highlight-svg').setAttribute('height', newHeight);
+
+        function closeModal() {
+            seatModal.style.display = 'none';
+            if (currentBookingId) {
+                fetch(`/book/cancel/${currentBookingId}`, {
+                    method: 'POST'
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            console.log('예매가 취소되었습니다.');
+                            currentBookingId = null;
+                        } else {
+                            console.error('예매 취소 중 오류 발생:', data);
+                        }
+                    })
+                    .catch(error => console.error('예매 취소 중 오류 발생:', error));
+            }
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+
+        document.querySelectorAll('area').forEach(area => {
+            area.addEventListener('click', (e) => {
+                e.preventDefault();
+                const mainZone = area.dataset.mainzone;
+                selectedMainZone = mainZone;
+                fetch(`/book/zones/${mainZone}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        zoneSelect.innerHTML = '<option value="">구역 선택</option>';
+                        data.forEach(zone => {
+                            const option = document.createElement('option');
+                            option.value = zone;
+                            option.textContent = zone;
+                            zoneSelect.appendChild(option);
+                        });
+                        zoneSelection.style.display = 'block';
+                    })
+                    .catch(error => console.error('Error fetching zones:', error));
+            });
+        });
+
+        zoneSelect.addEventListener('change', function () {
+            if (this.value && selectedMainZone) {
+                selectedZone = this.value;
+                const gameInfoId = document.getElementById('gameinfoId').value; // 게임 정보 ID 가져오기
+                console.log(`Selected mainZone: ${selectedMainZone}, zone: ${this.value}, gameInfoId: ${gameInfoId}`);
+                fetch(`/book/seats/${selectedMainZone}/${this.value}?gameInfoId=${gameInfoId}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('Fetched seats:', data); // 좌석 데이터를 콘솔에 출력하여 디버깅
+                        seatContainer.innerHTML = '';
+                        data.forEach(seat => {
+                            const seatDiv = document.createElement('div');
+                            seatDiv.classList.add('seat');
+                            if (seat.reserved) {
+                                seatDiv.classList.add('reserved');
+                            }
+                            seatDiv.setAttribute('data-seat', seat.seatNumber);
+                            seatDiv.setAttribute('data-price', seat.price);
+                            seatDiv.setAttribute('data-seatid', seat.seatid);
+                            seatDiv.innerText = seat.seatNumber;
+                            seatContainer.appendChild(seatDiv);
+                        });
+                        seatModal.style.display = 'block';
+                    })
+                    .catch(error => console.error('Error fetching seat data:', error));
+            }
+        });
+
+        seatContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('seat') && !e.target.classList.contains('reserved')) {
+                e.target.classList.toggle('selected');
+                updateSelectedSeats();
+            }
+        });
+
+        function updateSelectedSeats() {
+            const selectedSeats = document.querySelectorAll('.seat.selected');
+            const selectedSeatsArr = Array.from(selectedSeats).map(seat => seat.getAttribute('data-seat'));
+            const totalPrice = Array.from(selectedSeats).reduce((acc, seat) => {
+                return acc.plus(new Big(seat.getAttribute('data-price')));
+            }, new Big(0));
+
+            selectedSeatsDisplay.textContent = `선택된 좌석: ${selectedSeatsArr.length > 0 ? selectedSeatsArr.join(', ') : '없음'}`;
+            totalPriceDisplay.textContent = `총 가격: ${totalPrice}원`;
+        }
+
+        // 로그인된 사용자의 이름을 가져와서 입력 필드에 설정
+
+        fetch('/user/info')
+
+            .then(response => response.json())
+
+            .then(data => {
+
+                if (data.username) {
+
+                    document.getElementById('name').value = data.username;
+
+                }
+
+            })
+
+            .catch(error => console.error('Error fetching user info:', error));
+
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const gameinfoId = document.getElementById('gameinfoId').value;
+            const payid = document.getElementById('payid').value;
+            const selectedSeats = document.querySelectorAll('.seat.selected');
+            const selectedSeatsArr = Array.from(selectedSeats).map(seat => seat.getAttribute('data-seat'));
+            const selectedSeatIds = Array.from(selectedSeats).map(seat => seat.getAttribute('data-seatid'));
+
+            if (selectedSeatsArr.length === 0) {
+                alert('최소 하나의 좌석을 선택해야 합니다.');
+                return;
+            }
+
+            if (!selectedSeatIds.length || !selectedSeatIds[0]) {
+                alert('선택한 좌석의 정보가 올바르지 않습니다. 다시 시도해주세요.');
+                return;
+            }
+
+            const totalPrice = Array.from(selectedSeats).reduce((acc, seat) => acc.plus(new Big(seat.getAttribute('data-price'))), new Big(0));
+            const bookingData = {
+                name: name,
+                gameinfoId: gameinfoId,
+                payid: payid,
+                seat: selectedSeatsArr.join(', '),
+                seatid: selectedSeatIds[0],
+                date: new Date().toISOString(),
+                mainZone: selectedMainZone,
+                zone: selectedZone,
+                totalPrice: totalPrice.toString()
+            };
+
+            console.log('예매 요청 데이터:', bookingData);
+
+            fetch('/book/make', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(bookingData)
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        return response.json().then(errorData => {
+                            throw new Error(errorData.message || '예매 요청에 실패했습니다.');
+                        });
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.bookId) {
+                        currentBookingId = data.bookId;
+                        initiatePayment(data.bookId, totalPrice, payid);
+                    } else {
+                        alert('예매에 실패했습니다. 다시 시도하세요.');
+                    }
+                })
+                .catch(error => {
+                    console.error('오류 발생:', error);
+                    alert(`오류 발생: ${error.message}`);
+                });
+        });
+
+        function initiatePayment(bookid, amount, payid) {
+            IMP.init("imp30260072");
+
+            const merchant_uid = 'merchant_' + uuid.v4();
+
+            console.log('결제 요청:', {bookid, amount, payid, merchant_uid});
+
+            let paymentOptions = {
+                pg: "",
+                pay_method: payid,
+                merchant_uid: merchant_uid,
+                name: "테스트 결제",
+                amount: amount.toString(),
+                buyer_email: "test@example.com",
+                buyer_name: document.getElementById('name').value,
+                buyer_tel: "010-0000-0000",
+                buyer_addr: "서울특별시 강남구 삼성동",
+                buyer_postcode: "123-456",
+            };
+
+            if (payid === 'card') {
+                paymentOptions.pg = 'html5_inicis';
+            } else if (payid === 'vbank') {
+                paymentOptions.pg = 'html5_inicis';
+                paymentOptions.biz_num = '1234567890';
+            } else if (payid === 'phone') {
+                paymentOptions.pg = 'danal';
+            }
+
+            IMP.request_pay(paymentOptions, function (resp) {
+                console.log('결제 응답:', resp);
+                if (resp.success) {
+                    globalImpUid = resp.imp_uid;
+                    fetch('/payment/make', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            bookId: bookid,
+                            amount: amount.toString(),
+                            impUid: resp.imp_uid,
+                            merchantUid: merchant_uid,
+                            paymentMethod: payid,
+                            paymentDateTime: new Date().toISOString()
+                        })
+                    })
+                        .then(response => response.json())
+                        .then(paymentData => {
+                            console.log('서버 결제 응답:', paymentData);
+                            if (paymentData.paymentStatus === '성공') {
+                                fetch('/book/update-impUid', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify({
+                                        bookId: bookid,
+                                        impUid: globalImpUid
+                                    })
+                                })
+                                    .then(response => response.json())
+                                    .then(updateData => {
+                                        if (updateData.success) {
+                                            fetch(`/book/confirm/${bookid}`, {
+                                                method: 'POST'
+                                            })
+                                                .then(confirmResponse => confirmResponse.json())
+                                                .then(confirmData => {
+                                                    if (confirmData.success) {
+                                                        alert('예매 성공하셨습니다');
+                                                        currentBookingId = null;
+                                                        location.href = 'book_finish';
+                                                    } else {
+                                                        alert('예매 성공했지만 좌석 예약 확정에 실패했습니다. 다시 시도하세요.');
+                                                    }
+                                                })
+                                                .catch(error => {
+                                                    console.error('예약 확정 중 오류 발생:', error);
+                                                    alert('예약 확정 중 오류가 발생했습니다. 다시 시도하세요.');
+                                                });
+                                        } else {
+                                            alert('예매 성공했지만 업데이트에 실패했습니다. 다시 시도하세요.');
+                                        }
+                                    })
+                                    .catch(error => {
+                                        console.error('ImpUid 업데이트 중 오류 발생:', error);
+                                        alert('ImpUid 업데이트 중 오류가 발생했습니다. 다시 시도하세요.');
+                                    });
+                            } else {
+                                alert('예매 실패하셨습니다');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('결제 처리 중 오류 발생:', error);
+                            alert('결제 처리 중 오류가 발생했습니다. 다시 시도하세요.');
+                        });
+                } else {
+                    alert('결제에 실패했습니다. 다시 시도하세요.');
+                }
+            });
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+
+        window.onclick = function (event) {
+            if (event.target === seatModal) {
+                closeModal();
+            }
+        };
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>book_finish</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="/css/bookcss/book_finish.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+
+    <!--js-->
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+
+
+</head>
+
+<body>
+
+<div class="wrapper">
+    <th:block th:replace="~{fragments/nav :: navFragment}"></th:block>
+    <main>
+        <section>
+            <div class="book-title">
+                <h2>
+                    예매 완료
+                </h2>
+                <div class="long"></div>
+            </div>
+            <div class="book-text">
+                <h1>예매가 완료 되었습니다.<br></h1>
+                <h1>즐거운 경기관람 되세요!</h1>
+            </div>
+            <div class="book-btn">
+
+                <a href="/samsung" class="btn1a">
+                    <div class="btn-text btn-text1a">
+                        <div></div>
+                        <span><h1>홈으로</h1></span>
+                        <div></div>
+                    </div>
+
+                </a>
+                <a href="/book/list" class="btn2a">
+                    <div class="btn-text btn-text2a">
+                        <div></div>
+                        <span><h1>예매내역 확인하기</h1></span>
+                        <div></div>
+                    </div>
+
+                </a>
+
+            </div>
+
+
+        </section>
+    </main>
+    <!--footer-->
+    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+    <!--//footer-->
+    <script>
+        /*header*/
+        document.querySelectorAll('.menu > li').forEach(menuItem => {
+            menuItem.addEventListener('mouseenter', () => {
+                document.querySelector('.hideback').classList.add('show-hideback');
+            });
+
+            menuItem.addEventListener('mouseleave', () => {
+                document.querySelector('.hideback').classList.remove('show-hideback');
+            });
+        });
+        /*//header*/
+    </script>
+
+</div>
+
+</body>
+</html>

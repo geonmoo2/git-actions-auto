@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구자욱 상세 정보</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/detailcss/playerdetail.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+
+    <!-- JS -->
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <th:block th:replace="~{fragments/nav :: navFragment}"></th:block>
+    <main>
+        <section>
+            <div class="member-area">
+                <div class="area1">
+
+                    <div class="playerphoto">
+                        <img src="/img/player/hitter/outfielder/구자욱.png" alt="구자욱 사진">
+                    </div>
+                    <div class="playercoment">
+                        <div class="playername">
+                            <div class="number">5</div>
+                            <div>
+                                <div class="koname">구자욱</div>
+                                <div class="engname">Koo Ja-wook</div>
+                            </div>
+                        </div>
+                        <div class="playerinfo">외야수 / 우투좌타</div><br>
+                        <div class="allinfo">
+                            <div class="info1">
+                                <div class="birth1">생 년 월 일</div>
+                                <div class="height1">키 / 몸 무 게</div>
+                                <div class="school1">출 신 학 교</div>
+                                <div class="spec1">입 단 년 도</div>
+                                <div class="pay1">연 봉</div>
+                                <div class="comment">코 멘 트</div>
+                            </div>
+                            <div>
+                                <div class="birth">&nbsp;: 1993년 02월 12일</div>
+                                <div class="height">&nbsp;: 191cm / 75kg</div>
+                                <div class="school">&nbsp;: 본리초-경복중-대구고</div>
+                                <div class="spec">&nbsp;: 2012년 입단</div>
+                                <div class="pay">&nbsp;: 20억원</div>
+                            </div>
+                        </div>
+                        <span class="commenttext">2012년 삼성의 유니폼을 입고, 일찌감치 군 복무를 마친 후 지금까지 삼성의 프랜차이즈 스타로 자리매김하고 있다. 189cm의 큰 키와 뚜렷한 이목구비를 갖춰 팬들에게 많은 사랑을 받고 있을 뿐만 아니라 야구도 잘한다. 빠른 주력을 가지고 있으며 삼성 라이온즈의 빠른발 강명구 코치와 합을 맞춘 시너지를 톡톡히 본 타자이다. 데뷔 당시부터 많은 기대를 받은 선수고 현재까지도 라이온즈파크에서 울려퍼지는 구자욱을 향한 응원은 뜨겁다. 타격사이클이 극명한 선수지만 본인의 페이스를 찾으면 이후 바로 반등하는편이다. 다년계약 이후 저조한 성적을 보였으나 2023시즌 다시 원래의 구자욱의 모습으로 돌아왔다는 평가가 있다.</span>
+                        <div class="insta">
+                            <a href="https://www.instagram.com/koojawook/" target="_blank">
+                                <img src="/img/insta.png" alt="인스타그램 아이콘">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="members-area">
+                <th:block th:replace="~{fragments/outfielder_detail_slider :: outfielder_detail_sliderFragment}"></th:block>
+            </div>
+        </section>
+    </main>
+    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+
+    <script>
+        /* header */
+        document.querySelectorAll('.menu > li').forEach(menuItem => {
+            menuItem.addEventListener('mouseenter', () => {
+                document.querySelector('.hideback').classList.add('show-hideback');
+            });
+            menuItem.addEventListener('mouseleave', () => {
+                document.querySelector('.hideback').classList.remove('show-hideback');
+            });
+        });
+        /* header */
+        let slider = document.querySelector(".slider");
+        let innerSlider = document.querySelector(".slider-inner");
+        let pressed = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener("mousedown", (e) => {
+            pressed = true;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = innerSlider.offsetLeft;
+            slider.classList.add("active");
+        });
+
+        slider.addEventListener("mouseleave", () => {
+            pressed = false;
+            slider.classList.remove("active");
+        });
+
+        slider.addEventListener("mouseup", () => {
+            pressed = false;
+            slider.classList.remove("active");
+        });
+
+        slider.addEventListener("mousemove", (e) => {
+            if (!pressed) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = x - startX;
+            innerSlider.style.left = `${scrollLeft + walk}px`;
+            checkBoundary();
+        });
+
+        function checkBoundary() {
+            let outer = slider.getBoundingClientRect();
+            let inner = innerSlider.getBoundingClientRect();
+
+            if (parseInt(innerSlider.style.left) > 0) {
+                innerSlider.style.left = "0px";
+            } else if (inner.right < outer.right) {
+                innerSlider.style.left = `-${inner.width - outer.width}px`;
+
+            }
+        }
+
+        // 중앙에 배치할 슬라이드 인덱스 설정
+        const targetIndex = 2; // 중앙에 배치할 슬라이드의 인덱스 (0부터 시작)
+
+        function centerSlide(index) {
+            const slides = document.querySelectorAll('.slider-item');
+            const targetSlide = slides[index];
+            const sliderRect = slider.getBoundingClientRect();
+            const targetRect = targetSlide.getBoundingClientRect();
+
+            const offset = targetRect.left - sliderRect.left - (sliderRect.width / 2) + (targetRect.width / 2);
+            innerSlider.scrollLeft += offset;
+        }
+
+        // 슬라이더 로드 후 중앙에 배치
+        window.addEventListener('load', () => {
+            centerSlide(targetIndex);
+        });
+
+    </script>
+</div>
+</body>
+</html>

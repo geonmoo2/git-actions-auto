@@ -1,0 +1,297 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'PreT';
+    font-weight: 100;
+    font-style: normal;
+    src: url('../../font/Pretendard-Thin.eot');
+    src: local(''),
+    url('../../font/Pretendard-Thin.woff') format('woff'),
+    url('../../font/Pretendard-Thin.woff2') format('woff2'),
+    url('../../font/Pretendard-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Pre';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../../font/Pretendard-Light.eot');
+    src: local(''),
+    url('../../font/Pretendard-Light.woff') format('woff'),
+    url('../../font/Pretendard-Light.woff2') format('woff2'),
+    url('../../font/Pretendard-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreR';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../../font/Pretendard-Regular.eot');
+    src: local(''),
+    url('../../font/Pretendard-Regular.woff') format('woff'),
+    url('../../font/Pretendard-Regular.woff2') format('woff2'),
+    url('../../font/Pretendard-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreM';
+    font-weight: 600;
+    font-style: normal;
+    src: url('../../font/Pretendard-Medium.eot');
+    src: local(''),
+    url('../../font/Pretendard-Medium.woff') format('woff'),
+    url('../../font/Pretendard-Medium.woff2') format('woff2'),
+    url('../../font/Pretendard-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreSB';
+    font-weight: 700;
+    font-style: normal;
+    src: url('../../font/Pretendard-SemiBold.eot');
+    src: local(''),
+    url('../../font/Pretendard-SemiBold.woff') format('woff'),
+    url('../../font/Pretendard-SemiBold.woff2') format('woff2'),
+    url('../../font/Pretendard-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreEB';
+    font-weight: 900;
+    font-style: normal;
+    src: url('../../font/Pretendard-ExtraBold.eot');
+    src: local(''),
+    url('../../font/Pretendard-ExtraBold.woff') format('woff'),
+    url('../../font/Pretendard-ExtraBold.woff2') format('woff2'),
+    url('../../font/Pretendard-ExtraBold.otf') format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+
+.wrapper > main {
+    padding: 0;
+    min-height: 1100px;
+    background: url('../../img/하늘2.jpg') left top no-repeat, url('../../img/하늘1.jpg') right top no-repeat;
+    background-color: rgba(255, 255, 255, 0.7);
+    background-size: 220px 100%, 220px 100%, 100% 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 0 0;
+}
+
+.wrapper > main > section {
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titlebox {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    padding: 20px;
+    border: 2px solid #1b41ff;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 7px;
+    width: 80%;
+}
+
+.titlearea h2 {
+    font-family: 'PreSB';
+    color: #5976ff;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.titlearea h1 {
+    font-family: 'PreR';
+    color: #000;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.photo {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    background-color: white; /* 이미지 로드 전 배경색 설정 */
+    border-radius: 7px;
+}
+
+
+.all{
+    position: relative;
+    width: 1200px;
+    height: 600px;
+    overflow: hidden;
+    background-color: white; /* 이미지 로드 전 배경색 설정 */
+    border:0 solid #4141ff;
+    border-radius: 7px;
+    margin-bottom: 50px;
+}
+
+.photo img, .all img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 이미지가 컨테이너를 가득 채우도록 설정 */
+}
+
+.name{
+    font-family: PreR;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.engname{
+    font-family: PreR;
+    text-align: center;
+    font-size: 1rem;
+    margin:5px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.leaderinfo{
+    text-align: center;
+}
+
+
+.playersection {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.playerbox {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.playerinfo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.playerdetails{
+    width: 400px;
+    height: 100px;
+    border: 2px solid #1b41ff;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 7px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.motto{
+    padding:5px;
+    height: 65px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.motto>div{
+    font-family: PreR;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.motto>span{
+    font-family: PreR;
+}
+
+
+/* CSS for hover effect */
+.photo{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 7px;
+}
+
+.photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.7s ease; /* Add transition for smooth effect */
+}
+
+.photo:hover img{
+    filter: blur(3px); /* Blur the image on hover */
+}
+
+.photo:hover a{
+    display: block !important; /* Show the button on hover */
+}
+
+.photo a {
+    display: none; /* Hide the button initially */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #1b41ff;
+    border-radius: 5px;
+    font-family: 'PreSB';
+    text-decoration: none;
+    color: #1b41ff;
+    transition: all 0.7s ease; /* Add transition for smooth effect */
+    z-index: 1;
+}
+
+.photo a:hover {
+    background-color: #1b41ff;
+    color: white;
+}

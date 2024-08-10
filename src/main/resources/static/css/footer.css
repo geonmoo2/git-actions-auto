@@ -1,0 +1,43 @@
+/* 푸터 */
+footer {
+    width: 100%;
+    background-color: #ececec;;
+    padding: 3rem 0 3rem 0;
+    z-index: 999;
+}
+.footer-in{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footerlogo{
+    margin-bottom: 2rem;
+}
+.footer-con{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.footer-left>p{
+    font-family: 'PreM';
+    font-size: 15px;
+    margin-bottom: 1rem;
+}
+.footer-left>span{
+    display: block;
+    font-family: 'PreSB';
+    font-size: 13px;
+    color: #a8a8a8;
+}
+.footer-right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 18%;
+}
+.footer-right>a{
+    cursor:pointer;
+}
+
+.footer-right a:hover img {
+    transform: scale(1.1);
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMSUNG LIONS</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="/css/usercss/join_finish.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+
+    <!--js-->
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+<div class="wrapper">
+    <th:block th:replace="~{fragments/nav :: navFragment}"></th:block>
+    <main>
+        <section>
+            <div class="join">
+                <h1>회원가입완료</h1>
+                <br>
+                <div class="title-box">
+                    <h2>
+                        <p>한국 최고의 프로야구단 라이온즈의 회원이 되신 것을<br>진심으로 환영합니다!
+                            <br><br><br></p>
+                    </h2>
+                </div>
+                <div class="input-form">
+                    <span class="title"><h2>홈페이지 무료회원 가입<br></h2></span>
+                    <br>
+                    <div class="line-box">
+                        <ul>
+                            <li>
+                                <span><h2>홈페이지 가입이 완료 되었습니다.</h2></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="info-text">
+                        <span>다양한 정보와 서비스를 이용해보세요</span>
+                    </p>
+                    <br>
+                    <div class="btn">
+                        <a href="/samsung" class="btn1a">
+                            <span>홈으로</span>
+                        </a>
+                        <a href="/user/login" class="btn2a">
+                            <span>로그인</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--footer-->
+    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>    <!--footer-->
+    <script>
+        /* header */
+        document.querySelectorAll('.menu > li').forEach(menuItem => {
+            menuItem.addEventListener('mouseenter', () => {
+                document.querySelector('.hideback').classList.add('show-hideback');
+            });
+            menuItem.addEventListener('mouseleave', () => {
+                document.querySelector('.hideback').classList.remove('show-hideback');
+            });
+        });
+        /* header */
+    </script>
+</div>
+</body>
+</html>

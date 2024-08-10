@@ -1,0 +1,384 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'PreT';
+    font-weight: 100;
+    font-style: normal;
+    src: url('../../font/Pretendard-Thin.eot');
+    src: local(''),
+    url('../../font/Pretendard-Thin.woff') format('woff'),
+    url('../../font/Pretendard-Thin.woff2') format('woff2'),
+    url('../../font/Pretendard-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Pre';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../../font/Pretendard-Light.eot');
+    src: local(''),
+    url('../../font/Pretendard-Light.woff') format('woff'),
+    url('../../font/Pretendard-Light.woff2') format('woff2'),
+    url('../../font/Pretendard-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreR';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../../font/Pretendard-Regular.eot');
+    src: local(''),
+    url('../../font/Pretendard-Regular.woff') format('woff'),
+    url('../../font/Pretendard-Regular.woff2') format('woff2'),
+    url('../../font/Pretendard-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreM';
+    font-weight: 600;
+    font-style: normal;
+    src: url('../../font/Pretendard-Medium.eot');
+    src: local(''),
+    url('../../font/Pretendard-Medium.woff') format('woff'),
+    url('../../font/Pretendard-Medium.woff2') format('woff2'),
+    url('../../font/Pretendard-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreSB';
+    font-weight: 700;
+    font-style: normal;
+    src: url('../../font/Pretendard-SemiBold.eot');
+    src: local(''),
+    url('../../font/Pretendard-SemiBold.woff') format('woff'),
+    url('../../font/Pretendard-SemiBold.woff2') format('woff2'),
+    url('../../font/Pretendard-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreEB';
+    font-weight: 900;
+    font-style: normal;
+    src: url('../../font/Pretendard-ExtraBold.eot');
+    src: local(''),
+    url('../../font/Pretendard-ExtraBold.woff') format('woff'),
+    url('../../font/Pretendard-ExtraBold.woff2') format('woff2'),
+    url('../../font/Pretendard-ExtraBold.otf') format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+
+.wrapper > main {
+    padding: 0;
+    background: url('/img/하늘2.jpg') left top no-repeat,
+    url('/img/하늘1.jpg') right top no-repeat;
+    /*url('../../img/backgroundex1.jpg') no-repeat;*/
+    background-color: rgba(255, 255, 255, 0.7);
+    background-size: 220px 100%, 220px 100%, 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0 0;
+}
+
+.member-area .area1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    margin: 20px;
+    /*border: 2px solid #1b41ff;*/
+    border-radius: 15px;
+    background-color: white;
+    width: 80%;
+}
+
+.member-area {
+    display: flex;
+    justify-content: center;
+}
+
+
+.playerphoto {
+    width: 450px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.allinfo{
+    display: flex;
+}
+.playerphoto > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.playercoment {
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px;
+
+    width: 700px;
+}
+.playername{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin-bottom: 20px;
+}
+.playername>div:nth-child(2){
+    width: 200px;
+}
+.number{
+    font-family: 'PreSB';
+    font-size: 5rem;
+    text-align: left;
+    color: darkblue;
+    margin-right: 20px;
+}
+.koname {
+    font-family: 'PreSB';
+    font-size: 3rem;
+    text-align: left;
+    color: black;
+    width: 250px;
+}
+
+.engname {
+    font-family: 'PreR';
+    font-size: 1.5rem;
+
+    color: #575757;
+}
+
+.playerinfo{
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-family: 'PreR';
+}
+.info1{
+    width:140px;
+}
+
+.birth, .height, .school, .spec, .pay{
+    margin-bottom: 10px;
+    font-family: 'PreR';
+    font-size: 1.5rem;
+}
+.commenttext{
+    font-family: 'PreR';
+    font-size: 1rem;
+    padding-left:10px;
+    padding-right:10px;
+    line-height: 20px;
+}
+
+.info1>div{
+    margin-bottom: 10px;
+    font-family: 'PreR';
+    font-size: 1.5rem;
+    text-align: justify;
+    line-height:3.5px;
+
+
+}
+.info1>div::after{
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+
+.info1>div::before{
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+
+.insta {
+    margin-top: 20px;
+    display: flex;
+}
+
+.insta > a {
+    display: flex;
+    align-items: center;
+    font-family: 'PreR';
+    font-size: 1rem;
+    color: #1b41ff;
+    margin-right: 10px;
+
+}
+
+.insta > a > img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.members-area {
+    width: 1300px;
+}
+
+/* 슬라이더 스타일 */
+/* 슬라이더 스타일 */
+.slider {
+    position: relative;
+    width: 1300px;
+    margin: 50px auto;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: default;
+}
+
+.slider::before, .slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 70px; /* 흐릿해질 영역의 너비 */
+    height: calc(100% - 12px); /* 스크롤바 영역을 제외한 높이 */
+    z-index: 2;
+    pointer-events: none; /* 이 요소들이 클릭을 막지 않도록 */
+}
+
+.slider::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.slider::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.slider-inner {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    height: 100%;
+    overflow-x: auto; /* 가로 스크롤 활성화 */
+    overflow-y: hidden;
+    white-space: nowrap; /* 슬라이더 아이템이 한 줄에 나타나도록 설정 */
+    scrollbar-width: thin; /* Firefox용 스크롤바 얇게 */
+    scrollbar-color: #43beff #fff; /* Firefox용 스크롤바 색상 */
+}
+
+/* 웹킷 기반 브라우저용 스크롤바 스타일 */
+.slider-inner::-webkit-scrollbar {
+    height: 12px; /* 스크롤바의 높이 */
+}
+
+.slider-inner::-webkit-scrollbar-thumb {
+    background-color: #43beff; /* 스크롤바의 색상 */
+    border-radius: 10px; /* 스크롤바의 모서리를 둥글게 */
+}
+
+.slider-inner::-webkit-scrollbar-track {
+    background-color: #fff; /* 스크롤바 트랙의 색상 */
+}
+
+.slider-inner::-webkit-scrollbar-button {
+    display: none; /* 스크롤바 양쪽 화살표 숨김 */
+}
+
+.slider-item {
+    width: 300px; /* 고정된 너비 */
+    flex: 0 0 auto; /* 플렉스 아이템으로 고정된 너비 유지 */
+    height: 400px;
+    margin: 0 10px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 7px;
+    display: inline-block; /* 블록 요소를 인라인 블록으로 설정 */
+    background: #fff; /* 흰색 배경 추가 */
+    transition: transform 0.3s ease; /* 호버 시 애니메이션 추가 */
+    cursor: default; /* 슬라이더 아이템에 기본 커서 설정 */
+}
+
+.slider-item:hover {
+    transform: scale(1.05); /* 호버 시 확대 효과 */
+}
+
+.slider-item:hover .blur-effect {
+    filter: blur(3px); /* 호버 시 블러 효과 */
+}
+
+/* 이미지 및 텍스트 호버 효과 */
+.blur-effect {
+    transition: filter 0.7s ease; /* 부드러운 효과를 위한 전환 추가 */
+}
+
+.slider-item img {
+    width: 100%; /* 부모 컨테이너의 너비를 가득 채움 */
+    height: 300px;
+    object-fit: contain; /* 이미지가 컨테이너를 가득 채우도록 설정 */
+    border-bottom: 2px solid #ddd; /* 이미지 아래에 경계선 추가 */
+}
+
+.slider-item .name, .slider-item .engname {
+    padding: 10px;
+    text-align: center;
+}
+
+.slider-item .name {
+    font-family: 'PreSB';
+    font-size: 1.2rem;
+    color: black;
+}
+
+.slider-item .engname {
+    font-family: 'PreR';
+    font-size: 1rem;
+    color: #333;
+}
+
+/* 호버 시 버튼 표시 */
+.slider-item a {
+    display: none; /* 버튼을 기본적으로 숨김 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #43beff;
+    border-radius: 5px;
+    font-family: 'PreSB';
+    text-decoration: none;
+    color: #43beff;
+    transition: all 0.7s ease; /* 부드러운 효과를 위한 전환 추가 */
+    z-index: 1;
+}
+
+.slider-item:hover a {
+    display: block; /* 호버 시 버튼 표시 */
+}
+
+.slider-item a:hover {
+    background-color: #43beff;
+    color: white;
+}

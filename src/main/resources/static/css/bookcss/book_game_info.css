@@ -1,0 +1,221 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'PreT';
+    font-weight: 100;
+    font-style: normal;
+    src: url('/font/Pretendard-Thin.eot');
+    src: local('��'),
+        url('/font/Pretendard-Thin.woff') format('woff'),
+        url('/font/Pretendard-Thin.woff2') format('woff2'),
+        url('/font/Pretendard-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Pre';
+    font-weight: 300;
+    font-style: normal;
+    src: url('/font/Pretendard-Light.eot');
+    src: local('��'),
+        url('/font/Pretendard-Light.woff') format('woff'),
+        url('/font/Pretendard-Light.woff2') format('woff2'),
+        url('/font/Pretendard-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreR';
+    font-weight: 400;
+    font-style: normal;
+    src: url('/font/Pretendard-Regular.eot');
+    src: local('��'),
+        url('/font/Pretendard-Regular.woff') format('woff'),
+        url('/font/Pretendard-Regular.woff2') format('woff2'),
+        url('/font/Pretendard-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreM';
+    font-weight: 600;
+    font-style: normal;
+    src: url('/font/Pretendard-Medium.eot');
+    src: local('��'),
+        url('/font/Pretendard-Medium.woff') format('woff'),
+        url('/font/Pretendard-Medium.woff2') format('woff2'),
+        url('/font/Pretendard-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreSB';
+    font-weight: 700;
+    font-style: normal;
+    src: url('/font/Pretendard-SemiBold.eot');
+    src: local('��'),
+        url('/font/Pretendard-SemiBold.woff') format('woff'),
+        url('/font/Pretendard-SemiBold.woff2') format('woff2'),
+        url('/font/Pretendard-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreEB';
+    font-weight: 900;
+    font-style: normal;
+    src: url('/font/Pretendard-ExtraBold.eot');
+    src: local('��'),
+        url('/font/Pretendard-ExtraBold.woff') format('woff'),
+        url('/font/Pretendard-ExtraBold.woff2') format('woff2'),
+        url('/font/Pretendard-ExtraBold.otf') format('opentype');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+
+/* main */
+
+.wrapper>main{
+    /* width: auto;
+    height : 1000px;
+    background-image: url('/img/다운로드.jpg'),url('/img/구자욱.jpg');
+    background-repeat: no-repeat;
+    background-size:100% 100%, 100% 100%; 
+    background-position:0px 0px ,0px 0px; */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: /*url('/img/오승환.jpg') left top no-repeat,
+                url('/img/구자욱.jpg') right top no-repeat, */
+                url('../../img/backgroundex1.jpg') no-repeat;
+
+    background-color: rgb(255, 255, 255,0.7);
+    
+
+    background-size: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-top: 100px;
+    
+    
+    
+}
+.wrapper>main>section{
+    margin: auto;
+    
+   
+}
+.match-tabs{
+    width: 1200px;
+
+}
+.match_list>h1{
+    font-size: 3rem;
+    font-family: 'PreR';
+}
+.table{
+    text-align: center;
+    border-radius: 5px; /* 표의 모서리를 둥글게 만듭니다. */
+    overflow: hidden; /* 둥근 표의 모서리가 보이도록 합니다. */
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+    height: 80px;
+    align-items: center;
+    font-family: 'PreM';
+}
+.team{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.team>img{
+    width: 50px;
+    height: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+th {
+    background: linear-gradient(128deg,rgb(68, 0, 255),rgb(52, 52, 255));
+    color: #fff;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.btn {
+    padding: 8px 16px;
+    background-color: white;
+    color: #007bff;
+    border: 3px solid #007bff;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    width: 70px;
+    height: 40px;
+}
+
+.btn:hover {
+    background-color: #007bff;
+    color: white;
+    transition:0.5s;
+    border: 2px double white; /* 안쪽 선 */
+    outline: 1px solid #007bff; /* 바깥쪽 선 */
+    
+    transition: all .7s;
+}
+

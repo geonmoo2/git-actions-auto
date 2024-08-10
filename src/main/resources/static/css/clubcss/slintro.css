@@ -1,0 +1,231 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'PreT';
+    font-weight: 100;
+    font-style: normal;
+    src: url('/font/Pretendard-Thin.eot');
+    src: local('��'),
+        url('/font/Pretendard-Thin.woff') format('woff'),
+        url('/font/Pretendard-Thin.woff2') format('woff2'),
+        url('/font/Pretendard-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Pre';
+    font-weight: 300;
+    font-style: normal;
+    src: url('/font/Pretendard-Light.eot');
+    src: local('��'),
+        url('/font/Pretendard-Light.woff') format('woff'),
+        url('/font/Pretendard-Light.woff2') format('woff2'),
+        url('/font/Pretendard-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreR';
+    font-weight: 400;
+    font-style: normal;
+    src: url('/font/Pretendard-Regular.eot');
+    src: local('��'),
+        url('/font/Pretendard-Regular.woff') format('woff'),
+        url('/font/Pretendard-Regular.woff2') format('woff2'),
+        url('/font/Pretendard-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreM';
+    font-weight: 600;
+    font-style: normal;
+    src: url('/font/Pretendard-Medium.eot');
+    src: local('��'),
+        url('/font/Pretendard-Medium.woff') format('woff'),
+        url('/font/Pretendard-Medium.woff2') format('woff2'),
+        url('/font/Pretendard-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreSB';
+    font-weight: 700;
+    font-style: normal;
+    src: url('/font/Pretendard-SemiBold.eot');
+    src: local('��'),
+        url('/font/Pretendard-SemiBold.woff') format('woff'),
+        url('/font/Pretendard-SemiBold.woff2') format('woff2'),
+        url('/font/Pretendard-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreEB';
+    font-weight: 900;
+    font-style: normal;
+    src: url('/font/Pretendard-ExtraBold.eot');
+    src: local('��'),
+        url('/font/Pretendard-ExtraBold.woff') format('woff'),
+        url('/font/Pretendard-ExtraBold.woff2') format('woff2'),
+        url('/font/Pretendard-ExtraBold.otf') format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+
+
+/* main */
+
+.wrapper>main{
+    margin-top: 100px;
+    /* height : 700px; */
+}
+
+
+/* section-main */
+
+section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+section{
+
+display: flex;
+
+}
+.section1{
+    margin-top: 100px;
+    background-image: url('https://i.namu.wiki/i/Wm0NS8KszZRDNpIkmGZ0GJWin4bXJ-q-SPnWuma-1Pqg6O10IOaUow_3UHY70cbBX2ukTytpWKQ0LrwWZJFnTQ.webp');
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+
+    border: 0px solid;
+
+}
+.section1-main{
+
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.4);
+    height: 100%;
+    width: 100%;
+    align-items: center;
+
+}
+.section1-main2{
+
+    margin-top: 200px;
+    /* border:0px solid; */
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.9);
+    height: 500px;
+    width: 100%;
+    align-items: center;
+}
+
+
+
+
+
+
+.section1-main2>img{
+
+
+    margin-left: 150px;
+    margin-right: 250px;
+    width: 400px;
+    height: 440px;
+}
+
+/* 이종렬 부분 */
+.section2{
+    /*gin-top: 100px;*/
+    background-image:url(https://yagongso.com/wp-content/uploads/2022/02/temp_1644052940639.-1975860168.jpeg) ;
+    background-size: cover;
+    background-size: 100% 100%;
+
+
+    height: 100%;
+    width: 100%;
+
+
+}
+.section2-main{
+
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.4);
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+.section2-main2>img{
+    margin-right: 200px;
+    margin-left: 200px;
+    margin-top: -2px;
+    height: 440px;
+}
+
+.section2-main2{
+
+    /* border:1px solid; */
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.85);
+    height: 500px;
+    width: 100%;
+    align-items: center;
+    margin-top:50px;
+
+}
+
+
+section img {
+
+    margin-right: 60px;
+    margin-top:30px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+
+
+
+}
+
+section:nth-child(1){
+
+}
+section:nth-child(2){
+
+}
+section:nth-child(3){
+
+}
+h1, h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+section>h4{
+    font-weight: 700;
+}

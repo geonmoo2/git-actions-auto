@@ -1,0 +1,278 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'PreT';
+    font-weight: 100;
+    font-style: normal;
+    src: url('/font/Pretendard-Thin.eot');
+    src: local('��'),
+        url('/font/Pretendard-Thin.woff') format('woff'),
+        url('/font/Pretendard-Thin.woff2') format('woff2'),
+        url('/font/Pretendard-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Pre';
+    font-weight: 300;
+    font-style: normal;
+    src: url('/font/Pretendard-Light.eot');
+    src: local('��'),
+        url('/font/Pretendard-Light.woff') format('woff'),
+        url('/font/Pretendard-Light.woff2') format('woff2'),
+        url('/font/Pretendard-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreR';
+    font-weight: 400;
+    font-style: normal;
+    src: url('/font/Pretendard-Regular.eot');
+    src: local('��'),
+        url('/font/Pretendard-Regular.woff') format('woff'),
+        url('/font/Pretendard-Regular.woff2') format('woff2'),
+        url('/font/Pretendard-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreM';
+    font-weight: 600;
+    font-style: normal;
+    src: url('/font/Pretendard-Medium.eot');
+    src: local('��'),
+        url('/font/Pretendard-Medium.woff') format('woff'),
+        url('/font/Pretendard-Medium.woff2') format('woff2'),
+        url('/font/Pretendard-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreSB';
+    font-weight: 700;
+    font-style: normal;
+    src: url('/font/Pretendard-SemiBold.eot');
+    src: local('��'),
+        url('/font/Pretendard-SemiBold.woff') format('woff'),
+        url('/font/Pretendard-SemiBold.woff2') format('woff2'),
+        url('/font/Pretendard-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreEB';
+    font-weight: 900;
+    font-style: normal;
+    src: url('/font/Pretendard-ExtraBold.eot');
+    src: local('��'),
+        url('/font/Pretendard-ExtraBold.woff') format('woff'),
+        url('/font/Pretendard-ExtraBold.woff2') format('woff2'),
+        url('/font/Pretendard-ExtraBold.otf') format('opentype');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+
+/* main */
+
+.wrapper>main>section>img{
+    
+    width: 1000px;
+
+}
+
+.wrapper>main{
+}
+
+.wrapper>main>section{
+
+    background-image: url('https://mblogthumb-phinf.pstatic.net/20121027_165/39sung9_1351336496108AtYhE_JPEG/900%B6%F3%C0%CC%BF%C2%C1%EE.jpg?type=w2');
+    align-items: center;
+    background-size: 1900px 2870px;
+    /* background-size: cover; */
+    margin-top: 100px;
+
+
+}
+.wrapper>main>section>.section-nav{
+    
+    border-bottom: 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    height: 45px;
+
+}
+.wrapper>main>section>.section-nav>li{
+    
+    margin-right: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper>main>section>.section-nav>li>a{
+
+    font-size: 25px;
+}
+.wrapper>main>section>.section-nav>li>a:hover{
+
+    color: red;
+}
+
+
+
+/* 테이블 부분 */
+
+.table-section{
+    background-color: rgba(255, 255, 255,0.2);
+    border-radius: 15px;
+    margin-top: 100px;
+    display: flex;
+    
+
+
+}
+.table-header {
+    background-color: rgb(7, 76, 161,0.8);
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+.table-body {
+    background-color: rgb(0, 127, 255,0.8);
+    color: white;
+    border-radius: 15px;
+    
+}
+
+
+.table-nav{
+
+    
+    color: black;
+}
+.table-section-sub{
+
+    width: 1100px;
+    
+    margin-left: 100px;
+    height: 1950px;
+    margin-top: 200px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.sub-table{
+
+
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+}
+.ss1th{background-color: rgb(255, 215, 0, 0.8);   border-radius: 10px;}
+.ss2th{background-color: rgb(192, 192, 192,0.8); border-radius: 10px;}
+.ss3th{background-color: rgb(226, 145, 68,0.8); border-radius: 10px;}
+.ss4th{background-color: rgb(0, 102, 179,0.8);  border-radius: 10px;}
+
+
+
+
+
+.main-table {
+
+    
+    margin-top: 60px;
+    margin-left: 50px;
+    margin-right: 90px;
+    width: 1000px;
+    border-collapse: collapse;
+    margin-bottom: 100px;
+    
+
+}
+
+td, th {
+    
+    padding: 8px;
+    text-align: center; 
+
+    
+}
+
+.s1th{
+    background-color: rgb(255, 215, 0, 0.8);
+    
+}
+.s2th{
+
+    background-color: rgb(192, 192, 192,0.8);
+}
+.s3th{
+
+    background-color: rgb(226, 145, 68,0.8);
+
+}
+.s4th{
+
+    background-color: rgb(0, 102, 179,0.8);
+    color: white;
+}
+
+
+
+
+
+
+/* sub 테이블 */
+
+
+
+
+.table-section2{
+    margin-bottom: 60px;
+    max-width: 600px;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+
+.sub-table{
+    margin-top: 20px;
+    width: 200px;
+    margin-right: 40px;
+    
+}
+
+.p1{
+    margin-top: 100px;
+
+}
+
+.p1>img{
+    margin-top: 5px;
+    width: 550px;
+    height: 700px;
+    border-radius: 15px;
+    
+
+}
+.table-section2-bottom{
+
+    height: 200px;
+    display: flex;
+}
+

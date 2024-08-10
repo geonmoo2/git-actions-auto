@@ -1,0 +1,295 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'PreT';
+    font-weight: 100;
+    font-style: normal;
+    src: url('/font/Pretendard-Thin.eot');
+    src: local('��'),
+        url('/font/Pretendard-Thin.woff') format('woff'),
+        url('/font/Pretendard-Thin.woff2') format('woff2'),
+        url('/font/Pretendard-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Pre';
+    font-weight: 300;
+    font-style: normal;
+    src: url('/font/Pretendard-Light.eot');
+    src: local('��'),
+        url('/font/Pretendard-Light.woff') format('woff'),
+        url('/font/Pretendard-Light.woff2') format('woff2'),
+        url('/font/Pretendard-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreR';
+    font-weight: 400;
+    font-style: normal;
+    src: url('/font/Pretendard-Regular.eot');
+    src: local('��'),
+        url('/font/Pretendard-Regular.woff') format('woff'),
+        url('/font/Pretendard-Regular.woff2') format('woff2'),
+        url('/font/Pretendard-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreM';
+    font-weight: 600;
+    font-style: normal;
+    src: url('/font/Pretendard-Medium.eot');
+    src: local('��'),
+        url('/font/Pretendard-Medium.woff') format('woff'),
+        url('/font/Pretendard-Medium.woff2') format('woff2'),
+        url('/font/Pretendard-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreSB';
+    font-weight: 700;
+    font-style: normal;
+    src: url('/font/Pretendard-SemiBold.eot');
+    src: local('��'),
+        url('/font/Pretendard-SemiBold.woff') format('woff'),
+        url('/font/Pretendard-SemiBold.woff2') format('woff2'),
+        url('/font/Pretendard-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreEB';
+    font-weight: 900;
+    font-style: normal;
+    src: url('/font/Pretendard-ExtraBold.eot');
+    src: local('��'),
+        url('/font/Pretendard-ExtraBold.woff') format('woff'),
+        url('/font/Pretendard-ExtraBold.woff2') format('woff2'),
+        url('/font/Pretendard-ExtraBold.otf') format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/* header */
+.wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+
+
+/* main */
+/* main - nav */
+.wrapper>main{
+
+    /* height : 700px; */
+}
+
+.section-table{
+
+
+    background-image: url('/img/삼성폭죽배경.jpg');
+    background-size:2000px,1200px;
+    width:2000px;
+    height: 1200px;
+}
+
+
+
+
+
+.main-section2 {
+    transition: height 0.3s ease; /* 높이 변화를 0.3초 동안 부드럽게 적용 */
+}
+.wrapper>main>section{
+    align-items: center;
+    margin-top: 100px;
+
+
+}
+
+
+.wrapper>main>section>.section-nav{
+
+    margin-top: 100px;
+    border-bottom: 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.wrapper>main>section>.section-nav>li{
+
+    margin-right: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper>main>section>.section-nav>li>a{
+
+    font-size: 25px;
+}
+.wrapper>main>section>.section-nav>li>a:hover{
+
+    color: red;
+}
+
+/* table CSS */
+.board_list_wrap{
+
+    position: absolute;
+    background-color:rgba(255, 255, 255, 0.9);
+    margin-top: 100px;
+    margin-left: 220px;
+    padding: 50px;
+    width: 1530px;
+    border-radius: 15px;
+    height: 820px;
+    margin-bottom : 50px;
+
+
+}
+
+
+/* 기본 컨테이너 스타일 */
+.section-mid-form {
+
+    width:1400px;
+    margin-top:-20px;
+
+}
+
+.section-mid-form form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    width: 100%;
+    margin: 20px;
+    position: relative;
+}
+
+.section-mid-form form input[type="text"],
+.section-mid-form form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.section-mid-form form input[type="submit"],
+.section-mid-form form input[type="button"] {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.section-mid-form form input[type="submit"]:hover,
+.section-mid-form form input[type="button"]:hover {
+    background: #0056b3;
+}
+
+.section-mid-form>form>a{
+
+margin-left:1330px;
+
+
+}
+
+label {
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+
+
+/* footer */
+
+footer {
+
+    width: 100%;
+    background-color: #ececec;;
+    padding: 3rem 0 3rem 0;
+
+}
+.footer-in{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footerlogo{
+    margin-bottom: 2rem;
+}
+.footer-con{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.footer-left>p{
+    font-family: 'PreM';
+    font-size: 15px;
+    margin-bottom: 1rem;
+}
+.footer-left>span{
+    display: block;
+    font-family: 'PreSB';
+    font-size: 13px;
+    color: #a8a8a8;
+}
+.footer-right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 18%;
+}
+.footer-right>img{
+    cursor:pointer;
+}
+
+
+ button, .file-input-label {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: inline-block;
+            text-align: center;
+}
+
+button:hover, .file-input-label:hover {
+            background-color: #0056b3;
+}
+
+        /* 숨겨진 파일 입력 필드 */
+.file-input {
+            display: none;
+ }
+
+.file-input-label {
+            margin-top: 10px;
+}
+
+        /* 파일 이름 표시 */
+.file-name {
+            margin-left: 10px;
+            font-style: italic;
+}

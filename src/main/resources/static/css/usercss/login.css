@@ -1,0 +1,271 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'PreT';
+    font-weight: 100;
+    font-style: normal;
+    src: url('/font/Pretendard-Thin.eot');
+    src: local('��'),
+    url('/font/Pretendard-Thin.woff') format('woff'),
+    url('/font/Pretendard-Thin.woff2') format('woff2'),
+    url('/font/Pretendard-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Pre';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../../font/Pretendard-Light.eot');
+    src: local('��'),
+    url('../../font/Pretendard-Light.woff') format('woff'),
+    url('../../font/Pretendard-Light.woff2') format('woff2'),
+    url('../../font/Pretendard-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreR';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../../font/Pretendard-Regular.eot');
+    src: local('��'),
+    url('../../font/Pretendard-Regular.woff') format('woff'),
+    url('../../font/Pretendard-Regular.woff2') format('woff2'),
+    url('../../font/Pretendard-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreM';
+    font-weight: 600;
+    font-style: normal;
+    src: url('../../font/Pretendard-Medium.eot');
+    src: local('��'),
+    url('../../font/Pretendard-Medium.woff') format('woff'),
+    url('../../font/Pretendard-Medium.woff2') format('woff2'),
+    url('../../font/Pretendard-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreSB';
+    font-weight: 700;
+    font-style: normal;
+    src: url('../../font/Pretendard-SemiBold.eot');
+    src: local('��'),
+    url('../../font/Pretendard-SemiBold.woff') format('woff'),
+    url('../../font/Pretendard-SemiBold.woff2') format('woff2'),
+    url('../../font/Pretendard-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreEB';
+    font-weight: 900;
+    font-style: normal;
+    src: url('../../font/Pretendard-ExtraBold.eot');
+    src: local('��'),
+    url('../../font/Pretendard-ExtraBold.woff') format('woff'),
+    url('../../font/Pretendard-ExtraBold.woff2') format('woff2'),
+    url('../../font/Pretendard-ExtraBold.otf') format('opentype');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+
+
+.wrapper > main {
+    /* width: auto;
+    height : 1000px;
+    background-image: url('/img/다운로드.jpg'),url('/img/구자욱.jpg');
+    background-repeat: no-repeat;
+    background-size:100% 100%, 100% 100%; 
+    background-position:0px 0px ,0px 0px; */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: url('/img/player/오승환.jpg') left top no-repeat,
+    url('/img/player/구자욱.jpg') right top no-repeat,
+    url('/img/backgroundex1.jpg');
+
+    background-color: rgb(255, 255, 255, 0.7);
+
+
+    background-size: auto 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+
+
+}
+
+.wrapper > main > section {
+    margin: auto;
+
+
+}
+
+/* section.login */
+.wrapper > main > section > .login {
+    width: 450px;
+    height: 660px;
+    margin: auto;
+
+
+    padding: 60px 68px 40px;
+    border-radius: 10px;
+    color: rgb(7, 7, 82);
+    background-color: rgb(255, 255, 255, 0.7);
+
+
+}
+
+.wrapper > main > section > .login > .title {
+    margin-bottom: 28px;
+
+    z-index: 2;
+    text-align: center;
+    /* font-weight: 500; */
+    font-size: 2.4rem;
+    font-family: preR;
+    letter-spacing: 4px;
+}
+
+.wrapper > main > section > .login > .login-body {
+}
+
+.wrapper > main > section > .login > .login-body > form {
+    z-index: 2;
+}
+
+.wrapper > main > section > .login > .login-body > form > div {
+    margin-bottom: 20px;
+}
+
+.wrapper > main > section > .login > .login-body > form > div > * {
+    height: 50px;
+}
+
+.wrapper > main > section > .login > .login-body > form > div > input {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgb(128, 128, 128, 0.5);
+    padding-left: 15px;
+}
+
+.wrapper > main > section > .login > .login-body > form > div > input::placeholder {
+    transition: .1s;
+    font-size: 1rem;
+    text-align: left;
+    align-items: center;
+
+}
+
+.wrapper > main > section > .login > .login-body > form > div > input:focus::placeholder {
+    position: absolute;
+    left: 15px;
+    top: 5px;
+    font-size: 0.6rem;
+
+}
+
+.wrapper > main > section > .login > .login-body > form > div >.btn {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    background-color: rgb(81, 211, 243);
+    border-radius: 5px;
+    border: 0px;
+    background: linear-gradient(125deg, #81ecec, #6c5ce7, #81ecec);
+    background-position: left;
+    background-size: 200%;
+    color: white;
+    font-size: 1rem;
+    height: 40px;
+    text-align: center;
+    align-items: center;
+}
+
+.wrapper > main > section > .login > .login-body > form > div >.btn:hover{
+    cursor: pointer;
+}
+
+.wrapper > main > section > .login > .login-body > form > div > .btn > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper > main > section > .login > .login-body > form > div > button > a {
+
+
+}
+
+.wrapper > main > section > .login > .login-option {
+    display: auto;
+
+    align-items: center;
+    font-size: 0.8rem;
+    margin-bottom: 100px;
+
+    z-index: 2;
+}
+
+.wrapper > main > section > .login > .login-option > div:nth-child(1) {
+}
+
+.wrapper > main > section > .login > .login-option > div:nth-child(2) {
+    text-align: center;
+}
+
+.wrapper > main > section > .login > .login-option > div:nth-child(2) > a {
+    text-decoration: none;
+    color: rgb(18, 3, 61);
+
+}
+
+.wrapper > main > section > .login > .login-option > div:nth-child(2) > a:hover {
+    text-decoration: underline;
+}
+
+.wrapper > main > section > .login > .login-footer {
+    font-size: 0.7rem;
+    z-index: 2;
+}
+
+.wrapper > main > section > .login > .login-footer > p {
+    font-size: 1rem;
+}
+
+.wrapper > main > section > .login > .login-footer > a {
+    text-decoration: none;
+}
+
+.wrapper > main > section > .login > .login-footer > a:hover {
+    text-decoration: underline;
+}
+
+.wrapper > main > section > .login > .login-bg {
+
+}
+

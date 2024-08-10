@@ -1,0 +1,225 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'PreT';
+    font-weight: 100;
+    font-style: normal;
+    src: url('/font/Pretendard-Thin.eot');
+    src: local('��'),
+        url('/font/Pretendard-Thin.woff') format('woff'),
+        url('/font/Pretendard-Thin.woff2') format('woff2'),
+        url('/font/Pretendard-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Pre';
+    font-weight: 300;
+    font-style: normal;
+    src: url('/font/Pretendard-Light.eot');
+    src: local('��'),
+        url('/font/Pretendard-Light.woff') format('woff'),
+        url('/font/Pretendard-Light.woff2') format('woff2'),
+        url('/font/Pretendard-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreR';
+    font-weight: 400;
+    font-style: normal;
+    src: url('/font/Pretendard-Regular.eot');
+    src: local('��'),
+        url('/font/Pretendard-Regular.woff') format('woff'),
+        url('/font/Pretendard-Regular.woff2') format('woff2'),
+        url('/font/Pretendard-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreM';
+    font-weight: 600;
+    font-style: normal;
+    src: url('/font/Pretendard-Medium.eot');
+    src: local('��'),
+        url('/font/Pretendard-Medium.woff') format('woff'),
+        url('/font/Pretendard-Medium.woff2') format('woff2'),
+        url('/font/Pretendard-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreSB';
+    font-weight: 700;
+    font-style: normal;
+    src: url('/font/Pretendard-SemiBold.eot');
+    src: local('��'),
+        url('/font/Pretendard-SemiBold.woff') format('woff'),
+        url('/font/Pretendard-SemiBold.woff2') format('woff2'),
+        url('/font/Pretendard-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PreEB';
+    font-weight: 900;
+    font-style: normal;
+    src: url('/font/Pretendard-ExtraBold.eot');
+    src: local('��'),
+        url('/font/Pretendard-ExtraBold.woff') format('woff'),
+        url('/font/Pretendard-ExtraBold.woff2') format('woff2'),
+        url('/font/Pretendard-ExtraBold.otf') format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0;
+}
+
+
+.wrapper>main {
+    /* width: auto;
+    height : 1000px;
+    background-image: url('/img/다운로드.jpg'),url('/img/구자욱.jpg');
+    background-repeat: no-repeat;
+    background-size:100% 100%, 100% 100%; 
+    background-position:0px 0px ,0px 0px; */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: url('../../img/player/오승환.jpg') left top no-repeat,
+        url('../../img/player/구자욱.jpg') right top no-repeat,
+        url('../../img/backgroundex1.jpg');
+
+    background-color: rgb(255, 255, 255, 0.7);
+
+
+    background-size: auto 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+
+
+
+}
+
+.wrapper>main>section {
+    margin: auto;
+
+
+}
+
+
+.wrapper>main>section>.book-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.wrapper>main>section>.book-title>h2 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.wrapper>main>section>.book-title>.long {
+    border: 3px solid blue;
+    width: 60px;
+
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+.book-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.book-btn{
+    /* border: 2px solid black; */
+    width: 500px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    
+}
+.btn{
+       
+    width: 400px;
+    height: 300px;
+    background-color: rgba(255, 255, 255);
+    border: 2px solid rgba(0, 38, 255);
+    font-size :1rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box; /* 요소의 크기를 보더와 패딩을 포함한 값으로 설정 */
+    /* border: 2px solid transparent; */
+    outline: 2px solid transparent; /* 아웃라인 초기화 */
+    transition: all 1s;
+}
+.btn:hover{
+    background: linear-gradient(125deg,#81ecec,#bcb3ff);
+    border: 2px double white; /* 안쪽 선 */
+    outline: 2px solid rgba(0, 38, 255);; /* 바깥쪽 선 */
+    color: white;
+    transition: all 1s;
+    
+}
+.btn:hover .btn-text div {
+    border:1px solid white;
+    
+    transition: all 1s;
+}
+.btn:hover .btn-logo img {
+    content: url('../../img/teamlogo/logo.png');
+
+    transition: all 1s;
+    width: 110px;
+    height: 70px;
+    
+}
+.btn-logo{
+    margin-left: 50px;
+    
+}
+.btn-logo>img{
+    width: 110px;
+    height: 70px;
+}
+
+.btn-text{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-text>span{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.btn-text>div{
+    border: 1px solid blue;
+    width: 100px;
+}
+.btn:hover{
+    background-color: rgb(144, 228, 253);
+    transition: all 1s;
+    
+}

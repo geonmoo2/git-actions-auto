@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMSUNG LIONS</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="/css/usercss/login.css">
+    <link rel="stylesheet" type="text/css" href="/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+
+    <!--js-->
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+<div class="wrapper">
+    <th:block th:replace="fragments/nav :: navFragment"></th:block>
+    <main>
+        <section>
+            <div class="login">
+                <div class="title">
+                    로그인
+                </div>
+                <div class="login-body">
+                    <form action="/user/login" method="post">
+                        <div>
+                            <input type="text" name="username" class="form-control" placeholder="&nbsp;&nbsp;&nbsp;아이디">
+                        </div>
+                        <div>
+                            <input type="password" name="password" class="form-control" placeholder="&nbsp;&nbsp;&nbsp;비밀번호">
+                        </div>
+                        <div>
+                            <label for="remember-me">
+                                <input type="checkbox" id="remember-me" name="remember-me">로그인 정보 저장
+                            </label>
+                        </div>
+                        <div>
+                            <button class="btn btn-info"><span>로그인</span></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="login-option">
+
+                    <div>
+                        <br><br><a href="/user/join_start">회원가입</a> | <a href="/user/find_username">아이디 찾기</a> | <a href="/forgot-password">비밀번호찾기</a>
+                    </div>
+                </div>
+                <div class="login-footer">
+                    <p>삼성라이온즈 회원이 아닌가요?<br>지금 가입하세요.</p>
+                    <br>
+                    <span>이 페이지는 Google reCAPTCHA의 보호를 받아 사용자가 로봇이 아님을 확인합니다.</span>
+                    <a href="">자세히 알아보기.</a>
+                </div>
+                <div class="login-bg"></div>
+            </div>
+        </section>
+    </main>
+    <!--footer-->
+    <th:block th:replace="fragments/footer :: footerFragment"></th:block>
+    <!--footer-->
+    <script>
+        /* header */
+        document.querySelectorAll('.menu > li').forEach(menuItem => {
+            menuItem.addEventListener('mouseenter', () => {
+                document.querySelector('.hideback').classList.add('show-hideback');
+            });
+            menuItem.addEventListener('mouseleave', () => {
+                document.querySelector('.hideback').classList.remove('show-hideback');
+            });
+        });
+        /* header */
+    </script>
+
+    <div th:if="${param.error}">
+        <script>
+            alert('다시 시도하세요');
+        </script>
+    </div>
+</div>
+</body>
+</html>
