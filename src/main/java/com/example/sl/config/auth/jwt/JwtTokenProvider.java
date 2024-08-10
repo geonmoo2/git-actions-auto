@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 @Component
 public class JwtTokenProvider {
 
-    String url="jdbc:mysql://host.docker.internal:3306/samsungdb";
+    String url="jdbc:mysql://mysql-container:3306/samsungdb";
     String username ="root";
     String password = "1234";
     Connection conn = null;
