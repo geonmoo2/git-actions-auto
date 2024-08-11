@@ -9,6 +9,7 @@ env:
   VERSION: ${{ github.sha }}
   NAME: go_cicd
   NETWORK_NAME: my_network
+  MYSQL_CONTAINER_NAME: mysql-container
 
 jobs:
   build:
@@ -60,11 +61,11 @@ jobs:
         run: |
           docker network create ${{ env.NETWORK_NAME }} || true
 
-      - name: Run MySQL container
+      - name: Connect MySQL container to network
         run: |
-          docker run -d --name mysql-container --network ${{ env.NETWORK_NAME }} -e MYSQL_ROOT_PASSWORD=example mysql:latest
+          docker network connect ${{ env.NETWORK_NAME }} ${{ env.MYSQL_CONTAINER_NAME }} || true
 
-      - name: Docker run
+      - name: Deploy Application
         run: |
           docker stop ${{ env.NAME }} || true && docker rm ${{ env.NAME }} || true && docker rmi ${{ env.DOCKER_IMAGE }}:latest || true
           docker run -d --network ${{ env.NETWORK_NAME }} -p 81:8080 --name ${{ env.NAME }} --restart always ${{ env.DOCKER_IMAGE }}:latest
