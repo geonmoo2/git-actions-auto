@@ -4,23 +4,29 @@ FROM gradle:8.2-jdk17 AS build
 # Set the working directory
 WORKDIR /app
 
+# Install dos2unix to handle potential Windows line endings
+RUN apt-get update && apt-get install -y dos2unix
+
 # Copy the Gradle wrapper and build files
+COPY gradlew /app/gradlew
 COPY gradle /app/gradle
-COPY gradlew /app/
 COPY build.gradle /app/
 COPY settings.gradle /app/
 
-# Set permissions for gradlew
-RUN chmod +x gradlew
+# Convert gradlew to Unix format and set permissions
+RUN dos2unix /app/gradlew && chmod +x /app/gradlew
+
+# Verify gradlew is present and executable
+RUN ls -la /app
 
 # Download dependencies (using --no-daemon to prevent issues in CI/CD environments)
-RUN ./gradlew --no-daemon dependencies
+RUN /app/gradlew --no-daemon dependencies
 
 # Copy the source code
 COPY src /app/src
 
 # Build the project (excluding tests)
-RUN ./gradlew build -x test --no-daemon
+RUN /app/gradlew build -x test --no-daemon
 
 # Step 2: Runtime Stage
 FROM openjdk:17-jdk-slim
