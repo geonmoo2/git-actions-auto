@@ -68,4 +68,4 @@ jobs:
       - name: Deploy Application
         run: |
           docker stop ${{ env.NAME }} || true && docker rm ${{ env.NAME }} || true && docker rmi ${{ env.DOCKER_IMAGE }}:latest || true
-          docker run -d --network ${{ env.NETWORK_NAME }} -p 81:8080 --name ${{ env.NAME }} --restart always ${{ env.DOCKER_IMAGE }}:latest
+          docker run -d --network ${{ env.NETWORK_NAME }} -p 8080:8080 --name ${{ env.NAME }} --restart always ${{ env.DOCKER_IMAGE }}:latest
