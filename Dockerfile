@@ -10,6 +10,9 @@ COPY gradlew /app/
 COPY build.gradle /app/
 COPY settings.gradle /app/
 
+# Set permissions for gradlew
+RUN chmod +x gradlew
+
 # Download dependencies (using --no-daemon to prevent issues in CI/CD environments)
 RUN ./gradlew --no-daemon dependencies
 
