@@ -8,6 +8,7 @@ env:
   DOCKER_IMAGE: ghcr.io/${{ github.actor }}/git-actions-auto
   VERSION: ${{ github.sha }}
   NAME: go_cicd
+  NETWORK_NAME: my_network
 
 jobs:
   build:
@@ -55,7 +56,15 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GIT_TOKEN }}
 
+      - name: Create Docker network
+        run: |
+          docker network create ${{ env.NETWORK_NAME }} || true
+
+      - name: Run MySQL container
+        run: |
+          docker run -d --name mysql-container --network ${{ env.NETWORK_NAME }} -e MYSQL_ROOT_PASSWORD=example mysql:latest
+
       - name: Docker run
         run: |
           docker stop ${{ env.NAME }} || true && docker rm ${{ env.NAME }} || true && docker rmi ${{ env.DOCKER_IMAGE }}:latest || true
-          docker run -d -p 81:8080 --name go_cicd --restart always ${{ env.DOCKER_IMAGE }}:latest
+          docker run -d --network ${{ env.NETWORK_NAME }} -p 81:8080 --name ${{ env.NAME }} --restart always ${{ env.DOCKER_IMAGE }}:latest
