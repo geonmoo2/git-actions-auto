@@ -3,3 +3,6 @@ spring:
     url: jdbc:mysql://mysql-container:3306/samsungdb
     username: root
     password: 1234
+
+server:
+  port: 8080
