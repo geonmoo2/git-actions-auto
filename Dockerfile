@@ -9,12 +9,14 @@ COPY gradle /app/gradle
 COPY gradlew /app/
 COPY build.gradle /app/
 COPY settings.gradle /app/
+
+# Download dependencies (using --no-daemon to prevent issues in CI/CD environments)
+RUN ./gradlew --no-daemon dependencies
+
+# Copy the source code
 COPY src /app/src
 
-# Set permissions for gradlew
-RUN chmod +x gradlew
-
-# Download dependencies and build the project
+# Build the project (excluding tests)
 RUN ./gradlew build -x test --no-daemon
 
 # Step 2: Runtime Stage
