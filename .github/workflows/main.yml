@@ -10,6 +10,7 @@ env:
   DOCKER_IMAGE: ghcr.io/${{ github.actor }}/nuxt-auto-deploy
   VERSION: ${{ github.sha }}
   NAME: go_cicd
+  DOCKER_COMPOSE_FILE: docker-compose.yml  # Docker Compose 파일 경로
 
 jobs:
   # 빌드 Job
@@ -44,6 +45,7 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           push: true
           tags: ${{ env.DOCKER_IMAGE }}:latest
+
   # 배포 Job
   deploy:
     needs: build  # build 후에 실행되도록 정의
@@ -56,8 +58,8 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GIT_TOKEN }}
-      # 3000 -> 80 포트로 수행하도록 지정
-      - name: Docker run
+      # Docker Compose를 사용하여 컨테이너 관리
+      - name: Docker Compose setup
         run: |
           docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} pull  # 최신 이미지로 업데이트
           docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} up -d --build  # 컨테이너 생성 및 시작
