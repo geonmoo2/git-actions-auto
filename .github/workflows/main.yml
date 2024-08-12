@@ -1,26 +1,28 @@
-name: CI/CD Docker with Docker Compose
+name: CI/CD Docker
 
+# 트리거를 수행할 브랜치를 지정합니다.
 on:
   push:
     branches: [ main ]
 
+# 환경설정
 env:
-  DOCKER_IMAGE: ghcr.io/${{ github.actor }}/git-actions-auto
+  DOCKER_IMAGE: ghcr.io/${{ github.actor }}/nuxt-auto-deploy
   VERSION: ${{ github.sha }}
-  DOCKER_COMPOSE_FILE: docker-compose.yml
-  NETWORK_NAME: my-network
+  NAME: go_cicd
 
 jobs:
+  # 빌드 Job
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      # github repository에서 checkout
       - uses: actions/checkout@v2
-
+      # docker build 수행
       - name: Set up docker buildx
         id: buildx
         uses: docker/setup-buildx-action@v1
-
       - name: Cache docker layers
         uses: actions/cache@v2
         with:
@@ -28,44 +30,34 @@ jobs:
           key: ${{ runner.os }}-buildx-${{ env.VERSION }}
           restore-keys: |
             ${{ runner.os }}-buildx-
-
-      - name: Login to GHCR
+      # GitHub 컨테이너 레지스트리에 로그인 후 빌드 & 푸시
+      - name: Login to ghcr
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.GIT_TOKEN }}
-
-      - name: Build Docker image
-        run: |
-          docker buildx build --builder ${{ steps.buildx.outputs.name }} \
-          --tag ${{ env.DOCKER_IMAGE }}:latest --push .
-
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          builder: ${{ steps.buildx.outputs.name }}
+          push: true
+          tags: ${{ env.DOCKER_IMAGE }}:latest
+  # 배포 Job
   deploy:
-    needs: build
+    needs: build  # build 후에 실행되도록 정의
     name: Deploy
-    runs-on: ubuntu-latest
+    runs-on: [ self-hosted, label-go ] # AWS ./configure에서 사용할 label명
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Login to GHCR
+      - name: Login to ghcr
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.GIT_TOKEN }}
-
-      - name: Set up Docker Compose
-        run: |
-          sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -L -s https://api.github.com/repos/docker/compose/releases/latest | grep tag_name | cut -d '"' -f 4)/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-          sudo chmod +x /usr/local/bin/docker-compose
-
-      - name: Create Docker network
-        run: |
-          docker network create ${{ env.NETWORK_NAME }} || true
-
-      - name: Deploy Application with Docker Compose
+      # 3000 -> 80 포트로 수행하도록 지정
+      - name: Docker run
         run: |
           docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} pull  # 최신 이미지로 업데이트
           docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} up -d --build  # 컨테이너 생성 및 시작
