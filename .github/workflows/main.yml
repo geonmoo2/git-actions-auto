@@ -10,6 +10,7 @@ env:
   NAME: go_cicd
   NETWORK_NAME: my_network
   MYSQL_CONTAINER_NAME: mysql-container
+  DOCKER_COMPOSE_FILE: docker-compose.yml
 
 jobs:
   build:
@@ -57,15 +58,20 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GIT_TOKEN }}
 
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Create Docker network
         run: |
           docker network create ${{ env.NETWORK_NAME }} || true
 
-      - name: Connect MySQL container to network
+      - name: Pull Docker images
         run: |
-          docker network connect ${{ env.NETWORK_NAME }} ${{ env.MYSQL_CONTAINER_NAME }} || true
+          docker pull ${{ env.DOCKER_IMAGE }}:latest
 
-      - name: Deploy Application
+      - name: Deploy Application with Docker Compose
         run: |
-          docker stop ${{ env.NAME }} || true && docker rm ${{ env.NAME }} || true && docker rmi ${{ env.DOCKER_IMAGE }}:latest || true
-          docker run -d --network ${{ env.NETWORK_NAME }} -p 8080:8080 --name ${{ env.NAME }} --restart always ${{ env.DOCKER_IMAGE }}:latest
+          # Stop and remove existing containers if they exist
+          docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} down || true
+          # Start new containers
+          docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} up -d
