@@ -49,7 +49,7 @@ jobs:
     name: Deploy
     runs-on: [ self-hosted, label-go ]
     steps:
-      - uses: actions/checkout@v3  # 이 단계 추가
+      - uses: actions/checkout@v3
         name: Checkout code
         with:
           repository: ${{ github.repository }}
@@ -61,6 +61,14 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GIT_TOKEN }}
+
+      - name: Stop and remove existing containers
+        run: |
+          sudo docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} down
+
+      - name: Remove existing image
+        run: |
+          sudo docker rmi ${{ env.DOCKER_IMAGE }}:latest || true
 
       - name: Docker Compose setup
         run: |
