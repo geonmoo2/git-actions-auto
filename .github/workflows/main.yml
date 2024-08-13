@@ -8,7 +8,7 @@ env:
   DOCKER_IMAGE: ghcr.io/${{ github.actor }}/nuxt-auto-deploy
   VERSION: ${{ github.sha }}
   NAME: go_cicd
-  DOCKER_COMPOSE_FILE: ./docker-compose.yml  # 상대 경로로 수정
+  DOCKER_COMPOSE_FILE: ./docker-compose.yml
 
 jobs:
   build:
@@ -16,10 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        name: Checkout code
-        with:
-          repository: ${{ github.repository }}
-          path: repo  # 작업 디렉토리 내부의 경로로 설정
 
       - name: Set up docker buildx
         id: buildx
@@ -51,13 +47,13 @@ jobs:
   deploy:
     needs: build
     name: Deploy
-    runs-on: [self-hosted, label-go]
+    runs-on: [ self-hosted, label-go ]
     steps:
       - uses: actions/checkout@v3
         name: Checkout code
         with:
           repository: ${{ github.repository }}
-          path: repo  # 작업 디렉토리 내부의 경로로 설정
+          path: repo
 
       - name: Login to ghcr
         uses: docker/login-action@v2
@@ -78,3 +74,9 @@ jobs:
         run: |
           sudo docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} pull
           sudo docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} up -d --build --remove-orphans
+
+      - name: Load MySQL Dump Files
+        run: |
+          for file in repo/DATABASE/*.sql; do
+            docker exec -i mysql-container mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} samsungdb < $file
+          done
