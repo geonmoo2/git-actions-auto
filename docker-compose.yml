@@ -11,10 +11,9 @@ services:
       - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
-      - ./DATABASE:/docker-entrypoint-initdb.d  # SQL 파일을 초기화 스크립트로 추가
     networks:
-      - my-network
-    restart: unless-stopped
+      - git-actions-auto_my-network
+    restart: unless-stopped  # 컨테이너가 중지되거나 재시작되지 않도록 설정
 
   app:
     build:
@@ -30,13 +29,13 @@ services:
     depends_on:
       - mysql
     networks:
-      - my-network
-    restart: unless-stopped
+      - git-actions-auto_my-network
+    restart: unless-stopped  # 컨테이너가 중지되거나 재시작되지 않도록 설정
 
 volumes:
   mysql-data:
     driver: local
 
 networks:
-  my-network:
+  git-actions-auto_my-network:
     driver: bridge
