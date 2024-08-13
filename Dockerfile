@@ -23,8 +23,8 @@ RUN ./gradlew --no-daemon dependencies
 # Copy the source code
 COPY src /app/src
 
-# Build the project (excluding tests)
-RUN ./gradlew build -x test --no-daemon
+# Clean and build the project (excluding tests)
+RUN ./gradlew clean build -x test --no-daemon --stacktrace --info
 
 # Step 2: Runtime Stage
 FROM openjdk:17-jdk-slim
