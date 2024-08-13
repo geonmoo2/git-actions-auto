@@ -79,7 +79,7 @@ jobs:
         run: |
           echo "Waiting for MySQL to be ready..."
           for i in {1..30}; do
-            if docker exec mysql-container mysqladmin ping -h localhost --silent; then
+            if docker exec mysql-container mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} -e "SELECT 1;" > /dev/null 2>&1; then
               echo "MySQL is ready!"
               break
             fi
