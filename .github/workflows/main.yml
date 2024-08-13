@@ -66,30 +66,7 @@ jobs:
         run: |
           sudo docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} down
 
-      - name: Remove existing image
-        run: |
-          sudo docker rmi ${{ env.DOCKER_IMAGE }}:latest || true
-
       - name: Docker Compose setup
         run: |
           sudo docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} pull
           sudo docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} up -d --build --remove-orphans
-
-      - name: Wait for MySQL to be ready
-        run: |
-          echo "Waiting for MySQL to be ready..."
-          for i in {1..30}; do
-            if docker exec mysql-container mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} -e "SELECT 1;" > /dev/null 2>&1; then
-              echo "MySQL is ready!"
-              break
-            fi
-            echo "Waiting for MySQL..."
-            sleep 10
-          done
-
-      - name: Load MySQL Dump Files
-        run: |
-          for file in repo/DATABASE/*.sql; do
-            echo "Loading $file into MySQL..."
-            docker exec -i mysql-container mysql -u root -p${{ secrets.MYSQL_ROOT_PASSWORD }} samsungdb < $file
-          done
