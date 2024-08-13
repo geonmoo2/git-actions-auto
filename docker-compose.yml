@@ -12,7 +12,7 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
     networks:
-      - my-network
+      - git-actions-auto_my-network
     restart: unless-stopped  # 컨테이너가 중지되거나 재시작되지 않도록 설정
 
   app:
@@ -29,7 +29,7 @@ services:
     depends_on:
       - mysql
     networks:
-      - my-network
+      - git-actions-auto_my-network
     restart: unless-stopped  # 컨테이너가 중지되거나 재시작되지 않도록 설정
 
 volumes:
@@ -37,5 +37,5 @@ volumes:
     driver: local
 
 networks:
-  my-network:
+  git-actions-auto_my-network:
     driver: bridge
