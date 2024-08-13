@@ -8,7 +8,7 @@ env:
   DOCKER_IMAGE: ghcr.io/${{ github.actor }}/nuxt-auto-deploy
   VERSION: ${{ github.sha }}
   NAME: go_cicd
-  DOCKER_COMPOSE_FILE: ./docker-compose.yml  # Docker Compose 파일 경로
+  DOCKER_COMPOSE_FILE: /new/path/to/docker-compose.yml  # Updated Docker Compose file path
 
 jobs:
   build:
@@ -53,7 +53,7 @@ jobs:
         name: Checkout code
         with:
           repository: ${{ github.repository }}
-          path: .
+          path: /new/path/to/repo  # Updated repository path
 
       - name: Login to ghcr
         uses: docker/login-action@v2
