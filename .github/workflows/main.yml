@@ -8,7 +8,8 @@ env:
   DOCKER_IMAGE: ghcr.io/${{ github.actor }}/nuxt-auto-deploy
   VERSION: ${{ github.sha }}
   NAME: go_cicd
-  DOCKER_COMPOSE_FILE: ./actions-runner/_work/git-actions-auto/git-actions-auto/repo/docker-compose.yml
+  # docker-compose.yml 파일이 리포지토리 루트 디렉토리에 있으므로, 해당 경로를 지정
+  DOCKER_COMPOSE_FILE: ./docker-compose.yml
 
 jobs:
   build:
