@@ -55,6 +55,12 @@ jobs:
           repository: ${{ github.repository }}
           path: repo
 
+      - name: Print working directory
+        run: pwd
+
+      - name: List files in current directory
+        run: ls -al
+
       - name: Login to ghcr
         uses: docker/login-action@v2
         with:
