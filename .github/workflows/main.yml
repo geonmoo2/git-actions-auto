@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 env:
-  DOCKER_IMAGE: ghcr.io/${{ github.repository_owner }}/nuxt-auto-deploy
+  DOCKER_IMAGE: ghcr.io/${{ github.actor }}/nuxt-auto-deploy
   VERSION: ${{ github.sha }}
   NAME: go_cicd
   DOCKER_COMPOSE_FILE: ./docker-compose.yml
@@ -29,22 +29,20 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-buildx-
 
-      - name: Login to GitHub Container Registry
+      - name: Login to ghcr
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GIT_TOKEN }}
 
-      - name: Build and push Docker image
+      - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v3
         with:
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ${{ env.DOCKER_IMAGE }}:${{ env.VERSION }}
-          labels: |
-            version=${{ env.VERSION }}
+          tags: ${{ env.DOCKER_IMAGE }}:latest
 
   deploy:
     needs: build
@@ -57,7 +55,7 @@ jobs:
           repository: ${{ github.repository }}
           path: repo
 
-      - name: Login to GitHub Container Registry
+      - name: Login to ghcr
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
@@ -68,10 +66,7 @@ jobs:
         run: |
           sudo docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} down
 
-      - name: Pull the latest Docker image
+      - name: Docker Compose setup
         run: |
-          sudo docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} pull app
-
-      - name: Start containers with the latest image
-        run: |
-          sudo docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} up -d --build --no-cache --remove-orphans
+          sudo docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} pull
+          sudo docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} up -d --build --remove-orphans
