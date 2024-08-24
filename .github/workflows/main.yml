@@ -8,7 +8,7 @@ env:
   DOCKER_IMAGE: ghcr.io/${{ github.actor }}/nuxt-auto-deploy
   VERSION: ${{ github.sha }}
   NAME: go_cicd
-  DOCKER_COMPOSE_FILE: C:/Users/rjsan/OneDrive/Desktop/git-actions-auto/docker-compose.yml
+  DOCKER_COMPOSE_FILE: /mnt/c/Users/rjsan/OneDrive/Desktop/git-actions-auto/docker-compose.yml
 
 jobs:
   build:
