@@ -8,8 +8,7 @@ env:
   DOCKER_IMAGE: ghcr.io/${{ github.actor }}/nuxt-auto-deploy
   VERSION: ${{ github.sha }}
   NAME: go_cicd
-  # docker-compose.yml 파일이 리포지토리 루트 디렉토리에 있으므로, 해당 경로를 지정
-  DOCKER_COMPOSE_FILE: ./docker-compose.yml
+  DOCKER_COMPOSE_FILE: /home/ec2-user/actions-runner/_work/git-actions-auto/git-actions-auto/repo/docker-compose.yml
 
 jobs:
   build:
@@ -50,11 +49,17 @@ jobs:
     name: Deploy
     runs-on: [ self-hosted, label-go ]
     steps:
-      - uses: actions/checkout@v3
-        name: Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
         with:
           repository: ${{ github.repository }}
           path: repo
+
+      - name: Print working directory
+        run: pwd
+
+      - name: List files in current directory
+        run: ls -al
 
       - name: Login to ghcr
         uses: docker/login-action@v2
