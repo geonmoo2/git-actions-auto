@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 env:
-  DOCKER_IMAGE: ghcr.io/${{ github.actor }}/nuxt-auto-deploy
+  DOCKER_IMAGE: ghcr.io/${{ github.repository_owner }}/nuxt-auto-deploy
   VERSION: ${{ github.sha }}
   NAME: go_cicd
   DOCKER_COMPOSE_FILE: ./docker-compose.yml
@@ -71,4 +71,4 @@ jobs:
       - name: Docker Compose setup
         run: |
           sudo docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} pull app
-          sudo docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} up -d --remove-orphans
+          sudo docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} up -d --build --no-cache --remove-orphans
