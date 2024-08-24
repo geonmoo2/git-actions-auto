@@ -11,20 +11,6 @@ services:
       - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
-      - ./DATABASE/samsungdb_board_table.sql:/docker-entrypoint-initdb.d/samsungdb_board_table.sql
-      - ./DATABASE/samsungdb_book_entity.sql:/docker-entrypoint-initdb.d/samsungdb_book_entity.sql
-      - ./DATABASE/samsungdb_clubnews_board_table.sql:/docker-entrypoint-initdb.d/samsungdb_clubnews_board_table.sql
-      - ./DATABASE/samsungdb_fan_board_table.sql:/docker-entrypoint-initdb.d/samsungdb_fan_board_table.sql
-      - ./DATABASE/samsungdb_fan_comment_table.sql:/docker-entrypoint-initdb.d/samsungdb_fan_comment_table.sql
-      - ./DATABASE/samsungdb_faq_board_table.sql:/docker-entrypoint-initdb.d/samsungdb_faq_board_table.sql
-      - ./DATABASE/samsungdb_game_info_entity.sql:/docker-entrypoint-initdb.d/samsungdb_game_info_entity.sql
-      - ./DATABASE/samsungdb_image_entity.sql:/docker-entrypoint-initdb.d/samsungdb_image_entity.sql
-      - ./DATABASE/samsungdb_logined_user.sql:/docker-entrypoint-initdb.d/samsungdb_logined_user.sql
-      - ./DATABASE/samsungdb_payment_entity.sql:/docker-entrypoint-initdb.d/samsungdb_payment_entity.sql
-      - ./DATABASE/samsungdb_seat_entity.sql:/docker-entrypoint-initdb.d/samsungdb_seat_entity.sql
-      - ./DATABASE/samsungdb_signature.sql:/docker-entrypoint-initdb.d/samsungdb_signature.sql
-      - ./DATABASE/samsungdb_story_entity.sql:/docker-entrypoint-initdb.d/samsungdb_story_entity.sql
-      - ./DATABASE/samsungdb_user.sql:/docker-entrypoint-initdb.d/samsungdb_user.sql
     networks:
       - git-actions-auto_my-network
     restart: unless-stopped  # 컨테이너가 중지되거나 재시작되지 않도록 설정
