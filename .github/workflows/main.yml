@@ -8,8 +8,7 @@ env:
   DOCKER_IMAGE: ghcr.io/${{ github.actor }}/nuxt-auto-deploy
   VERSION: ${{ github.sha }}
   NAME: go_cicd
-  # 배포 서버에서 사용할 수 있는 경로로 수정
-  DOCKER_COMPOSE_FILE: /home/ec2-user/git-actions-auto/docker-compose.yml
+  DOCKER_COMPOSE_FILE: ./actions-runner/_work/git-actions-auto/git-actions-auto/repo/docker-compose.yml
 
 jobs:
   build:
