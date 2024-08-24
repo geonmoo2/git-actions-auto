@@ -76,3 +76,24 @@ jobs:
         run: |
           sudo docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} pull
           sudo docker-compose -f ${{ env.DOCKER_COMPOSE_FILE }} up -d --build --remove-orphans
+
+      - name: Wait for MySQL to be ready
+        run: |
+          sleep 20  # MySQL이 시작될 때까지 대기
+
+      - name: Load SQL scripts into MySQL
+        run: |
+          docker exec -i mysql-container mysql -u root -p1234 samsungdb < ./repo/DATABASE/samsungdb_board_table.sql
+          docker exec -i mysql-container mysql -u root -p1234 samsungdb < ./repo/DATABASE/samsungdb_book_entity.sql
+          docker exec -i mysql-container mysql -u root -p1234 samsungdb < ./repo/DATABASE/samsungdb_clubnews_board_table.sql
+          docker exec -i mysql-container mysql -u root -p1234 samsungdb < ./repo/DATABASE/samsungdb_fan_board_table.sql
+          docker exec -i mysql-container mysql -u root -p1234 samsungdb < ./repo/DATABASE/samsungdb_fan_comment_table.sql
+          docker exec -i mysql-container mysql -u root -p1234 samsungdb < ./repo/DATABASE/samsungdb_faq_board_table.sql
+          docker exec -i mysql-container mysql -u root -p1234 samsungdb < ./repo/DATABASE/samsungdb_game_info_entity.sql
+          docker exec -i mysql-container mysql -u root -p1234 samsungdb < ./repo/DATABASE/samsungdb_image_entity.sql
+          docker exec -i mysql-container mysql -u root -p1234 samsungdb < ./repo/DATABASE/samsungdb_logined_user.sql
+          docker exec -i mysql-container mysql -u root -p1234 samsungdb < ./repo/DATABASE/samsungdb_payment_entity.sql
+          docker exec -i mysql-container mysql -u root -p1234 samsungdb < ./repo/DATABASE/samsungdb_seat_entity.sql
+          docker exec -i mysql-container mysql -u root -p1234 samsungdb < ./repo/DATABASE/samsungdb_signature.sql
+          docker exec -i mysql-container mysql -u root -p1234 samsungdb < ./repo/DATABASE/samsungdb_story_entity.sql
+          docker exec -i mysql-container mysql -u root -p1234 samsungdb < ./repo/DATABASE/samsungdb_user.sql
