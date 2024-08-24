@@ -91,7 +91,7 @@ a {
 /* main */
 
 .wrapper>main>section>img{
-    
+
     width: 1000px;
 
 }
@@ -103,14 +103,14 @@ a {
 
     background-image: url('https://mblogthumb-phinf.pstatic.net/20121027_165/39sung9_1351336496108AtYhE_JPEG/900%B6%F3%C0%CC%BF%C2%C1%EE.jpg?type=w2');
     align-items: center;
-    background-size: 1900px 2870px;
+    background-size: 100% 115%;
     /* background-size: cover; */
     margin-top: 100px;
 
 
 }
 .wrapper>main>section>.section-nav{
-    
+
     border-bottom: 2px solid;
     display: flex;
     justify-content: center;
@@ -120,7 +120,7 @@ a {
 
 }
 .wrapper>main>section>.section-nav>li{
-    
+
     margin-right: 50px;
     justify-content: center;
     align-items: center;
@@ -139,11 +139,16 @@ a {
 /* 테이블 부분 */
 
 .table-section{
-    background-color: rgba(255, 255, 255,0.2);
+
+    width:80%;
+    position:relative;
+    margin: 0 auto;
+
     border-radius: 15px;
-    margin-top: 100px;
     display: flex;
-    
+
+
+
 
 
 }
@@ -158,19 +163,19 @@ a {
     background-color: rgb(0, 127, 255,0.8);
     color: white;
     border-radius: 15px;
-    
+
 }
 
 
 .table-nav{
 
-    
+
     color: black;
 }
 .table-section-sub{
 
     width: 1100px;
-    
+
     margin-left: 100px;
     height: 1950px;
     margin-top: 200px;
@@ -194,28 +199,28 @@ a {
 
 .main-table {
 
-    
+
     margin-top: 60px;
     margin-left: 50px;
     margin-right: 90px;
     width: 1000px;
     border-collapse: collapse;
     margin-bottom: 100px;
-    
+
 
 }
 
 td, th {
-    
-    padding: 8px;
-    text-align: center; 
 
-    
+    padding: 8px;
+    text-align: center;
+
+
 }
 
 .s1th{
     background-color: rgb(255, 215, 0, 0.8);
-    
+
 }
 .s2th{
 
@@ -254,7 +259,7 @@ td, th {
     margin-top: 20px;
     width: 200px;
     margin-right: 40px;
-    
+
 }
 
 .p1{
@@ -263,11 +268,11 @@ td, th {
 }
 
 .p1>img{
-    margin-top: 5px;
-    width: 550px;
-    height: 700px;
+    margin-top: 5%;
+    width: 100%;
+    height: 80%;
     border-radius: 15px;
-    
+
 
 }
 .table-section2-bottom{
@@ -275,4 +280,3 @@ td, th {
     height: 200px;
     display: flex;
 }
-

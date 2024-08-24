@@ -98,10 +98,10 @@ a {
 
 .section-table{
 
-
     background-color: #f8f8f8;
-    background-size:2000px 1000px;
+    background-size:auto 100vh;
     height: 1000px;
+
 }
 
 
@@ -144,15 +144,23 @@ a {
 }
 
 /* table CSS */
-.board_list_wrap{
-    position: absolute;
-    background-color:rgba(255, 255, 255, 0.9);
-    margin-top: 100px;
-    margin-left: 220px;
+.board_list_wrap {
+
+    top:10%;
+    position: relative;
+    background-color: rgba(255, 255, 255, 1);
+    margin: 0 auto; /* 자동으로 좌우 중앙 정렬 */
     padding: 50px;
-    width: 1500px;
+    width: 90%; /* 부모 요소의 90%만큼의 너비 */
+    max-width: 1500px; /* 최대 너비를 1500px로 설정 */
     border-radius: 15px;
     height: 700px;
+    border: 2px solid black;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* 작은 그림자 */
+                0 6px 20px rgba(0, 0, 0, 0.3); /* 큰 그림자 */
+    border: 2px solid rgba(0, 0, 0, 0.2); /* 반투명한 테두리 */
+
 
 
 

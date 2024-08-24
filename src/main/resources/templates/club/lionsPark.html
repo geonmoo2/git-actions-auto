@@ -27,15 +27,12 @@
 </head>
 
 <body>
-
 <div class="wrapper">
     <th:block th:replace="~{fragments/nav :: navFragment}"></th:block>
     <main>
         <section>
 
             <div class="section-main">
-                <div class="section-left"></div>
-
 
                 <div class="section-mid">
 
@@ -98,8 +95,8 @@
                                 new daum.roughmap.Lander({
                                     "timestamp": "1715693280126",
                                     "key": "2jc65",
-                                    "mapWidth": "800",
-                                    "mapHeight": "350"
+                                    "mapWidth": "900",
+                                    "mapHeight": "400"
                                 }).render();
                             </script>
                         </div>
@@ -161,16 +158,12 @@
                                 </ul>
                             </div>
                         </div>
-
-
                     </div>
-
-                    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
                 </div>
-                <div class="section-right"></div>
             </div>
         </section>
     </main>
+    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
 </div>
 <script>
     /*header*/
